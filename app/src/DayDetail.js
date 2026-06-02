@@ -69,7 +69,7 @@ export default function DayDetail({ visible, date, events, onClose }) {
             {tab === 'events' ? (
               events.length === 0
                 ? <Text style={styles.emptyMsg}>No collected events for this day.</Text>
-                : events.map((ev, i) => <EventCard key={i} ev={ev} />)
+                : events.map((ev, i) => <EventCard key={i} ev={ev} detail />)
             ) : (
               <StockImpactPanel impacts={dayImpacts} />
             )}

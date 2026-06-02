@@ -57,7 +57,9 @@ ENTITY_TICKERS: dict[str, str] = {
     "bp": "BP", "shell": "SHEL",
     # Consumer / retail
     "nike": "NKE", "fedex": "FDX", "costco": "COST", "walmart": "WMT",
-    "victoria's secret": "VSCO", "citi trends": "CTRN", "caleres": "CAL",
+    "victoria's secret": "VSXY",  # ticker changed VSCO→VSXY on 2026-06-02
+    "kohl's": "KSS", "kohls": "KSS", "macy's": "M", "macys": "M",
+    "citi trends": "CTRN", "caleres": "CAL",
     "greif": "GEF", "eplus": "PLUS", "cronos": "CRON", "accenture": "ACN",
     "adobe": "ADBE",
     # Software / IT services

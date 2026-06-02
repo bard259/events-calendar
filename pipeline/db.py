@@ -38,6 +38,26 @@ CREATE TABLE IF NOT EXISTS event_stock_impacts (
     sector      TEXT,
     FOREIGN KEY(event_uid) REFERENCES events(uid)
 );
+CREATE TABLE IF NOT EXISTS event_setups (
+    event_uid     TEXT PRIMARY KEY,
+    ticker        TEXT,
+    score         INTEGER NOT NULL,   -- 0–100 asymmetry score
+    label         TEXT,               -- "High-asymmetry setup" | "Notable setup" | "Low"
+    short_pct     REAL,               -- short interest as % of float (nullable)
+    short_as_of   TEXT,
+    activists     TEXT,               -- json list
+    analyst_trend TEXT,
+    bias          TEXT,
+    notes         TEXT,               -- json list
+    sources       TEXT,               -- json list
+    FOREIGN KEY(event_uid) REFERENCES events(uid)
+);
+CREATE TABLE IF NOT EXISTS event_previews (
+    event_uid TEXT PRIMARY KEY,
+    ticker    TEXT,
+    payload   TEXT NOT NULL,   -- json: consensus bar, implied move, lean, bull/bear/watch, sources
+    FOREIGN KEY(event_uid) REFERENCES events(uid)
+);
 CREATE INDEX IF NOT EXISTS idx_events_date ON events(event_date);
 CREATE INDEX IF NOT EXISTS idx_events_cat  ON events(category_id);
 
@@ -152,6 +172,29 @@ def save_stock_impacts(conn, impacts: list[dict]):
            (event_uid, ticker, direction, confidence, reason, sector)
            VALUES (:event_uid, :ticker, :direction, :confidence, :reason, :sector)""",
         impacts,
+    )
+    conn.commit()
+
+
+def save_setups(conn, setups: list[dict]):
+    """Upsert pre-event setup rows (one per event_uid)."""
+    conn.executemany(
+        """INSERT OR REPLACE INTO event_setups
+           (event_uid, ticker, score, label, short_pct, short_as_of,
+            activists, analyst_trend, bias, notes, sources)
+           VALUES (:event_uid, :ticker, :score, :label, :short_pct, :short_as_of,
+            :activists, :analyst_trend, :bias, :notes, :sources)""",
+        setups,
+    )
+    conn.commit()
+
+
+def save_previews(conn, previews: list[dict]):
+    """Upsert earnings-preview rows (one per event_uid). Each: {event_uid, ticker, payload}."""
+    conn.executemany(
+        """INSERT OR REPLACE INTO event_previews (event_uid, ticker, payload)
+           VALUES (:event_uid, :ticker, :payload)""",
+        previews,
     )
     conn.commit()
 

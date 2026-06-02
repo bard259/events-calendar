@@ -43,6 +43,11 @@ ENTITIES: list[tuple[str, list[str]]] = [
     ("TSMC",       ["taiwan semiconductor", "tsmc"]),
     ("Anthropic",  ["anthropic", "claude"]),
     ("OpenAI",     ["openai", "chatgpt", "gpt-5", "gpt-6"]),
+    # High-short / activist consumer-turnaround names (VSCO/VSXY-style setups) — their
+    # dated catalysts get a ⚡ setup badge via analysis/setup_signals.py.
+    ("Victoria's Secret", ["victoria's secret", "victorias secret", "vsxy", "vsco"]),
+    ("Kohl's",            ["kohl's", "kohls"]),
+    ("Macy's",            ["macy's", "macys"]),
 ]
 
 _ALIAS_INDEX = sorted(
@@ -106,6 +111,10 @@ class DailyTechNewsCollector(BaseCollector):
         "Anthropic Claude model release 2026",
         "OpenAI GPT model release 2026",
         "AI data center launch 2026 gigawatt",
+        # High-short / activist consumer-turnaround catalysts
+        "Victoria's Secret VSXY earnings date 2026",
+        "Kohl's earnings date 2026",
+        "Macy's earnings date 2026",
     ]
 
     def _detect_entity(self, blob: str) -> str:
