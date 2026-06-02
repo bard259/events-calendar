@@ -57,6 +57,13 @@ def run(month: str) -> None:
     db.save_stock_impacts(conn, impacts)
     print(f"  {len(impacts)} stock-impact records written.")
 
+    # ── Pre-event setup signals (short interest / activist / asymmetry) ────────
+    from analysis import setup_signals, earnings_preview
+    n_setups = setup_signals.enrich_and_save(conn)
+    print(f"  {n_setups} pre-event setup records written.")
+    n_prev = earnings_preview.enrich_and_save(conn)
+    print(f"  {n_prev} earnings-preview annotations written.")
+
     total_events = conn.execute("SELECT COUNT(*) n FROM events").fetchone()["n"]
     bytes_after = db.db_size_bytes()
     db.finish_run(conn, run_id, total_events, grand_total_new, bytes_after)

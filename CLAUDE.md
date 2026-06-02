@@ -1,26 +1,33 @@
-# Events — June 2026 Event Collection Pipeline + Calendar App
+# Events — Jun–Dec 2026 Event Collection Pipeline + Calendar App
+
+> New here? Read **`TAKEOVER.md`** first (cold-start onboarding + current state), then this
+> file for the deeper conventions.
 
 This repo has two halves:
 
-1. **`pipeline/`** — a Python data-collection pipeline that gathers financial / macro /
-   geopolitical *events* for **June 2026** across 8 categories, stores them in **SQLite**,
-   and reports an **estimated vs. actual** storage footprint. It mixes **live free APIs**
-   and **scrapers**, and explicitly **detects, records, and reports** rate-limiting and
-   Terms-of-Service issues.
-2. **`app/`** — an **Expo / React Native** app (runs on **web + iOS** from one codebase)
-   with a clickable **calendar UI**. Tapping a day shows that day's collected events.
+1. **`pipeline/`** — a Python (stdlib-only) data-collection pipeline that gathers financial /
+   macro / geopolitical / **AI-ecosystem** *events* for **June–December 2026** across **9
+   categories**, stores them in **SQLite**, runs a **rules-based stock-impact analysis**, and
+   reports an **estimated vs. actual** storage footprint. It mixes **live free APIs** and
+   **scrapers**, and explicitly **detects, records, and reports** rate-limiting and
+   Terms-of-Service issues. **All event data is live-sourced** (`source_type` ∈ {`api`,
+   `scraper`}); there is **no synthetic/curated** event data — do not reintroduce `CURATED`
+   lists.
+2. **`app/`** — an **Expo / React Native** app (runs on **web + iOS** from one codebase) with
+   **Month / Week / Day / Latest** views, category filters, and search. Tapping a day shows
+   that day's events **and** the stocks likely impacted (ticker, direction, confidence, reason).
 
 ## Event categories (stable IDs — used in DB and app filters)
 
 | id | category                          | primary source(s)                                  |
 | -: | --------------------------------- | -------------------------------------------------- |
-| 1  | Macro & Economic Data             | **T1** parse BLS published schedule + curated      |
-| 2  | Central Bank & Policy             | **T1** parse Fed FOMC calendar + curated intl.     |
-| 3  | Corporate Financial Events        | SEC EDGAR API + **T2** SEC full-text + **IPOs** + curated |
-| 4  | Corporate Strategic Catalysts     | curated + **T3** Google News RSS mining            |
+| 1  | Macro & Economic Data             | **T1** parse BLS + BEA published schedules         |
+| 2  | Central Bank & Policy             | **T1** parse Fed FOMC calendar + **T3** intl. news |
+| 3  | Corporate Financial Events        | SEC EDGAR API + **T2** SEC full-text + **IPOs**    |
+| 4  | Corporate Strategic Catalysts     | **T3** Google News RSS + official-site scrape      |
 | 5  | Operational Milestones            | Launch Library 2 API (live)                        |
-| 6  | Regulatory, Legal & Approval      | openFDA API + **T2** SEC full-text (PDUFA) + curated |
-| 7  | Industry & Supply-Demand          | OPEC / conference calendar (curated)               |
+| 6  | Regulatory, Legal & Approval      | openFDA API + **T2** SEC full-text (PDUFA)         |
+| 7  | Industry & Supply-Demand          | **T1** parse EIA schedule + **T3** OPEC/shipping news |
 | 8  | Geopolitical & Security           | curated + **T3** Google News RSS mining            |
 | 9  | AI & Compute Ecosystem            | **T3** Google News RSS mining (`collectors/ai_industry.py`) |
 
@@ -81,11 +88,18 @@ This repo has two halves:
 # 1. estimate storage BEFORE collecting
 python3 pipeline/estimate_storage.py
 
-# 2. run the full collection (writes pipeline/events.db)
+# 2a. full single-month sweep (all 14 ALL_COLLECTORS) → events.db
 python3 pipeline/collect.py --month 2026-06
+
+# 2b. incremental, idempotent, whole Jun–Dec range (run daily; auto re-exports JSON)
+python3 pipeline/daily_update.py
+python3 pipeline/daily_update.py --start 2026-06-01 --end 2026-12-31
 
 # 3. print the actual storage + rate-limit/ToS report
 python3 pipeline/report.py
+
+# 4. rebuild the app's data after any manual DB change
+python3 pipeline/export_for_app.py
 
 # app (web)
 cd app && npm install && npx expo start --web
@@ -95,9 +109,12 @@ cd app && npx expo start --ios
 
 ## Data flow
 
-`collect.py` → runs each collector → `Event`s → `db.upsert_events()` → `events.db`.
-Each collector also writes a `collector_reports` row (counts, rate-limit/ToS flags, errors).
-`report.py` reads `collection_runs` + `collector_reports` and prints the storage + issues report.
+`collect.py` (one month, all collectors) **or** `daily_update.py` (incremental, full range)
+→ runs each collector → `Event`s → `db.upsert_events()` (dedup by `uid`) → `events.db`
+→ `analysis/stock_impact.analyze_all()` → `event_stock_impacts` → `export_for_app.py`
+→ `app/assets/events.json`. Each collector also writes a `collector_reports` row
+(counts, rate-limit/ToS flags, errors); `report.py` reads `collection_runs` +
+`collector_reports` and prints the storage + issues report.
 
 ## Notes for future edits
 
@@ -106,5 +123,27 @@ Each collector also writes a `collector_reports` row (counts, rate-limit/ToS fla
   app's `src/theme.js` (`categoryColors`/`categoryIcons`). No DB migration is needed
   (the `category` column is derived from `config.CATEGORIES` at insert time).
 - The app reads data via `app/assets/events.json`, which is exported from SQLite by
-  `pipeline/export_for_app.py`. Re-run that after re-collecting.
-- When adding a collector, register it in `collectors/__init__.py:ALL_COLLECTORS`.
+  `pipeline/export_for_app.py`. Re-run that after re-collecting (`daily_update.py` does it
+  automatically).
+- When adding a collector, register it in `collectors/__init__.py:ALL_COLLECTORS` (picked up
+  by `collect.py`) and/or `daily_update.py:DAILY_COLLECTORS` (the daily incremental run).
+- **No synthetic event data.** `source_type` is `api` | `scraper` only for events; the
+  `synthetic` enum value exists but is unused. Earlier `CURATED = [...]` fallbacks were
+  removed from `corporate_financial.py`, `operational.py`, `regulatory.py` — don't add them
+  back; surface a real source or skip.
+- **Stock-impact engine** (`analysis/stock_impact.py`): entity-match → keyword-rule →
+  category-default layers. Entity match is substring-based, so avoid short fragile keys
+  (`"arm holdings"` not `"arm"`). Private AI labs (no ticker) map to a public enabler basket.
+- **Setup-signals layer** (`analysis/setup_signals.py`): scores earnings/catalyst events for
+  VSCO/VSXY-style asymmetry (short interest + activist + analyst-trend + catalyst type →
+  0–100 `event_setups` row, surfaced as a ⚡ SETUP badge). `SETUP_PROFILES` is a **sourced,
+  dated snapshot** (analytical reference, not event data) — refresh periodically; a live
+  activist refresher via EDGAR FTS exists (`verify_activist_edgar`, off by default). Runs in
+  `collect.py`/`daily_update.py`; standalone `enrich_setups.py`.
+- **Earnings-preview layer** (`analysis/earnings_preview.py`): per-ticker `PREVIEWS` (sourced,
+  dated) attach a consensus bar / options-implied move / directional lean / bull-bear-watch to
+  marquee earnings events → `event_previews` table → `ev.preview` → 📊 block in the day-detail.
+  Earnings-keyword-gated. Same refresh discipline as setups. Research, not advice.
+- **Multi-month dates**: `parsers.extract_dates_window(text, start_iso, end_iso)` is the
+  range-aware extractor used by the daily/AI collectors; `extract_dates(text, year, month)`
+  is the single-month one. Both keep the `(?!\d)` "June 2026"≠"June 20" guard.

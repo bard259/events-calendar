@@ -70,7 +70,7 @@ export default function LatestView({ events, onSelectDay, today }) {
               </View>
               {g.items.map((ev, i) => (
                 <Pressable key={i} onPress={() => onSelectDay(ev.event_date)}>
-                  <EventCard ev={ev} />
+                  <EventCard ev={ev} showDate />
                 </Pressable>
               ))}
             </View>

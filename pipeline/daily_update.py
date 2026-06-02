@@ -78,6 +78,13 @@ def run(start: str, end: str) -> None:
     else:
         print("\n  No new events today.")
 
+    # Recompute pre-event setup signals across all events (cheap, no network).
+    from analysis import setup_signals, earnings_preview
+    n_setups = setup_signals.enrich_and_save(conn)
+    print(f"  {n_setups} pre-event setup records (short interest / activist / asymmetry)")
+    n_prev = earnings_preview.enrich_and_save(conn)
+    print(f"  {n_prev} earnings-preview annotations")
+
     total = conn.execute("SELECT COUNT(*) n FROM events").fetchone()["n"]
     conn.close()
     print(f"\n  Total events in DB: {total}")

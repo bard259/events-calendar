@@ -1,6 +1,6 @@
 {
   "month": "2026-06",
-  "generated_events": 174,
+  "generated_events": 175,
   "categories": [
     {
       "id": 1,
@@ -1081,7 +1081,7 @@
       "collected_at": "2026-06-01T22:11:16.731190+00:00",
       "stock_impacts": [
         {
-          "ticker": "VSCO",
+          "ticker": "VSXY",
           "direction": 0,
           "confidence": "high",
           "reason": "Direct event for Victoria'S Secret; price-sensitive catalyst",
@@ -1094,7 +1094,32 @@
           "reason": "Corporate earnings shape quarterly equity market narrative",
           "sector": "broad_market"
         }
-      ]
+      ],
+      "setup": {
+        "ticker": "VSXY",
+        "score": 78,
+        "label": "High-asymmetry setup",
+        "short_pct": 19.0,
+        "short_as_of": "2026-05 (pre-Q1, Ortex)",
+        "activists": [
+          "BBRC / Brett Blundy (12.9%)",
+          "Barington Capital"
+        ],
+        "analyst_trend": "rising",
+        "bias": "Upside-skew on a beat; sharp downside on a miss (two-sided, high vol)",
+        "notes": [
+          "19% of float short",
+          "Activist(s): BBRC / Brett Blundy (12.9%), Barington Capital",
+          "Earnings/guidance catalyst — binary, expectations resettable",
+          "Analyst targets rising into the print",
+          "Turnaround thesis: Core bra/PINK turnaround under CEO Hillary Super; 4 straight quarters of positive comps; activists pushing board refresh + value unlock."
+        ],
+        "sources": [
+          "https://www.cnbc.com/2025/06/21/how-activist-barington-can-collaborate-with-victorias-secret-to-improve-value.html",
+          "https://www.sec.gov/Archives/edgar/data/0001856437/000121390026051617/ea028885801ex99-4.htm",
+          "https://fintel.io/ss/us/vsco"
+        ]
+      }
     },
     {
       "uid": "1798aa58574eb025:sec_edgar_fts",
@@ -1127,7 +1152,26 @@
           "reason": "Corporate earnings shape quarterly equity market narrative",
           "sector": "broad_market"
         }
-      ]
+      ],
+      "setup": {
+        "ticker": "CTRN",
+        "score": 31,
+        "label": "Low",
+        "short_pct": 9.79,
+        "short_as_of": "2026-05-15 (MarketBeat/FINRA; ~7.2 days-to-cover, rising)",
+        "activists": [],
+        "analyst_trend": "",
+        "bias": "Upside-skew on a beat; sharp downside on a miss (two-sided, high vol)",
+        "notes": [
+          "10% of float short",
+          "Earnings/guidance catalyst — binary, expectations resettable",
+          "Turnaround thesis: Small-cap value-apparel turnaround — 21 consecutive months of positive comps and expanding profitability; small float + rising short ratio (prior Macellum board win 2021). Milder version of the VSXY setup."
+        ],
+        "sources": [
+          "https://www.marketbeat.com/stocks/NASDAQ/CTRN/short-interest/",
+          "https://www.fool.com/earnings/call-transcripts/2026/06/02/citi-trends-ctrn-q1-2026-earnings-transcript/"
+        ]
+      }
     },
     {
       "uid": "1ac8a7c1eb1c366c:google_news_strategic",
@@ -1367,7 +1411,34 @@
           "reason": "Leading accelerator vendor benefits from AI-ecosystem momentum",
           "sector": "ai_compute"
         }
-      ]
+      ],
+      "preview": {
+        "ticker": "AVGO",
+        "company": "Broadcom",
+        "as_of": "2026-06-02 — Q2 FY26, reports Wed 6/3 after close (move shows 6/4)",
+        "implied_move": "±8–10.6%",
+        "avg_move": "±6.7% (last 4 quarters)",
+        "lean": "Beat highly likely; PRICE reaction two-sided. Leans UP only on a beat-and-raise of the forward AI guide — elevated sell-the-news risk at all-time highs.",
+        "bar": [
+          "EPS consensus $2.40 (+52% YoY; revised up from $2.16 over 90 days)",
+          "Revenue ~$22.1B (company guided ~$22B, +47% YoY)",
+          "AI semis: Q1 ~$4.1B → buy-side bar ~$5.0B; whisper higher (WFC: AI +30–40% vs prior)"
+        ],
+        "watch": [
+          "NEXT-quarter AI-semiconductor guide vs. the ~$5B+ whisper (the key swing factor)",
+          "New hyperscaler custom-XPU/ASIC design wins; 2027 AI backlog tone",
+          "Gross-margin mix (semis vs. VMware/infrastructure software)"
+        ],
+        "bull": "AI franchise + estimates revised up + guide already above consensus; Strong Buy, avg target ~$482 (WFC $545); historically drifts higher in 6 of last 8 post-prints.",
+        "bear": "At all-time highs (~$447–466), +29% YTD, ran up ~5% into the print → a beat is largely priced; an in-line AI guide could trigger profit-taking. '$100B vol warning.'",
+        "contrast": "Mirror image of the VSXY setup: crowded-long at highs + high expectations = asymmetry skewed to DOWNSIDE surprise (VSXY was shorted/doubted → upside).",
+        "sources": [
+          "https://news.alphastreet.com/broadcom-avgo-q2-2026-preview-eps-est-2-40-reports-june-3/amp/",
+          "https://www.tipranks.com/news/broadcom-is-about-to-report-q2-earnings-options-traders-expect-a-10-65-move-in-avgo-stock",
+          "https://www.heygotrade.com/en/blog/broadcom-avgo-q2-fy26-earnings-preview/",
+          "https://www.marketbeat.com/stocks/NASDAQ/AVGO/forecast/"
+        ]
+      }
     },
     {
       "uid": "475924664c3c7859:bls_schedule_scrape",
@@ -2002,6 +2073,32 @@
           "confidence": "low",
           "reason": "SpaceX competitive pressure on Boeing launch business",
           "sector": "industrials"
+        }
+      ]
+    },
+    {
+      "uid": "9edeca85fa6586b1:launch_library_2",
+      "category_id": 5,
+      "category": "Operational Milestones",
+      "title": "Long March 5 | Unknown Payload",
+      "description": "Details TBD.",
+      "event_date": "2026-06-10",
+      "event_datetime": "2026-06-10T06:00:00Z",
+      "entity": "China Aerospace Science and Technology Corporation",
+      "importance": "medium",
+      "source": "launch_library_2",
+      "source_type": "api",
+      "source_url": "https://ll.thespacedevs.com/2.2.0/launch/2670e4f1-d58b-4787-9c3f-f9eb03349513/",
+      "pub_date": null,
+      "pub_source": null,
+      "collected_at": "2026-06-02T18:25:20.441581+00:00",
+      "stock_impacts": [
+        {
+          "ticker": "ARKX",
+          "direction": 1,
+          "confidence": "low",
+          "reason": "Operational milestones add evidence for space-economy ETF thesis",
+          "sector": "launches"
         }
       ]
     },
