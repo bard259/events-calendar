@@ -1,0 +1,13 @@
+# pipeline
+# NOTE: events.db IS committed — it's the baseline the daily cloud agent appends to.
+__pycache__/
+*.pyc
+
+# app
+app/node_modules/
+app/.expo/
+app/dist/
+app/web-build/
+
+# misc
+.DS_Store
