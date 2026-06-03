@@ -30,6 +30,7 @@ Design principles
 """
 from __future__ import annotations
 
+import json
 import re
 from dataclasses import dataclass, field
 
@@ -314,6 +315,7 @@ def analyze(event) -> list[Impact]:
         desc = (event.get("description") or "").lower()
         entity = (event.get("entity") or "").lower()
         uid = event.get("uid", "")
+        raw_json = event.get("raw_json", "")
 
     blob = f"{title} {desc} {entity}"
     impacts: list[Impact] = []
@@ -323,6 +325,11 @@ def analyze(event) -> list[Impact]:
         if imp.ticker not in seen_tickers:
             seen_tickers.add(imp.ticker)
             impacts.append(imp)
+
+    raw_ticker = _ticker_from_raw(raw_json if "raw_json" in locals() else "")
+    if raw_ticker and cat == 3 and re.search(r"\b(earnings|results|report)\b", blob, flags=re.I):
+        add(Impact(raw_ticker, 0, "high",
+                   "Direct earnings report; watch result and guidance versus expectations", ""))
 
     # Layer 1: entity match → direct high-confidence impact
     for fragment, ticker in ENTITY_TICKERS.items():
@@ -342,6 +349,17 @@ def analyze(event) -> list[Impact]:
             add(imp)
 
     return impacts[:12]  # cap to 12 per event to keep payload lean
+
+
+def _ticker_from_raw(raw_json: str) -> str:
+    if not raw_json:
+        return ""
+    try:
+        raw = json.loads(raw_json)
+    except Exception:
+        return ""
+    row = raw.get("nfin_row") or raw
+    return str(row.get("symbol") or raw.get("ticker") or "").strip().upper()
 
 
 def analyze_all(events) -> list[dict]:
