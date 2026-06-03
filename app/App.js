@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import {
   SafeAreaView, View, Text, ScrollView, Pressable,
   StyleSheet, Platform,
@@ -8,12 +8,15 @@ import Calendar from './src/Calendar';
 import WeekView from './src/WeekView';
 import DayView from './src/DayView';
 import LatestView from './src/LatestView';
+import ReportsView from './src/ReportsView';
 import DayDetail from './src/DayDetail';
 import SearchModal from './src/SearchModal';
+import CompanyModal from './src/CompanyModal';
+import { registerCompanyOpener } from './src/companyStore';
 import { colors, categoryColors, categoryIcons } from './src/theme';
 import {
   ALL_EVENTS, CATEGORIES, MONTHS, RANGE_START, RANGE_END,
-  groupByDate, parseMonth,
+  AGENT_REPORTS, groupByDate, parseMonth,
 } from './src/data';
 
 const TODAY = new Date().toISOString().slice(0, 10);
@@ -57,8 +60,8 @@ function dayLabel(dateStr) {
   });
 }
 
-const VIEW_MODES  = ['month', 'week', 'day', 'latest'];
-const VIEW_LABELS = { month: 'Month', week: 'Week', day: 'Day', latest: 'Latest' };
+const VIEW_MODES  = ['month', 'week', 'day', 'latest', 'reports'];
+const VIEW_LABELS = { month: 'Month', week: 'Week', day: 'Day', latest: 'Latest', reports: 'Reports' };
 
 export default function App() {
   const [activeCats, setActiveCats]     = useState(() => new Set(CATEGORIES.map(c => c.id)));
@@ -68,6 +71,10 @@ export default function App() {
   const [viewMode, setViewMode]         = useState('month');
   const [monthCursor, setMonthCursor]   = useState(INIT_MONTH); // "YYYY-MM"
   const [cursorDate, setCursorDate]     = useState(INIT_DATE);  // "YYYY-MM-DD"
+  const [companyTicker, setCompanyTicker] = useState(null);
+
+  // Let any EventCard open the company modal without prop-drilling.
+  useEffect(() => registerCompanyOpener(setCompanyTicker), []);
 
   const filtered     = useMemo(() => ALL_EVENTS.filter(e => activeCats.has(e.category_id)), [activeCats]);
   const eventsByDate = useMemo(() => groupByDate(filtered), [filtered]);
@@ -79,13 +86,17 @@ export default function App() {
 
   const { year, month0 } = parseMonth(monthCursor);
   const monthIdx = MONTHS.indexOf(monthCursor);
+  const allTypesSelected = activeCats.size === CATEGORIES.length;
 
-  function toggleCat(id) {
-    setActiveCats(prev => {
-      const next = new Set(prev);
-      next.has(id) ? next.delete(id) : next.add(id);
-      return next;
-    });
+  function showAllTypes() {
+    setActiveCats(new Set(CATEGORIES.map(c => c.id)));
+  }
+
+  // Single-select: tap a type to view ONLY that event type; tap it again (or "All") to reset.
+  function selectOnlyCat(id) {
+    setActiveCats(prev => (prev.size === 1 && prev.has(id))
+      ? new Set(CATEGORIES.map(c => c.id))
+      : new Set([id]));
   }
 
   function openDay(date) {
@@ -150,27 +161,50 @@ export default function App() {
           </View>
         </View>
 
-        {/* ── Category chips ──────────────────────────── */}
-        <ScrollView horizontal showsHorizontalScrollIndicator={false}
-          style={styles.chipsScroll} contentContainerStyle={styles.chipsContent}>
-          {CATEGORIES.map(c => {
-            const on  = activeCats.has(c.id);
-            const col = categoryColors[c.id];
-            return (
-              <Pressable key={c.id} onPress={() => toggleCat(c.id)}
+        {/* ── Event type selector ──────────────────────── */}
+        {viewMode !== 'reports' && (
+          <>
+            <View style={styles.filterHeader}>
+              <Text style={styles.filterLabel}>Event type</Text>
+              <Text style={styles.filterCount}>
+                {allTypesSelected ? `${filtered.length} shown` : `Only: ${filtered.length} shown · tap again for all`}
+              </Text>
+            </View>
+            <ScrollView horizontal showsHorizontalScrollIndicator={false}
+              style={styles.chipsScroll} contentContainerStyle={styles.chipsContent}>
+              <Pressable onPress={showAllTypes}
                 style={[
                   styles.chip,
-                  on ? { borderColor: col, backgroundColor: col + '18' }
-                     : { borderColor: colors.border, backgroundColor: 'transparent' },
+                  allTypesSelected
+                    ? { borderColor: colors.accent, backgroundColor: colors.accent + '18' }
+                    : { borderColor: colors.border, backgroundColor: 'transparent' },
                 ]}>
-                <Text style={styles.chipIcon}>{categoryIcons[c.id]}</Text>
-                <Text style={[styles.chipText, { color: on ? col : colors.textMuted }]} numberOfLines={1}>
-                  {c.name}
+                <Text style={styles.chipIcon}>•</Text>
+                <Text style={[styles.chipText, { color: allTypesSelected ? colors.accent : colors.textMuted }]}>
+                  All
                 </Text>
               </Pressable>
-            );
-          })}
-        </ScrollView>
+              {CATEGORIES.map(c => {
+                const on  = activeCats.has(c.id);
+                const solo = activeCats.size === 1 && on;
+                const col = categoryColors[c.id];
+                return (
+                  <Pressable key={c.id} onPress={() => selectOnlyCat(c.id)}
+                    style={[
+                      styles.chip,
+                      on ? { borderColor: col, backgroundColor: col + (solo ? '30' : '18') }
+                         : { borderColor: colors.border, backgroundColor: 'transparent' },
+                    ]}>
+                    <Text style={styles.chipIcon}>{categoryIcons[c.id]}</Text>
+                    <Text style={[styles.chipText, { color: on ? col : colors.textMuted }]} numberOfLines={1}>
+                      {c.name}
+                    </Text>
+                  </Pressable>
+                );
+              })}
+            </ScrollView>
+          </>
+        )}
 
         <View style={styles.divider} />
 
@@ -189,7 +223,7 @@ export default function App() {
         </View>
 
         {/* ── Period navigation (calendar views only) ─── */}
-        {viewMode !== 'latest' && (
+        {viewMode !== 'latest' && viewMode !== 'reports' && (
           <View style={styles.navRow}>
             <Pressable onPress={() => navigate(-1)} disabled={!canPrev}
               style={[styles.navBtn, !canPrev && styles.navBtnDisabled]}>
@@ -228,6 +262,9 @@ export default function App() {
         {viewMode === 'latest' && (
           <LatestView events={latestList} onSelectDay={openDay} today={TODAY} />
         )}
+        {viewMode === 'reports' && (
+          <ReportsView data={AGENT_REPORTS} />
+        )}
 
         {/* ── Legend (month only) ─────────────────────── */}
         {viewMode === 'month' && (
@@ -258,6 +295,8 @@ export default function App() {
         onClose={() => setSearchOpen(false)}
         onPick={pickSearchResult}
       />
+
+      <CompanyModal ticker={companyTicker} onClose={() => setCompanyTicker(null)} />
     </SafeAreaView>
   );
 }
@@ -287,6 +326,13 @@ const styles = StyleSheet.create({
   statNum:   { color: colors.text, fontSize: 18, fontWeight: '800', lineHeight: 22 },
   statLabel: { color: colors.textMuted, fontSize: 9, fontWeight: '700', letterSpacing: 1 },
 
+  filterHeader: {
+    maxWidth: 700, alignSelf: 'center', width: '100%',
+    flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center',
+    marginBottom: 7,
+  },
+  filterLabel: { color: colors.text, fontSize: 12, fontWeight: '800' },
+  filterCount: { color: colors.textMuted, fontSize: 11, fontWeight: '600' },
   chipsScroll:  { maxWidth: 700, alignSelf: 'center', width: '100%', flexGrow: 0, marginBottom: 14 },
   chipsContent: { gap: 8, paddingVertical: 2 },
   chip: {
