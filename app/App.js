@@ -9,6 +9,7 @@ import WeekView from './src/WeekView';
 import DayView from './src/DayView';
 import LatestView from './src/LatestView';
 import ReportsView from './src/ReportsView';
+import GraphView from './src/GraphView';
 import DayDetail from './src/DayDetail';
 import SearchModal from './src/SearchModal';
 import CompanyModal from './src/CompanyModal';
@@ -60,8 +61,8 @@ function dayLabel(dateStr) {
   });
 }
 
-const VIEW_MODES  = ['month', 'week', 'day', 'latest', 'reports'];
-const VIEW_LABELS = { month: 'Month', week: 'Week', day: 'Day', latest: 'Latest', reports: 'Reports' };
+const VIEW_MODES  = ['month', 'week', 'day', 'latest', 'graph', 'reports'];
+const VIEW_LABELS = { month: 'Month', week: 'Week', day: 'Day', latest: 'Latest', graph: 'Graph', reports: 'Reports' };
 
 export default function App() {
   const [activeCats, setActiveCats]     = useState(() => new Set(CATEGORIES.map(c => c.id)));
@@ -162,7 +163,7 @@ export default function App() {
         </View>
 
         {/* ── Event type selector ──────────────────────── */}
-        {viewMode !== 'reports' && (
+        {viewMode !== 'reports' && viewMode !== 'graph' && (
           <>
             <View style={styles.filterHeader}>
               <Text style={styles.filterLabel}>Event type</Text>
@@ -223,7 +224,7 @@ export default function App() {
         </View>
 
         {/* ── Period navigation (calendar views only) ─── */}
-        {viewMode !== 'latest' && viewMode !== 'reports' && (
+        {viewMode !== 'latest' && viewMode !== 'reports' && viewMode !== 'graph' && (
           <View style={styles.navRow}>
             <Pressable onPress={() => navigate(-1)} disabled={!canPrev}
               style={[styles.navBtn, !canPrev && styles.navBtnDisabled]}>
@@ -261,6 +262,9 @@ export default function App() {
         )}
         {viewMode === 'latest' && (
           <LatestView events={latestList} onSelectDay={openDay} today={TODAY} />
+        )}
+        {viewMode === 'graph' && (
+          <GraphView />
         )}
         {viewMode === 'reports' && (
           <ReportsView data={AGENT_REPORTS} />

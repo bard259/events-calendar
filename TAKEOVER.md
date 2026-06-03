@@ -224,6 +224,19 @@ successive days. This is by design, not a bug.
 
 ## 8. Session log (append newest at top)
 
+### 2026-06-03 — merged PR #3 + company knowledge-graph page
+- Merged **PR #3** (AVGO pre-print recap) into main — corrected a baseline error (Q1 FY26 AI
+  revenue was $8.4B not $4.1B; Q2 guide $10.7B/+140%) before the nightly run. Resolved the
+  earnings_preview.py conflict by keeping the corrected content + the app's decision/confidence/
+  significance fields.
+- **Company knowledge graph** (research → force-directed/Fruchterman–Reingold is the standard):
+  `pipeline/graph_build.py` builds nodes (companies) + edges (co-move in the same event's
+  stock-impacts), precomputes the FR layout in stdlib Python → `app/assets/company_graph.json`.
+  New **Graph** tab (`app/src/GraphView.js`) renders it with plain RN Views (no svg dep),
+  colored by sector group; nodes tap → CompanyModal. First build: 21 nodes / 16 edges (grows
+  as multi-company events accumulate). Wired into `run_daily_agents.py` to refresh daily.
+
+
 ### 2026-06-02 (latest+3) — integrate agents, company cards, continuous-learning alpha
 - **Integrated** Codex's decision/critic subsystem (earnings-calendar scrape → decision agent →
   price snapshots → critic → learnable `memory/key_knowledge_memory.json`; Reports tab) with this

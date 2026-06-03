@@ -1,0 +1,287 @@
+{
+  "nodes": [
+    {
+      "ticker": "META",
+      "name": "Meta",
+      "group": "Internet & Media",
+      "degree": 4,
+      "events": 6,
+      "x": 0.9835,
+      "y": 0.4456
+    },
+    {
+      "ticker": "TSM",
+      "name": "Taiwan Semiconductor Manufacturing Company Ltd.",
+      "group": "Semiconductors",
+      "degree": 3,
+      "events": 3,
+      "x": 0.4638,
+      "y": 0.5165
+    },
+    {
+      "ticker": "MU",
+      "name": "Micron Technology, Inc.",
+      "group": "Semiconductors",
+      "degree": 3,
+      "events": 4,
+      "x": 0.4458,
+      "y": 0.5017
+    },
+    {
+      "ticker": "NOC",
+      "name": "Northrop Grumman Space Systems",
+      "group": "Defense & Aerospace",
+      "degree": 2,
+      "events": 7,
+      "x": 0.0056,
+      "y": 0.2672
+    },
+    {
+      "ticker": "TSLA",
+      "name": "Tesla, Inc.",
+      "group": "Consumer",
+      "degree": 2,
+      "events": 3,
+      "x": 0.4716,
+      "y": 0.5313
+    },
+    {
+      "ticker": "INTC",
+      "name": "Intel Corporation",
+      "group": "Semiconductors",
+      "degree": 2,
+      "events": 4,
+      "x": 0.0567,
+      "y": 0.821
+    },
+    {
+      "ticker": "RMCF",
+      "name": "Rocky Mountain Chocolate Factory, Inc.",
+      "group": "Other",
+      "degree": 2,
+      "events": 1,
+      "x": 0.4814,
+      "y": 0.5225
+    },
+    {
+      "ticker": "RKLB",
+      "name": "SpaceX",
+      "group": "Defense & Aerospace",
+      "degree": 1,
+      "events": 40,
+      "x": 0.0027,
+      "y": 0.2545
+    },
+    {
+      "ticker": "DTSS",
+      "name": "Datasea Intelligent Technology Ltd.",
+      "group": "Other",
+      "degree": 1,
+      "events": 1,
+      "x": 0.0648,
+      "y": 0.8339
+    },
+    {
+      "ticker": "CMC",
+      "name": "Commercial Metals Company",
+      "group": "Other",
+      "degree": 1,
+      "events": 1,
+      "x": 0.9745,
+      "y": 0.4606
+    },
+    {
+      "ticker": "TMQ",
+      "name": "Trilogy Metals Inc.",
+      "group": "Other",
+      "degree": 1,
+      "events": 1,
+      "x": 0.9716,
+      "y": 0.4327
+    },
+    {
+      "ticker": "PLG",
+      "name": "Platinum Group Metals Ltd.",
+      "group": "Other",
+      "degree": 1,
+      "events": 1,
+      "x": 0.9977,
+      "y": 0.433
+    },
+    {
+      "ticker": "AAPL",
+      "name": "Apple",
+      "group": "Hardware & Networking",
+      "degree": 1,
+      "events": 2,
+      "x": 0.5214,
+      "y": 0.9861
+    },
+    {
+      "ticker": "PAPL",
+      "name": "Pineapple Financial Inc.",
+      "group": "Other",
+      "degree": 1,
+      "events": 1,
+      "x": 0.5244,
+      "y": 1.0
+    },
+    {
+      "ticker": "NXPI",
+      "name": "NXP Semiconductors N.V.",
+      "group": "Semiconductors",
+      "degree": 1,
+      "events": 1,
+      "x": 0.4264,
+      "y": 0.5022
+    },
+    {
+      "ticker": "GOOG",
+      "name": "Alphabet Inc.",
+      "group": "Software & Cloud",
+      "degree": 1,
+      "events": 1,
+      "x": 0.572,
+      "y": 0.0141
+    },
+    {
+      "ticker": "GOOGL",
+      "name": "Alphabet Inc.",
+      "group": "Internet & Media",
+      "degree": 1,
+      "events": 2,
+      "x": 0.5739,
+      "y": 0.0
+    },
+    {
+      "ticker": "CMG",
+      "name": "Chipotle Mexican Grill, Inc.",
+      "group": "Consumer",
+      "degree": 1,
+      "events": 1,
+      "x": 0.4431,
+      "y": 0.4834
+    },
+    {
+      "ticker": "AMBP",
+      "name": "Ardagh Metal Packaging S.A.",
+      "group": "Other",
+      "degree": 1,
+      "events": 1,
+      "x": 1.0,
+      "y": 0.4555
+    },
+    {
+      "ticker": "ILAG",
+      "name": "Intelligent Living Application Group Inc.",
+      "group": "Other",
+      "degree": 1,
+      "events": 1,
+      "x": 0.0412,
+      "y": 0.8163
+    },
+    {
+      "ticker": "CDP",
+      "name": "COPT Defense Properties",
+      "group": "Other",
+      "degree": 1,
+      "events": 1,
+      "x": 0.0,
+      "y": 0.2811
+    }
+  ],
+  "edges": [
+    {
+      "a": "NOC",
+      "b": "RKLB",
+      "weight": 5
+    },
+    {
+      "a": "TSLA",
+      "b": "TSM",
+      "weight": 2
+    },
+    {
+      "a": "DTSS",
+      "b": "INTC",
+      "weight": 1
+    },
+    {
+      "a": "CMC",
+      "b": "META",
+      "weight": 1
+    },
+    {
+      "a": "META",
+      "b": "TMQ",
+      "weight": 1
+    },
+    {
+      "a": "META",
+      "b": "PLG",
+      "weight": 1
+    },
+    {
+      "a": "AAPL",
+      "b": "PAPL",
+      "weight": 1
+    },
+    {
+      "a": "MU",
+      "b": "TSM",
+      "weight": 1
+    },
+    {
+      "a": "MU",
+      "b": "NXPI",
+      "weight": 1
+    },
+    {
+      "a": "RMCF",
+      "b": "TSLA",
+      "weight": 1
+    },
+    {
+      "a": "RMCF",
+      "b": "TSM",
+      "weight": 1
+    },
+    {
+      "a": "GOOG",
+      "b": "GOOGL",
+      "weight": 1
+    },
+    {
+      "a": "CMG",
+      "b": "MU",
+      "weight": 1
+    },
+    {
+      "a": "AMBP",
+      "b": "META",
+      "weight": 1
+    },
+    {
+      "a": "ILAG",
+      "b": "INTC",
+      "weight": 1
+    },
+    {
+      "a": "CDP",
+      "b": "NOC",
+      "weight": 1
+    }
+  ],
+  "groups": {
+    "Semiconductors": "#38bdf8",
+    "Software & Cloud": "#a855f7",
+    "Internet & Media": "#f472b6",
+    "Hardware & Networking": "#22d3ee",
+    "Defense & Aerospace": "#f87171",
+    "Energy": "#fbbf24",
+    "Financials": "#34d399",
+    "Healthcare": "#818cf8",
+    "Consumer": "#fb923c",
+    "Other": "#8fa3bf"
+  }
+}
