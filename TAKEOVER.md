@@ -224,6 +224,25 @@ successive days. This is by design, not a bug.
 
 ## 8. Session log (append newest at top)
 
+### 2026-06-02 (latest+3) — integrate agents, company cards, continuous-learning alpha
+- **Integrated** Codex's decision/critic subsystem (earnings-calendar scrape → decision agent →
+  price snapshots → critic → learnable `memory/key_knowledge_memory.json`; Reports tab) with this
+  session's setup/preview/company-TLDR/single-select work. One branch: `integrated-agents-company-cards`.
+- **Company cards** (#2): `company_cards.py` builds one card/ticker — curated TL;DR > SEC SIC
+  industry (cached `memory/sic_cache.json`, capped 250/run) > size fallback → `company_cards`
+  table + `app/assets/company_cards.json`. Events carry `company_ticker`; app links via "About ›"
+  → `CompanyModal`. Run: 1039 cards (29 curated / 244 SEC industry / 766 size; fills over runs).
+  Re-run `python3 pipeline/company_cards.py --sec-cap N` to extend SEC coverage.
+- **Earnings-alpha (#3)** `analysis/earnings_alpha.py`: `pop_score` (post-earnings increase
+  likelihood) + `lookahead_days` (pre-earnings-drift entry timing, research-grounded) → `earnings_alpha`
+  table merged into `ev.preview` (shows in EVENT CALL block). Learning loop: `evaluate_outcomes`
+  (realized pre→post returns from `investment_price_snapshots`) → `earnings_outcomes` → `learn`
+  self-tunes `memory/earnings_alpha_params.json`. Wired into `run_daily_agents.py`.
+- **Daily run**: `python3 pipeline/run_daily_agents.py` (scrape→decide→snapshot→critique→learn→export).
+  Verified end-to-end (`--skip-scrape`): decision+critic+9 snapshots+alpha+export, no errors.
+  Scheduled as a remote routine (see below) — it must commit `memory/` back so learning persists.
+
+
 ### 2026-06-03 — scraped earnings cards add company intros
 - Added export-derived `company_intro` for nfin/Nasdaq API earnings rows in
   `pipeline/export_for_app.py`. It is built from the preserved `raw_json.nfin_row`

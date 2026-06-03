@@ -160,12 +160,31 @@ def main():
             previews_by_uid[p["event_uid"]] = json.loads(p["payload"])
     except Exception:
         pass  # event_previews table may not exist on an older DB
+    # Forward earnings-alpha (post-earnings increase likelihood + look-ahead days)
+    alpha_by_uid: dict[str, dict] = {}
+    try:
+        for a in conn.execute(
+            """SELECT event_uid, pop_score, increase_likelihood, lookahead_days, hold_through, rationale
+               FROM earnings_alpha"""):
+            alpha_by_uid[a["event_uid"]] = {
+                "pop_score": a["pop_score"], "increase_likelihood": a["increase_likelihood"],
+                "lookahead_days": a["lookahead_days"], "hold_through": a["hold_through"],
+                "alpha_rationale": json.loads(a["rationale"] or "[]"),
+            }
+    except Exception:
+        pass  # earnings_alpha table may not exist on an older DB
+
     for ev in events:
         if ev["uid"] in previews_by_uid:
             ev["preview"] = previews_by_uid[ev["uid"]]
+            if ev["uid"] in alpha_by_uid:
+                ev["preview"].update(alpha_by_uid[ev["uid"]])  # surface alpha in the EVENT CALL block
         intro = _company_intro(ev)
         if intro:
             ev["company_intro"] = intro
+        tk = _resolve_ticker(ev)
+        if tk:
+            ev["company_ticker"] = tk  # links the event to its company_cards.json entry
         ev.pop("raw_json", None)
 
     payload = {

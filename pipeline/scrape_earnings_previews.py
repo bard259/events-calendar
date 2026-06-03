@@ -164,9 +164,10 @@ def run(start: str, end: str) -> None:
     else:
         impacts = []
 
-    from analysis import setup_signals, earnings_preview
+    from analysis import setup_signals, earnings_preview, earnings_alpha
     n_setups = setup_signals.enrich_and_save(conn)
     n_previews = earnings_preview.enrich_and_save(conn)
+    earnings_alpha.enrich_and_save(conn)  # post-earnings increase likelihood + look-ahead days
 
     notes = list(report.notes)
     notes.append("Earnings Labs cross-check: June page says 456 companies; July page says 624 companies.")

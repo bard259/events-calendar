@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, Pressable, StyleSheet, Linking } from 'react-native';
 import { colors, categoryColors, categoryIcons, importanceConfig } from './theme';
 import { categoryName } from './data';
+import { openCompany } from './companyStore';
 
 function timeLabel(ev) {
   if (!ev.event_datetime) return null;
@@ -111,6 +112,18 @@ export function EarningsPreviewBlock({ preview }) {
         </Text>
       ) : null}
 
+      {preview.lookahead_days != null ? (
+        <View style={styles.alphaRow}>
+          <Text style={styles.alphaText}>
+            📈 Post-earnings increase likelihood: <Text style={styles.alphaStrong}>{preview.increase_likelihood || '—'}</Text>
+            {preview.pop_score != null ? ` (${preview.pop_score}/100)` : ''}
+          </Text>
+          <Text style={styles.alphaText}>
+            ⏱ Suggested look-ahead: <Text style={styles.alphaStrong}>~{preview.lookahead_days} trading days before</Text>
+          </Text>
+        </View>
+      ) : null}
+
       {(preview.bar || []).length ? (
         <>
           <Text style={styles.previewLabel}>WHAT WOULD LOOK GOOD</Text>
@@ -189,7 +202,15 @@ export function EventCard({ ev, showDate = false, detail = false }) {
         ) : null}
 
         {!!ev.company_intro && (
-          <Text style={styles.companyIntro} numberOfLines={detail ? 4 : 3}>{ev.company_intro}</Text>
+          ev.company_ticker ? (
+            <Pressable onPress={() => openCompany(ev.company_ticker)}>
+              <Text style={styles.companyIntro} numberOfLines={detail ? 5 : 3}>
+                {ev.company_intro} <Text style={styles.companyLink}>About ›</Text>
+              </Text>
+            </Pressable>
+          ) : (
+            <Text style={styles.companyIntro} numberOfLines={detail ? 4 : 3}>{ev.company_intro}</Text>
+          )
         )}
 
         {ev.setup ? (
@@ -323,6 +344,12 @@ const styles = StyleSheet.create({
   previewStatLabel: { color: colors.textMuted, fontSize: 9, fontWeight: '800', marginBottom: 2 },
   previewStatValue: { color: colors.text, fontSize: 12, fontWeight: '800', lineHeight: 16 },
   previewMove:    { color: colors.textSecondary, fontSize: 11, fontWeight: '600', marginBottom: 2 },
+  alphaRow: {
+    borderWidth: 1, borderColor: '#34d39955', borderRadius: 7,
+    backgroundColor: '#34d39911', padding: 7, marginTop: 4, marginBottom: 2, gap: 2,
+  },
+  alphaText:   { color: colors.textSecondary, fontSize: 11, lineHeight: 16 },
+  alphaStrong: { color: '#34d399', fontWeight: '800' },
   previewLabel:   { color: colors.textMuted, fontSize: 9, fontWeight: '800', letterSpacing: 1, marginTop: 5 },
   previewBullet:  { color: colors.textSecondary, fontSize: 11, lineHeight: 16 },
   previewBull:    { color: '#34d399', fontSize: 11, lineHeight: 16, marginTop: 5 },
@@ -345,6 +372,7 @@ const styles = StyleSheet.create({
     marginBottom: 6,
     fontWeight: '600',
   },
+  companyLink: { color: colors.accent, fontSize: 11, fontWeight: '700' },
   cardDesc: {
     color: colors.textSecondary, fontSize: 12, lineHeight: 18,
     marginBottom: 8, opacity: 0.9,

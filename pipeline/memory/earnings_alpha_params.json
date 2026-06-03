@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "updated_at": "2026-06-03T05:44:19.541724+00:00",
+  "tier_lookahead": {
+    "high": 12,
+    "medium": 7,
+    "low": 2
+  },
+  "thresholds": {
+    "high": 62,
+    "medium": 40
+  },
+  "weights": {
+    "setup_high": 30,
+    "setup_notable": 16,
+    "ai_infra": 16,
+    "positive_outlook": 14,
+    "confidence_high": 16,
+    "confidence_medium": 8,
+    "significance_high": 12,
+    "megacap": 6,
+    "risk_flag": -12
+  },
+  "learned": {
+    "samples": 0,
+    "hit_rate": null,
+    "avg_drift_pct": null,
+    "by_tier": {}
+  }
+}

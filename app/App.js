@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import {
   SafeAreaView, View, Text, ScrollView, Pressable,
   StyleSheet, Platform,
@@ -11,6 +11,8 @@ import LatestView from './src/LatestView';
 import ReportsView from './src/ReportsView';
 import DayDetail from './src/DayDetail';
 import SearchModal from './src/SearchModal';
+import CompanyModal from './src/CompanyModal';
+import { registerCompanyOpener } from './src/companyStore';
 import { colors, categoryColors, categoryIcons } from './src/theme';
 import {
   ALL_EVENTS, CATEGORIES, MONTHS, RANGE_START, RANGE_END,
@@ -69,6 +71,10 @@ export default function App() {
   const [viewMode, setViewMode]         = useState('month');
   const [monthCursor, setMonthCursor]   = useState(INIT_MONTH); // "YYYY-MM"
   const [cursorDate, setCursorDate]     = useState(INIT_DATE);  // "YYYY-MM-DD"
+  const [companyTicker, setCompanyTicker] = useState(null);
+
+  // Let any EventCard open the company modal without prop-drilling.
+  useEffect(() => registerCompanyOpener(setCompanyTicker), []);
 
   const filtered     = useMemo(() => ALL_EVENTS.filter(e => activeCats.has(e.category_id)), [activeCats]);
   const eventsByDate = useMemo(() => groupByDate(filtered), [filtered]);
@@ -289,6 +295,8 @@ export default function App() {
         onClose={() => setSearchOpen(false)}
         onPick={pickSearchResult}
       />
+
+      <CompanyModal ticker={companyTicker} onClose={() => setCompanyTicker(null)} />
     </SafeAreaView>
   );
 }

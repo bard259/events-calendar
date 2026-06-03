@@ -58,6 +58,48 @@ CREATE TABLE IF NOT EXISTS event_previews (
     payload   TEXT NOT NULL,   -- json: consensus bar, implied move, lean, bull/bear/watch, sources
     FOREIGN KEY(event_uid) REFERENCES events(uid)
 );
+CREATE TABLE IF NOT EXISTS company_cards (
+    ticker       TEXT PRIMARY KEY,
+    name         TEXT,
+    intro        TEXT,            -- one-line business/mission TL;DR
+    intro_source TEXT,            -- 'curated' | 'sic' | 'size'
+    industry     TEXT,            -- SEC SIC description, when available
+    size         TEXT,            -- mega/large/mid/small-cap
+    market_cap   REAL,
+    n_events     INTEGER DEFAULT 0,
+    next_event   TEXT,            -- next/earliest linked event date
+    event_uids   TEXT,            -- json list of linked event uids
+    updated_at   TEXT
+);
+-- Forward-looking earnings "alpha": likelihood of a post-earnings increase + the
+-- research-grounded number of trading days to look ahead (enter) before the report.
+CREATE TABLE IF NOT EXISTS earnings_alpha (
+    event_uid           TEXT PRIMARY KEY,
+    ticker              TEXT,
+    event_date          TEXT,
+    pop_score           INTEGER,    -- 0–100 likelihood of a post-earnings increase
+    increase_likelihood TEXT,       -- 'elevated' | 'moderate' | 'low'
+    lookahead_days      INTEGER,    -- recommended trading days before earnings to enter
+    hold_through        TEXT,
+    rationale           TEXT,       -- json list
+    params_version      INTEGER,
+    updated_at          TEXT,
+    FOREIGN KEY(event_uid) REFERENCES events(uid)
+);
+-- Realized outcomes (closes the learning loop): pre vs post earnings price from snapshots.
+CREATE TABLE IF NOT EXISTS earnings_outcomes (
+    event_uid   TEXT PRIMARY KEY,
+    ticker      TEXT,
+    event_date  TEXT,
+    pre_date    TEXT,
+    pre_price   REAL,
+    post_date   TEXT,
+    post_price  REAL,
+    ret_pct     REAL,        -- (post-pre)/pre * 100
+    increased   INTEGER,     -- 1 if ret_pct > 0
+    pop_score   INTEGER,     -- the prediction we're scoring
+    evaluated_at TEXT
+);
 CREATE TABLE IF NOT EXISTS earnings_scrape_runs (
     id              INTEGER PRIMARY KEY AUTOINCREMENT,
     source          TEXT NOT NULL,
@@ -297,6 +339,45 @@ def save_previews(conn, previews: list[dict]):
         """INSERT OR REPLACE INTO event_previews (event_uid, ticker, payload)
            VALUES (:event_uid, :ticker, :payload)""",
         previews,
+    )
+    conn.commit()
+
+
+def save_company_cards(conn, cards: list[dict]):
+    """Upsert company cards (one per ticker)."""
+    conn.executemany(
+        """INSERT OR REPLACE INTO company_cards
+           (ticker, name, intro, intro_source, industry, size, market_cap,
+            n_events, next_event, event_uids, updated_at)
+           VALUES (:ticker, :name, :intro, :intro_source, :industry, :size, :market_cap,
+            :n_events, :next_event, :event_uids, :updated_at)""",
+        cards,
+    )
+    conn.commit()
+
+
+def save_earnings_alpha(conn, rows: list[dict]):
+    """Upsert forward earnings-alpha predictions (one per event_uid)."""
+    conn.executemany(
+        """INSERT OR REPLACE INTO earnings_alpha
+           (event_uid, ticker, event_date, pop_score, increase_likelihood,
+            lookahead_days, hold_through, rationale, params_version, updated_at)
+           VALUES (:event_uid, :ticker, :event_date, :pop_score, :increase_likelihood,
+            :lookahead_days, :hold_through, :rationale, :params_version, :updated_at)""",
+        rows,
+    )
+    conn.commit()
+
+
+def save_earnings_outcomes(conn, rows: list[dict]):
+    """Upsert realized post-earnings outcomes (one per event_uid)."""
+    conn.executemany(
+        """INSERT OR REPLACE INTO earnings_outcomes
+           (event_uid, ticker, event_date, pre_date, pre_price, post_date, post_price,
+            ret_pct, increased, pop_score, evaluated_at)
+           VALUES (:event_uid, :ticker, :event_date, :pre_date, :pre_price, :post_date,
+            :post_price, :ret_pct, :increased, :pop_score, :evaluated_at)""",
+        rows,
     )
     conn.commit()
 
