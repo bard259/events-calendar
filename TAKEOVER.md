@@ -223,6 +223,28 @@ successive days. This is by design, not a bug.
 
 ## 8. Session log (append newest at top)
 
+### 2026-06-03 — AVGO Q2 FY26 pre-print final check (results PENDING)
+- **Timing**: 13:00 UTC (9 AM ET), Broadcom reports after U.S. market close (~5 PM ET / 21:00 UTC).
+  Results will play out in trading on 6/4.
+- **Baseline error caught**: Original preview (6/2) cited "Q1 AI ~$4.1B" — confirmed this was
+  **Q4 FY2024 data**, not Q1 FY2026. Actual Q1 FY2026 AI semiconductor revenue = **$8.4B (+106%
+  YoY)** (CNBC / Broadcom IR, March 4 2026). The "$5.0B buy-side bar" was therefore 2×+ too low;
+  correct Q2 bar is the company's own **$10.7B guide (+140% YoY)**. Preview `bar` field corrected.
+- **Pre-earnings rally**: Stock ran to ~$495 ATH on 6/3 (+4.7% on the day alone), up ~$280B in
+  market cap over four sessions (Bloomberg). Original preview anchored $447–466 as ATH — stale by
+  ~$30–50. Sell-the-news risk structurally higher than at original write.
+- **Last-minute analyst tone**: Oppenheimer (Schafer) expects beat + raised Q3 guide; Susquehanna,
+  Morgan Stanley, J.P. Morgan all lifted price targets. Consensus EPS $2.40 (+52% YoY), revenue
+  $22.1B (+47% YoY). AI semi whisper likely $11B+ vs $10.7B guide.
+- **Lean updated**: beat-and-raise expected; PRICE reaction two-sided. Up only on AI rev >$10.7B
+  + Q3 raised guide + FY2027 $100B+ reiteration. In-line = risk-off.
+- **Key learning folded into `lean`**: "original AI-semi bar was 2×+ too low; $10.7B is the real
+  floor." `learning` list added to AVGO PREVIEWS entry with full detail + PENDING flag.
+- **Sources added**: Broadcom Q1 FY2026 press release (IR / CNBC 2026-03-04), Seeking Alpha
+  preview, Bloomberg bonanza article.
+- **Next action**: after 6/3 close, update `lean` + `bar` with actuals (EPS, rev, AI rev,
+  Q3 guide) and close out the `learning[RESULTS PENDING]` bullet with the post-print verdict.
+
 ### 2026-06-02 (latest+1) — earnings-preview annotations (AVGO)
 - New **`analysis/earnings_preview.py`** mirrors the setup-signals pattern: a sourced/dated
   `PREVIEWS` table (keyed by ticker) attaches the consensus bar, options-implied move, a
