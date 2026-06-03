@@ -97,25 +97,34 @@ def _build_edges(conn, companies: set[str]):
     return weights
 
 
-def _fruchterman_reingold(nodes: list[str], edges: dict, iterations=400, seed=7):
+def _layout(nodes: list[str], edges: dict, groups_of: dict, iterations=600, seed=7):
+    """Cluster-separated Fruchterman–Reingold: each sector group is pulled toward its own
+    anchor (anchors spread on a circle) so clusters land in distinct regions; cross-cluster
+    repulsion is softened so groups stay compact."""
     rnd = random.Random(seed)
-    pos = {n: [rnd.uniform(0, 1), rnd.uniform(0, 1)] for n in nodes}
+    grps = sorted(set(groups_of.values()))
+    anchors = {}
+    for i, g in enumerate(grps):
+        ang = 2 * math.pi * i / max(1, len(grps))
+        anchors[g] = (0.5 + 0.34 * math.cos(ang), 0.5 + 0.34 * math.sin(ang))
+    pos = {n: [anchors[groups_of[n]][0] + rnd.uniform(-0.04, 0.04),
+               anchors[groups_of[n]][1] + rnd.uniform(-0.04, 0.04)] for n in nodes}
     n = max(1, len(nodes))
-    k = math.sqrt(1.0 / n)            # ideal edge length on a unit square
-    t = 0.1                            # initial temperature
+    k = math.sqrt(1.0 / n)
+    t = 0.08
     adj = [(a, b, w) for (a, b), w in edges.items()]
     for _ in range(iterations):
         disp = {nd: [0.0, 0.0] for nd in nodes}
-        # repulsion (all pairs)
+        # repulsion (all pairs; softer across different clusters)
         for i in range(len(nodes)):
             for j in range(i + 1, len(nodes)):
                 a, b = nodes[i], nodes[j]
                 dx, dy = pos[a][0] - pos[b][0], pos[a][1] - pos[b][1]
                 dist = math.hypot(dx, dy) or 0.001
-                force = (k * k) / dist
+                rep = (k * k) / dist * (1.0 if groups_of[a] == groups_of[b] else 0.45)
                 ux, uy = dx / dist, dy / dist
-                disp[a][0] += ux * force; disp[a][1] += uy * force
-                disp[b][0] -= ux * force; disp[b][1] -= uy * force
+                disp[a][0] += ux * rep; disp[a][1] += uy * rep
+                disp[b][0] -= ux * rep; disp[b][1] -= uy * rep
         # attraction (edges, weighted)
         for a, b, w in adj:
             dx, dy = pos[a][0] - pos[b][0], pos[a][1] - pos[b][1]
@@ -124,13 +133,18 @@ def _fruchterman_reingold(nodes: list[str], edges: dict, iterations=400, seed=7)
             ux, uy = dx / dist, dy / dist
             disp[a][0] -= ux * force; disp[a][1] -= uy * force
             disp[b][0] += ux * force; disp[b][1] += uy * force
+        # cluster gravity — pull each node toward its group anchor
+        for nd in nodes:
+            ax, ay = anchors[groups_of[nd]]
+            disp[nd][0] += (ax - pos[nd][0]) * 0.6
+            disp[nd][1] += (ay - pos[nd][1]) * 0.6
         # integrate with temperature cap
         for nd in nodes:
             d = disp[nd]
             dl = math.hypot(d[0], d[1]) or 0.001
             pos[nd][0] += (d[0] / dl) * min(dl, t)
             pos[nd][1] += (d[1] / dl) * min(dl, t)
-        t = max(0.01, t * 0.985)      # cool down
+        t = max(0.01, t * 0.99)       # cool down
     # normalize to [0,1]
     xs = [p[0] for p in pos.values()]; ys = [p[1] for p in pos.values()]
     minx, maxx, miny, maxy = min(xs), max(xs), min(ys), max(ys)
@@ -163,13 +177,14 @@ def build(max_nodes: int = 90) -> dict:
     ev_count = {r["ticker"]: r["n"] for r in conn.execute(
         "SELECT ticker, COUNT(*) n FROM event_stock_impacts GROUP BY ticker")}
 
-    pos = _fruchterman_reingold(keep, {(e["a"], e["b"]): e["weight"] for e in edges})
+    groups_of = {t: _group(t, (cards.get(t) or {}).get("industry") or "") for t in keep}
+    pos = _layout(keep, {(e["a"], e["b"]): e["weight"] for e in edges}, groups_of)
     nodes = []
     for t in keep:
         c = cards.get(t, {})
         nodes.append({
             "ticker": t, "name": c.get("name") or t,
-            "group": _group(t, c.get("industry") or ""),
+            "group": groups_of[t],
             "degree": degree.get(t, 0), "events": ev_count.get(t, 0),
             "x": pos[t][0], "y": pos[t][1],
         })
