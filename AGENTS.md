@@ -152,17 +152,3 @@ not a curated/synthetic event source, and `raw_json` is not written to the app p
 - **Multi-month dates**: `parsers.extract_dates_window(text, start_iso, end_iso)` is the
   range-aware extractor used by the daily/AI collectors; `extract_dates(text, year, month)`
   is the single-month one. Both keep the `(?!\d)` "June 2026"≠"June 20" guard.
-- **Company cards** (`company_cards.py` → `company_cards` table → `app/assets/company_cards.json`):
-  one card per ticker with a business intro — curated `company_tldr.COMPANY_TLDR` > SEC SIC
-  industry (cached in `memory/sic_cache.json`, capped per run) > `{size}-cap` fallback. Events
-  carry `company_ticker`; the app links the card via a tappable "About ›" → `CompanyModal`.
-- **Decision/critic agents** (`decision_agents.py`, `run_daily_agents.py`): rules-based paper
-  decisions from `event_previews` + a learnable `memory/key_knowledge_memory.json`; price
-  snapshots (`investment_price_snapshots`); critic updates memory. Reports in `pipeline/reports/`,
-  surfaced in the app's **Reports** tab (`export_agent_reports.py` → `agent_reports.json`).
-- **Earnings-alpha (continuous learning)** (`analysis/earnings_alpha.py`): per-earnings
-  `pop_score` (post-earnings *increase* likelihood) + research-grounded `lookahead_days`
-  (pre-earnings-drift entry timing) → `earnings_alpha` table, merged into `ev.preview`.
-  `evaluate_outcomes` reads price snapshots for realized pre→post returns (`earnings_outcomes`);
-  `learn` self-tunes thresholds + per-tier look-ahead in `memory/earnings_alpha_params.json`.
-  Runs in `run_daily_agents.py`.

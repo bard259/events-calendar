@@ -58,8 +58,152 @@ CREATE TABLE IF NOT EXISTS event_previews (
     payload   TEXT NOT NULL,   -- json: consensus bar, implied move, lean, bull/bear/watch, sources
     FOREIGN KEY(event_uid) REFERENCES events(uid)
 );
+CREATE TABLE IF NOT EXISTS company_cards (
+    ticker       TEXT PRIMARY KEY,
+    name         TEXT,
+    intro        TEXT,            -- one-line business/mission TL;DR
+    intro_source TEXT,            -- 'curated' | 'sic' | 'size'
+    industry     TEXT,            -- SEC SIC description, when available
+    size         TEXT,            -- mega/large/mid/small-cap
+    market_cap   REAL,
+    n_events     INTEGER DEFAULT 0,
+    next_event   TEXT,            -- next/earliest linked event date
+    event_uids   TEXT,            -- json list of linked event uids
+    updated_at   TEXT
+);
+-- Forward-looking earnings "alpha": likelihood of a post-earnings increase + the
+-- research-grounded number of trading days to look ahead (enter) before the report.
+CREATE TABLE IF NOT EXISTS earnings_alpha (
+    event_uid           TEXT PRIMARY KEY,
+    ticker              TEXT,
+    event_date          TEXT,
+    pop_score           INTEGER,    -- 0–100 likelihood of a post-earnings increase
+    increase_likelihood TEXT,       -- 'elevated' | 'moderate' | 'low'
+    lookahead_days      INTEGER,    -- recommended trading days before earnings to enter
+    hold_through        TEXT,
+    rationale           TEXT,       -- json list
+    params_version      INTEGER,
+    updated_at          TEXT,
+    FOREIGN KEY(event_uid) REFERENCES events(uid)
+);
+-- Realized outcomes (closes the learning loop): pre vs post earnings price from snapshots.
+CREATE TABLE IF NOT EXISTS earnings_outcomes (
+    event_uid   TEXT PRIMARY KEY,
+    ticker      TEXT,
+    event_date  TEXT,
+    pre_date    TEXT,
+    pre_price   REAL,
+    post_date   TEXT,
+    post_price  REAL,
+    ret_pct     REAL,        -- (post-pre)/pre * 100
+    increased   INTEGER,     -- 1 if ret_pct > 0
+    pop_score   INTEGER,     -- the prediction we're scoring
+    evaluated_at TEXT
+);
+CREATE TABLE IF NOT EXISTS earnings_scrape_runs (
+    id              INTEGER PRIMARY KEY AUTOINCREMENT,
+    source          TEXT NOT NULL,
+    start_date      TEXT NOT NULL,
+    end_date        TEXT NOT NULL,
+    started_at      TEXT NOT NULL,
+    finished_at     TEXT,
+    days_requested  INTEGER DEFAULT 0,
+    days_ok         INTEGER DEFAULT 0,
+    rows_seen       INTEGER DEFAULT 0,
+    events_inserted INTEGER DEFAULT 0,
+    errors          TEXT,
+    notes           TEXT
+);
+CREATE TABLE IF NOT EXISTS earnings_scrape_items (
+    id           INTEGER PRIMARY KEY AUTOINCREMENT,
+    run_id       INTEGER,
+    event_uid    TEXT,
+    ticker       TEXT,
+    company      TEXT,
+    event_date   TEXT,
+    source       TEXT,
+    status       TEXT,
+    raw_json     TEXT,
+    collected_at TEXT NOT NULL,
+    FOREIGN KEY(run_id) REFERENCES earnings_scrape_runs(id),
+    FOREIGN KEY(event_uid) REFERENCES events(uid)
+);
+CREATE TABLE IF NOT EXISTS decision_agent_runs (
+    id              INTEGER PRIMARY KEY AUTOINCREMENT,
+    run_date        TEXT NOT NULL,
+    started_at      TEXT NOT NULL,
+    finished_at     TEXT,
+    horizon_days    INTEGER NOT NULL,
+    events_reviewed INTEGER DEFAULT 0,
+    decisions_made  INTEGER DEFAULT 0,
+    report_path     TEXT,
+    memory_path     TEXT,
+    notes           TEXT
+);
+CREATE TABLE IF NOT EXISTS investment_decisions (
+    id              INTEGER PRIMARY KEY AUTOINCREMENT,
+    run_id          INTEGER,
+    run_date        TEXT NOT NULL,
+    event_uid       TEXT NOT NULL,
+    event_date      TEXT NOT NULL,
+    ticker          TEXT NOT NULL,
+    company         TEXT,
+    action          TEXT NOT NULL,   -- BUY | WATCH | PASS | IGNORE
+    confidence      TEXT,
+    significance    TEXT,
+    score           INTEGER,
+    thesis          TEXT,
+    risks           TEXT,
+    memory_snapshot TEXT,
+    created_at      TEXT NOT NULL,
+    UNIQUE(run_date, event_uid),
+    FOREIGN KEY(run_id) REFERENCES decision_agent_runs(id),
+    FOREIGN KEY(event_uid) REFERENCES events(uid)
+);
+CREATE TABLE IF NOT EXISTS decision_critic_runs (
+    id               INTEGER PRIMARY KEY AUTOINCREMENT,
+    run_date         TEXT NOT NULL,
+    started_at       TEXT NOT NULL,
+    finished_at      TEXT,
+    decisions_checked INTEGER DEFAULT 0,
+    findings_count   INTEGER DEFAULT 0,
+    missed_count     INTEGER DEFAULT 0,
+    report_path      TEXT,
+    memory_path      TEXT,
+    notes            TEXT
+);
+CREATE TABLE IF NOT EXISTS decision_critic_findings (
+    id          INTEGER PRIMARY KEY AUTOINCREMENT,
+    run_id      INTEGER,
+    event_uid   TEXT,
+    ticker      TEXT,
+    finding_type TEXT NOT NULL,
+    severity    TEXT,
+    summary     TEXT,
+    lesson      TEXT,
+    created_at  TEXT NOT NULL,
+    FOREIGN KEY(run_id) REFERENCES decision_critic_runs(id),
+    FOREIGN KEY(event_uid) REFERENCES events(uid)
+);
+CREATE TABLE IF NOT EXISTS investment_price_snapshots (
+    id            INTEGER PRIMARY KEY AUTOINCREMENT,
+    decision_id   INTEGER,
+    ticker        TEXT NOT NULL,
+    snapshot_date TEXT NOT NULL,
+    price         REAL,
+    price_source  TEXT,
+    raw_json      TEXT,
+    created_at    TEXT NOT NULL,
+    FOREIGN KEY(decision_id) REFERENCES investment_decisions(id)
+);
 CREATE INDEX IF NOT EXISTS idx_events_date ON events(event_date);
 CREATE INDEX IF NOT EXISTS idx_events_cat  ON events(category_id);
+CREATE INDEX IF NOT EXISTS idx_earnings_scrape_items_run ON earnings_scrape_items(run_id);
+CREATE INDEX IF NOT EXISTS idx_earnings_scrape_items_date ON earnings_scrape_items(event_date);
+CREATE INDEX IF NOT EXISTS idx_investment_decisions_date ON investment_decisions(run_date);
+CREATE INDEX IF NOT EXISTS idx_investment_decisions_event ON investment_decisions(event_uid);
+CREATE INDEX IF NOT EXISTS idx_decision_critic_findings_run ON decision_critic_findings(run_id);
+CREATE INDEX IF NOT EXISTS idx_investment_price_snapshots_decision ON investment_price_snapshots(decision_id);
 
 CREATE TABLE IF NOT EXISTS collection_runs (
     id             INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -195,6 +339,162 @@ def save_previews(conn, previews: list[dict]):
         """INSERT OR REPLACE INTO event_previews (event_uid, ticker, payload)
            VALUES (:event_uid, :ticker, :payload)""",
         previews,
+    )
+    conn.commit()
+
+
+def save_company_cards(conn, cards: list[dict]):
+    """Upsert company cards (one per ticker)."""
+    conn.executemany(
+        """INSERT OR REPLACE INTO company_cards
+           (ticker, name, intro, intro_source, industry, size, market_cap,
+            n_events, next_event, event_uids, updated_at)
+           VALUES (:ticker, :name, :intro, :intro_source, :industry, :size, :market_cap,
+            :n_events, :next_event, :event_uids, :updated_at)""",
+        cards,
+    )
+    conn.commit()
+
+
+def save_earnings_alpha(conn, rows: list[dict]):
+    """Upsert forward earnings-alpha predictions (one per event_uid)."""
+    conn.executemany(
+        """INSERT OR REPLACE INTO earnings_alpha
+           (event_uid, ticker, event_date, pop_score, increase_likelihood,
+            lookahead_days, hold_through, rationale, params_version, updated_at)
+           VALUES (:event_uid, :ticker, :event_date, :pop_score, :increase_likelihood,
+            :lookahead_days, :hold_through, :rationale, :params_version, :updated_at)""",
+        rows,
+    )
+    conn.commit()
+
+
+def save_earnings_outcomes(conn, rows: list[dict]):
+    """Upsert realized post-earnings outcomes (one per event_uid)."""
+    conn.executemany(
+        """INSERT OR REPLACE INTO earnings_outcomes
+           (event_uid, ticker, event_date, pre_date, pre_price, post_date, post_price,
+            ret_pct, increased, pop_score, evaluated_at)
+           VALUES (:event_uid, :ticker, :event_date, :pre_date, :pre_price, :post_date,
+            :post_price, :ret_pct, :increased, :pop_score, :evaluated_at)""",
+        rows,
+    )
+    conn.commit()
+
+
+def start_earnings_scrape(conn, source: str, start_date: str, end_date: str,
+                          days_requested: int) -> int:
+    cur = conn.execute(
+        """INSERT INTO earnings_scrape_runs
+           (source, start_date, end_date, started_at, days_requested, errors, notes)
+           VALUES (?,?,?,?,?,?,?)""",
+        (source, start_date, end_date, datetime.now(timezone.utc).isoformat(),
+         days_requested, "[]", "[]"),
+    )
+    conn.commit()
+    return cur.lastrowid
+
+
+def finish_earnings_scrape(conn, run_id: int, *, days_ok: int, rows_seen: int,
+                           events_inserted: int, errors: list[str], notes: list[str]):
+    conn.execute(
+        """UPDATE earnings_scrape_runs
+           SET finished_at=?, days_ok=?, rows_seen=?, events_inserted=?, errors=?, notes=?
+           WHERE id=?""",
+        (datetime.now(timezone.utc).isoformat(), days_ok, rows_seen, events_inserted,
+         json.dumps(errors), json.dumps(notes), run_id),
+    )
+    conn.commit()
+
+
+def save_earnings_scrape_items(conn, items: list[dict]):
+    conn.executemany(
+        """INSERT INTO earnings_scrape_items
+           (run_id, event_uid, ticker, company, event_date, source, status, raw_json, collected_at)
+           VALUES (:run_id, :event_uid, :ticker, :company, :event_date, :source, :status,
+                   :raw_json, :collected_at)""",
+        items,
+    )
+    conn.commit()
+
+
+def start_decision_run(conn, run_date: str, horizon_days: int, memory_path: str) -> int:
+    cur = conn.execute(
+        """INSERT INTO decision_agent_runs
+           (run_date, started_at, horizon_days, memory_path, notes)
+           VALUES (?,?,?,?,?)""",
+        (run_date, datetime.now(timezone.utc).isoformat(), horizon_days, memory_path, "[]"),
+    )
+    conn.commit()
+    return cur.lastrowid
+
+
+def finish_decision_run(conn, run_id: int, *, events_reviewed: int, decisions_made: int,
+                        report_path: str, notes: list[str]):
+    conn.execute(
+        """UPDATE decision_agent_runs
+           SET finished_at=?, events_reviewed=?, decisions_made=?, report_path=?, notes=?
+           WHERE id=?""",
+        (datetime.now(timezone.utc).isoformat(), events_reviewed, decisions_made,
+         report_path, json.dumps(notes), run_id),
+    )
+    conn.commit()
+
+
+def save_investment_decisions(conn, decisions: list[dict]):
+    conn.executemany(
+        """INSERT OR REPLACE INTO investment_decisions
+           (run_id, run_date, event_uid, event_date, ticker, company, action,
+            confidence, significance, score, thesis, risks, memory_snapshot, created_at)
+           VALUES (:run_id, :run_date, :event_uid, :event_date, :ticker, :company, :action,
+            :confidence, :significance, :score, :thesis, :risks, :memory_snapshot, :created_at)""",
+        decisions,
+    )
+    conn.commit()
+
+
+def start_critic_run(conn, run_date: str, memory_path: str) -> int:
+    cur = conn.execute(
+        """INSERT INTO decision_critic_runs
+           (run_date, started_at, memory_path, notes)
+           VALUES (?,?,?,?)""",
+        (run_date, datetime.now(timezone.utc).isoformat(), memory_path, "[]"),
+    )
+    conn.commit()
+    return cur.lastrowid
+
+
+def finish_critic_run(conn, run_id: int, *, decisions_checked: int, findings_count: int,
+                      missed_count: int, report_path: str, notes: list[str]):
+    conn.execute(
+        """UPDATE decision_critic_runs
+           SET finished_at=?, decisions_checked=?, findings_count=?, missed_count=?,
+               report_path=?, notes=?
+           WHERE id=?""",
+        (datetime.now(timezone.utc).isoformat(), decisions_checked, findings_count,
+         missed_count, report_path, json.dumps(notes), run_id),
+    )
+    conn.commit()
+
+
+def save_critic_findings(conn, findings: list[dict]):
+    conn.executemany(
+        """INSERT INTO decision_critic_findings
+           (run_id, event_uid, ticker, finding_type, severity, summary, lesson, created_at)
+           VALUES (:run_id, :event_uid, :ticker, :finding_type, :severity, :summary,
+                   :lesson, :created_at)""",
+        findings,
+    )
+    conn.commit()
+
+
+def save_price_snapshots(conn, snapshots: list[dict]):
+    conn.executemany(
+        """INSERT INTO investment_price_snapshots
+           (decision_id, ticker, snapshot_date, price, price_source, raw_json, created_at)
+           VALUES (:decision_id, :ticker, :snapshot_date, :price, :price_source,
+                   :raw_json, :created_at)""",
+        snapshots,
     )
     conn.commit()
 

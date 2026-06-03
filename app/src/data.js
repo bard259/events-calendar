@@ -1,9 +1,11 @@
 // Loads the pipeline export and provides date-indexed lookups.
 import raw from '../assets/events.json';
+import agentRaw from '../assets/agent_reports.json';
 
 export const MONTH = raw.month; // "2026-06"
 export const CATEGORIES = raw.categories; // [{id,name}]
 export const ALL_EVENTS = raw.events;
+export const AGENT_REPORTS = agentRaw;
 
 // Map: "YYYY-MM-DD" -> [events]
 export function groupByDate(events) {
@@ -53,13 +55,13 @@ export const LAST_COLLECTED = ALL_EVENTS.reduce(
   (mx, e) => (e.collected_at && e.collected_at > mx ? e.collected_at : mx), ''
 ).slice(0, 10);
 
-// Case-insensitive search across title, entity, description, category and tickers.
+// Case-insensitive search across title, entity, company intro, description, category and tickers.
 export function searchEvents(query) {
   const q = query.trim().toLowerCase();
   if (!q) return [];
   return ALL_EVENTS.filter((e) => {
     const tickers = (e.stock_impacts || []).map((i) => i.ticker).join(' ');
-    const hay = `${e.title} ${e.entity} ${e.description} ${e.category} ${tickers}`.toLowerCase();
+    const hay = `${e.title} ${e.entity} ${e.company_intro} ${e.description} ${e.category} ${tickers}`.toLowerCase();
     return hay.includes(q);
   }).sort((a, b) => a.event_date.localeCompare(b.event_date));
 }

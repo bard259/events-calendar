@@ -5,7 +5,7 @@
 > for the deeper conventions. Keep this file **updated** at the end of any substantial
 > work session (there's a "Session log" at the bottom — append to it).
 
-Last updated: **2026-06-02** · Data span: **2026-06-01 → 2026-12-31** · DB: **174 events**
+Last updated: **2026-06-03** · Data span: **2026-06-01 → 2026-12-31** · DB: **1,198 events**
 
 ---
 
@@ -74,7 +74,7 @@ pipeline/
   daily_update.py      incremental DAILY_COLLECTORS over the full range
   report.py            reads runs + collector_reports → storage & issue report
   estimate_storage.py  pre-collection size estimate (uses EXPECTED_COUNTS)
-  export_for_app.py    DB → app/assets/events.json (events + stock_impacts + setup + categories)
+  export_for_app.py    DB → app/assets/events.json (events + stock_impacts + setup + categories + nfin company_intro)
   enrich_setups.py     standalone: recompute event_setups + re-export (no re-collect)
   analysis/
     stock_impact.py    rules engine: ENTITY_TICKERS, SECTOR_ETFS, KEYWORD_RULES, CATEGORY_DEFAULTS
@@ -106,7 +106,7 @@ app/
     WeekView.js        7-day view
     DayView.js         single-day list
     LatestView.js      "latest identified events" — grouped by collected_at, newest first
-    EventCard.js       reusable event card (SourcePill + optional showDate)
+    EventCard.js       reusable event card (SourcePill + optional showDate + company_intro)
     DayDetail.js       modal: Events tab / Stocks tab (aggregates day's impacts)
     StockImpact.js     stock-signal cards (ticker badge ▲▼◆, confidence, reason)
     SearchModal.js     full-text search over title/entity/desc/category/tickers
@@ -194,9 +194,10 @@ ticker** → a keyword rule maps them to the public enabler basket (NVDA/AMZN/GO
 
 ## 6. Current state (as of last update)
 
-- **174 events**, span **2026-06-01 → 2026-12-31**. Source split: **137 api / 37 scraper /
-  0 synthetic**. Per-category: 1→19, 2→3, 3→30, 4→5, 5→100 (LL2 launches dominate the
-  multi-month window), 6→7, 7→3, 8→4, 9→3.
+- **1,198 events**, span **2026-06-01 → 2026-12-31**. Source split:
+  **1,161 api / 37 scraper / 0 synthetic**. Per-category:
+  1→19, 2→3, 3→1,053, 4→5, 5→101, 6→7, 7→3, 8→4, 9→3.
+  Category 3 is now much larger after the nfin/Nasdaq June-July earnings scrape.
 - Category **9 (AI & Compute Ecosystem)** is live: `ai_industry.py` + AI rules in
   `stock_impact.py` + violet `🧠` lane in `theme.js`. (Anthropic/OpenAI etc. map to the
   enabler basket since they're private.)
@@ -222,6 +223,104 @@ successive days. This is by design, not a bug.
 ---
 
 ## 8. Session log (append newest at top)
+
+### 2026-06-02 (latest+3) — integrate agents, company cards, continuous-learning alpha
+- **Integrated** Codex's decision/critic subsystem (earnings-calendar scrape → decision agent →
+  price snapshots → critic → learnable `memory/key_knowledge_memory.json`; Reports tab) with this
+  session's setup/preview/company-TLDR/single-select work. One branch: `integrated-agents-company-cards`.
+- **Company cards** (#2): `company_cards.py` builds one card/ticker — curated TL;DR > SEC SIC
+  industry (cached `memory/sic_cache.json`, capped 250/run) > size fallback → `company_cards`
+  table + `app/assets/company_cards.json`. Events carry `company_ticker`; app links via "About ›"
+  → `CompanyModal`. Run: 1039 cards (29 curated / 244 SEC industry / 766 size; fills over runs).
+  Re-run `python3 pipeline/company_cards.py --sec-cap N` to extend SEC coverage.
+- **Earnings-alpha (#3)** `analysis/earnings_alpha.py`: `pop_score` (post-earnings increase
+  likelihood) + `lookahead_days` (pre-earnings-drift entry timing, research-grounded) → `earnings_alpha`
+  table merged into `ev.preview` (shows in EVENT CALL block). Learning loop: `evaluate_outcomes`
+  (realized pre→post returns from `investment_price_snapshots`) → `earnings_outcomes` → `learn`
+  self-tunes `memory/earnings_alpha_params.json`. Wired into `run_daily_agents.py`.
+- **Daily run**: `python3 pipeline/run_daily_agents.py` (scrape→decide→snapshot→critique→learn→export).
+  Verified end-to-end (`--skip-scrape`): decision+critic+9 snapshots+alpha+export, no errors.
+  Scheduled as a remote routine (see below) — it must commit `memory/` back so learning persists.
+
+
+### 2026-06-03 — scraped earnings cards add company intros
+- Added export-derived `company_intro` for nfin/Nasdaq API earnings rows in
+  `pipeline/export_for_app.py`. It is built from the preserved `raw_json.nfin_row`
+  ticker/name/market-cap/fiscal-quarter/analyst-estimate fields, then `raw_json` is stripped
+  before writing `app/assets/events.json`; no re-scrape or DB mutation is required.
+- `app/src/EventCard.js` now shows the intro as a compact two-line card summary, and
+  `app/src/data.js` includes it in search.
+
+### 2026-06-02 — June-July earnings scrape + multi-select event types
+- Restored multi-select event-type filtering in `app/App.js`; the `All` chip now acts as a
+  quick select/clear control while individual event types can be combined.
+- Added `pipeline/scrape_earnings_previews.py`, a day-by-day nfin/Nasdaq earnings-calendar
+  scraper for `2026-06-02 → 2026-07-31`. It records each run in
+  `earnings_scrape_runs` and every scraped ticker/date row in `earnings_scrape_items`.
+- Scrape run #1: **60/60 days ok**, **1,023 earnings rows** scraped and inserted:
+  **328 June** + **695 July**. Cross-check note: Earnings Labs monthly pages report
+  **456 companies in June 2026** and **624 in July 2026** for full-month calendars.
+- Refreshed stock impacts and app export. Earnings previews now include automatic
+  plain-language decision/confidence/significance blocks for scraped nfin rows:
+  **1,029 preview annotations** total.
+
+### 2026-06-02 — decision + critic agents scheduled daily
+- Added `pipeline/decision_agents.py`:
+  - **decision agent** reads earnings previews + `pipeline/memory/key_knowledge_memory.json`
+    and writes paper decisions into `investment_decisions` plus markdown reports under
+    `pipeline/reports/decisions/YYYY-MM-DD.md`.
+  - **critic agent** reviews prior decisions/missed opportunities, writes findings into
+    `decision_critic_findings`, updates memory lessons, and writes reports under
+    `pipeline/reports/critics/YYYY-MM-DD.md`.
+- Added `pipeline/run_daily_agents.py` as the single daily entrypoint. It refreshes upcoming
+  earnings rows, regenerates previews, runs the decision agent, then runs the critic.
+- Added DB tables: `decision_agent_runs`, `investment_decisions`, `decision_critic_runs`,
+  `decision_critic_findings`.
+- Created active Codex automation **daily-earnings-decision-and-critic-agents** to run the
+  daily workflow at **06:30 local time**.
+- Local smoke run for `2026-06-02 --skip-scrape`: **183 deduped decisions** over a 7-day
+  horizon, latest report files written, critic report clean.
+
+### 2026-06-02 — app Reports page for agents + performance
+- Added `pipeline/export_agent_reports.py`, exporting decision runs, critic runs, markdown
+  excerpts, latest decisions, critic findings, key memory, and price-snapshot performance
+  into `app/assets/agent_reports.json`.
+- Added nfin quote snapshots for latest BUY/WATCH decisions via
+  `decision_agents.collect_price_snapshots`; stored in `investment_price_snapshots`.
+  `run_daily_agents.py` now collects snapshots and exports agent report data after the
+  decision+critic run.
+- Added `app/src/ReportsView.js` and a **Reports** top-level app tab. The page shows:
+  performance summary, open BUY/WATCH ideas with latest prices/returns, decision report,
+  critic report/findings, and key memory.
+- Browser verification passed: Reports page rendered, performance tab showed **5 tracked /
+  5 measured**, and Decision/Critic/Memory tabs displayed current report content.
+
+### 2026-06-03 — less-conservative decision agent + Marvell signal research
+- Recalibrated `pipeline/decision_agents.py` so the decision agent is less conservative but
+  still filtered:
+  - BUY threshold **66 → 56**
+  - WATCH threshold **42 → 40**
+  - generic-preview penalty **-8 → -3**
+  - medium/high confidence and significance weights raised
+  - added `ai_infra_momentum_score()` for Marvell-like AI infrastructure signals.
+- Updated `pipeline/memory/key_knowledge_memory.json` with a Marvell lesson:
+  Nvidia/hyperscaler validation + custom silicon + optical/networking bottleneck exposure
+  + analyst/guidance reset is a high-quality AI-infra signal.
+- Latest run for `2026-06-03 --skip-scrape`: **5 BUY / 2 WATCH / 152 PASS**.
+  BUY list: **AVGO, ORCL, CRWD, MDT, CIEN**. WATCH list: **NAVN, M**.
+- Added research report:
+  `pipeline/reports/research/marvell_ai_infra_signals_2026-06-03.md`.
+  Highest-similarity names: **AVGO, CRDO, ANET, CIEN**; broader read-through:
+  **COHR, LITE, GLW, VRT, DELL, ALAB**.
+
+### 2026-06-02 — earnings-preview refresh across 2026 earnings rows
+- Ran `python3 pipeline/enrich_setups.py`: wrote **2** setup records and **7**
+  earnings-preview annotations, then re-exported `app/assets/events.json`.
+- Verified all true company earnings rows in the 2026 DB have previews:
+  **CTRN, VSXY, AVGO, CAL, CRON, GEF, PLUS**. Two remaining earnings-like rows are
+  non-corporate schedule items (**U.S. Treasury quarterly refunding settlement** and
+  **BLS Real Earnings**) and intentionally do not receive earnings-preview blocks.
+- Current DB/report count is **175 events** (**138 api / 37 scraper / 0 synthetic**).
 
 ### 2026-06-02 (latest+1) — earnings-preview annotations (AVGO)
 - New **`analysis/earnings_preview.py`** mirrors the setup-signals pattern: a sourced/dated

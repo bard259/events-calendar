@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "updated_at": "2026-06-03T13:32:15.920900+00:00",
+  "principles": [
+    "Make a positive call when several independent signals line up; do not require perfection.",
+    "Penalize data-quality warnings, unverified dates, and already-reported stale events.",
+    "Treat earnings as two-sided unless the preview says the outlook is likely to improve.",
+    "A large run-up is acceptable when a new external validation resets the addressable market.",
+    "AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.",
+    "Record missed high-significance opportunities so future scoring learns from omissions."
+  ],
+  "weights": {
+    "confidence_high": 34,
+    "confidence_medium": 21,
+    "confidence_low": 5,
+    "significance_high": 29,
+    "significance_medium": 17,
+    "setup_high": 22,
+    "setup_notable": 12,
+    "data_quality_penalty": -45,
+    "generic_preview_penalty": -3,
+    "ai_infra_momentum": 18,
+    "positive_outlook": 14
+  },
+  "lessons": [
+    {
+      "date": "2026-06-02",
+      "lesson": "When a preview reports a strong beat plus raised outlook, raise score faster.",
+      "source": "missed_opportunity",
+      "severity": "medium"
+    },
+    {
+      "date": "2026-06-03",
+      "lesson": "Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.",
+      "source": "marvell_research",
+      "severity": "high"
+    },
+    {
+      "date": "2026-06-03",
+      "lesson": "Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.",
+      "source": "bad_decision",
+      "severity": "high"
+    }
+  ]
+}
