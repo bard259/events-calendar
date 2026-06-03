@@ -1,0 +1,1017 @@
+{
+  "center": "anthropic",
+  "nodes": [
+    {
+      "id": "anthropic",
+      "label": "Anthropic",
+      "sector": "AI Labs",
+      "ticker": null,
+      "kind": "private",
+      "degree": 14,
+      "x": 0.338,
+      "y": 0.4107
+    },
+    {
+      "id": "openai",
+      "label": "OpenAI",
+      "sector": "AI Labs",
+      "ticker": null,
+      "kind": "private",
+      "degree": 6,
+      "x": 0.3782,
+      "y": 0.4647
+    },
+    {
+      "id": "xai",
+      "label": "xAI",
+      "sector": "AI Labs",
+      "ticker": null,
+      "kind": "private",
+      "degree": 3,
+      "x": 0.5094,
+      "y": 0.3366
+    },
+    {
+      "id": "mistral",
+      "label": "Mistral AI",
+      "sector": "AI Labs",
+      "ticker": null,
+      "kind": "private",
+      "degree": 0,
+      "x": 1.0,
+      "y": 0.3119
+    },
+    {
+      "id": "deepmind",
+      "label": "Google DeepMind",
+      "sector": "AI Labs",
+      "ticker": null,
+      "kind": "subsidiary",
+      "degree": 1,
+      "x": 0.4674,
+      "y": 0.6497
+    },
+    {
+      "id": "AMZN",
+      "label": "Amazon (AWS)",
+      "sector": "Cloud",
+      "ticker": "AMZN",
+      "kind": "public",
+      "degree": 8,
+      "x": 0.4384,
+      "y": 0.5149
+    },
+    {
+      "id": "GOOGL",
+      "label": "Alphabet (Google Cloud)",
+      "sector": "Cloud",
+      "ticker": "GOOGL",
+      "kind": "public",
+      "degree": 8,
+      "x": 0.3535,
+      "y": 0.5597
+    },
+    {
+      "id": "MSFT",
+      "label": "Microsoft (Azure)",
+      "sector": "Cloud",
+      "ticker": "MSFT",
+      "kind": "public",
+      "degree": 13,
+      "x": 0.3021,
+      "y": 0.4085
+    },
+    {
+      "id": "ORCL",
+      "label": "Oracle (OCI)",
+      "sector": "Cloud",
+      "ticker": "ORCL",
+      "kind": "public",
+      "degree": 3,
+      "x": 0.4678,
+      "y": 0.4746
+    },
+    {
+      "id": "CRWV",
+      "label": "CoreWeave",
+      "sector": "Cloud",
+      "ticker": "CRWV",
+      "kind": "public",
+      "degree": 3,
+      "x": 0.2234,
+      "y": 0.3708
+    },
+    {
+      "id": "META",
+      "label": "Meta",
+      "sector": "Cloud",
+      "ticker": "META",
+      "kind": "public",
+      "degree": 8,
+      "x": 0.1675,
+      "y": 0.5053
+    },
+    {
+      "id": "NVDA",
+      "label": "Nvidia",
+      "sector": "Chips",
+      "ticker": "NVDA",
+      "kind": "public",
+      "degree": 15,
+      "x": 0.3568,
+      "y": 0.4366
+    },
+    {
+      "id": "AMD",
+      "label": "AMD",
+      "sector": "Chips",
+      "ticker": "AMD",
+      "kind": "public",
+      "degree": 7,
+      "x": 0.3335,
+      "y": 0.4711
+    },
+    {
+      "id": "AVGO",
+      "label": "Broadcom",
+      "sector": "Chips",
+      "ticker": "AVGO",
+      "kind": "public",
+      "degree": 5,
+      "x": 0.2832,
+      "y": 0.5135
+    },
+    {
+      "id": "MRVL",
+      "label": "Marvell",
+      "sector": "Chips",
+      "ticker": "MRVL",
+      "kind": "public",
+      "degree": 4,
+      "x": 0.371,
+      "y": 0.5197
+    },
+    {
+      "id": "ARM",
+      "label": "Arm Holdings",
+      "sector": "Chips",
+      "ticker": "ARM",
+      "kind": "public",
+      "degree": 0,
+      "x": 0.9259,
+      "y": 0.7193
+    },
+    {
+      "id": "INTC",
+      "label": "Intel",
+      "sector": "Chips",
+      "ticker": "INTC",
+      "kind": "public",
+      "degree": 0,
+      "x": 0.7786,
+      "y": 0.8612
+    },
+    {
+      "id": "QCOM",
+      "label": "Qualcomm",
+      "sector": "Chips",
+      "ticker": "QCOM",
+      "kind": "public",
+      "degree": 0,
+      "x": 0.9876,
+      "y": 0.5472
+    },
+    {
+      "id": "STM",
+      "label": "STMicroelectronics",
+      "sector": "Chips",
+      "ticker": "STM",
+      "kind": "public",
+      "degree": 1,
+      "x": 0.6101,
+      "y": 0.2296
+    },
+    {
+      "id": "TSM",
+      "label": "TSMC",
+      "sector": "Foundry & Equipment",
+      "ticker": "TSM",
+      "kind": "public",
+      "degree": 11,
+      "x": 0.2672,
+      "y": 0.5643
+    },
+    {
+      "id": "ASML",
+      "label": "ASML",
+      "sector": "Foundry & Equipment",
+      "ticker": "ASML",
+      "kind": "public",
+      "degree": 1,
+      "x": 0.2602,
+      "y": 0.6941
+    },
+    {
+      "id": "AMAT",
+      "label": "Applied Materials",
+      "sector": "Foundry & Equipment",
+      "ticker": "AMAT",
+      "kind": "public",
+      "degree": 1,
+      "x": 0.118,
+      "y": 0.5823
+    },
+    {
+      "id": "LRCX",
+      "label": "Lam Research",
+      "sector": "Foundry & Equipment",
+      "ticker": "LRCX",
+      "kind": "public",
+      "degree": 1,
+      "x": 0.1804,
+      "y": 0.6939
+    },
+    {
+      "id": "KLAC",
+      "label": "KLA",
+      "sector": "Foundry & Equipment",
+      "ticker": "KLAC",
+      "kind": "public",
+      "degree": 1,
+      "x": 0.1482,
+      "y": 0.6439
+    },
+    {
+      "id": "MU",
+      "label": "Micron",
+      "sector": "Memory",
+      "ticker": "MU",
+      "kind": "public",
+      "degree": 2,
+      "x": 0.4571,
+      "y": 0.4096
+    },
+    {
+      "id": "hynix",
+      "label": "SK Hynix",
+      "sector": "Memory",
+      "ticker": null,
+      "kind": "public",
+      "degree": 2,
+      "x": 0.3849,
+      "y": 0.364
+    },
+    {
+      "id": "samsung",
+      "label": "Samsung",
+      "sector": "Memory",
+      "ticker": null,
+      "kind": "public",
+      "degree": 1,
+      "x": 0.4424,
+      "y": 0.3009
+    },
+    {
+      "id": "SMCI",
+      "label": "Super Micro",
+      "sector": "Hardware",
+      "ticker": "SMCI",
+      "kind": "public",
+      "degree": 3,
+      "x": 0.2634,
+      "y": 0.3444
+    },
+    {
+      "id": "DELL",
+      "label": "Dell",
+      "sector": "Hardware",
+      "ticker": "DELL",
+      "kind": "public",
+      "degree": 2,
+      "x": 0.5334,
+      "y": 0.4236
+    },
+    {
+      "id": "ANET",
+      "label": "Arista",
+      "sector": "Hardware",
+      "ticker": "ANET",
+      "kind": "public",
+      "degree": 2,
+      "x": 0.1275,
+      "y": 0.4131
+    },
+    {
+      "id": "VRT",
+      "label": "Vertiv",
+      "sector": "Hardware",
+      "ticker": "VRT",
+      "kind": "public",
+      "degree": 2,
+      "x": 0.148,
+      "y": 0.32
+    },
+    {
+      "id": "ETN",
+      "label": "Eaton",
+      "sector": "Hardware",
+      "ticker": "ETN",
+      "kind": "public",
+      "degree": 1,
+      "x": 0.2827,
+      "y": 0.6429
+    },
+    {
+      "id": "spacex",
+      "label": "SpaceX / Starlink",
+      "sector": "Space",
+      "ticker": null,
+      "kind": "private",
+      "degree": 7,
+      "x": 0.4651,
+      "y": 0.2265
+    },
+    {
+      "id": "RKLB",
+      "label": "Rocket Lab",
+      "sector": "Space",
+      "ticker": "RKLB",
+      "kind": "public",
+      "degree": 1,
+      "x": 0.4723,
+      "y": 0.0
+    },
+    {
+      "id": "wistron",
+      "label": "Wistron NeWeb",
+      "sector": "Space",
+      "ticker": null,
+      "kind": "public",
+      "degree": 1,
+      "x": 0.5459,
+      "y": 0.1174
+    },
+    {
+      "id": "filtronic",
+      "label": "Filtronic",
+      "sector": "Space",
+      "ticker": null,
+      "kind": "public",
+      "degree": 1,
+      "x": 0.6076,
+      "y": 0.1691
+    },
+    {
+      "id": "nasa",
+      "label": "NASA",
+      "sector": "Government",
+      "ticker": null,
+      "kind": "gov",
+      "degree": 2,
+      "x": 0.4338,
+      "y": 0.0933
+    },
+    {
+      "id": "spaceforce",
+      "label": "US Space Force / DoD",
+      "sector": "Government",
+      "ticker": null,
+      "kind": "gov",
+      "degree": 1,
+      "x": 0.3477,
+      "y": 0.1478
+    },
+    {
+      "id": "CEG",
+      "label": "Constellation Energy",
+      "sector": "Energy",
+      "ticker": "CEG",
+      "kind": "public",
+      "degree": 4,
+      "x": 0.1835,
+      "y": 0.4597
+    },
+    {
+      "id": "VST",
+      "label": "Vistra",
+      "sector": "Energy",
+      "ticker": "VST",
+      "kind": "public",
+      "degree": 2,
+      "x": 0.0046,
+      "y": 0.5664
+    },
+    {
+      "id": "TLN",
+      "label": "Talen Energy",
+      "sector": "Energy",
+      "ticker": "TLN",
+      "kind": "public",
+      "degree": 1,
+      "x": 0.5216,
+      "y": 0.6251
+    },
+    {
+      "id": "OKLO",
+      "label": "Oklo",
+      "sector": "Energy",
+      "ticker": "OKLO",
+      "kind": "public",
+      "degree": 1,
+      "x": 0.0587,
+      "y": 0.6281
+    },
+    {
+      "id": "SMR",
+      "label": "NuScale Power",
+      "sector": "Energy",
+      "ticker": "SMR",
+      "kind": "public",
+      "degree": 0,
+      "x": 0.117,
+      "y": 1.0
+    },
+    {
+      "id": "xenergy",
+      "label": "X-energy",
+      "sector": "Energy",
+      "ticker": null,
+      "kind": "private",
+      "degree": 1,
+      "x": 0.5702,
+      "y": 0.5664
+    },
+    {
+      "id": "kairos",
+      "label": "Kairos Power",
+      "sector": "Energy",
+      "ticker": null,
+      "kind": "private",
+      "degree": 1,
+      "x": 0.375,
+      "y": 0.7029
+    },
+    {
+      "id": "terrapower",
+      "label": "TerraPower",
+      "sector": "Energy",
+      "ticker": null,
+      "kind": "private",
+      "degree": 1,
+      "x": 0.0,
+      "y": 0.4687
+    },
+    {
+      "id": "CCJ",
+      "label": "Cameco (uranium)",
+      "sector": "Energy",
+      "ticker": "CCJ",
+      "kind": "public",
+      "degree": 2,
+      "x": 0.0494,
+      "y": 0.5107
+    },
+    {
+      "id": "menlo",
+      "label": "Menlo Ventures",
+      "sector": "Investors",
+      "ticker": null,
+      "kind": "private",
+      "degree": 1,
+      "x": 0.352,
+      "y": 0.2586
+    },
+    {
+      "id": "lightspeed",
+      "label": "Lightspeed",
+      "sector": "Investors",
+      "ticker": null,
+      "kind": "private",
+      "degree": 1,
+      "x": 0.2069,
+      "y": 0.2913
+    },
+    {
+      "id": "iconiq",
+      "label": "ICONIQ Growth",
+      "sector": "Investors",
+      "ticker": null,
+      "kind": "private",
+      "degree": 1,
+      "x": 0.266,
+      "y": 0.2599
+    },
+    {
+      "id": "CRM",
+      "label": "Salesforce Ventures",
+      "sector": "Investors",
+      "ticker": "CRM",
+      "kind": "public",
+      "degree": 2,
+      "x": 0.3357,
+      "y": 0.3218
+    }
+  ],
+  "edges": [
+    {
+      "a": "AMZN",
+      "b": "anthropic",
+      "type": "invests_in",
+      "note": "~$8B + up to $25B (~$33B total)"
+    },
+    {
+      "a": "GOOGL",
+      "b": "anthropic",
+      "type": "invests_in",
+      "note": "up to $40B"
+    },
+    {
+      "a": "MSFT",
+      "b": "anthropic",
+      "type": "invests_in",
+      "note": "up to $5B"
+    },
+    {
+      "a": "NVDA",
+      "b": "anthropic",
+      "type": "invests_in",
+      "note": "up to $10B"
+    },
+    {
+      "a": "menlo",
+      "b": "anthropic",
+      "type": "invests_in",
+      "note": "lead VC"
+    },
+    {
+      "a": "lightspeed",
+      "b": "anthropic",
+      "type": "invests_in",
+      "note": ""
+    },
+    {
+      "a": "iconiq",
+      "b": "anthropic",
+      "type": "invests_in",
+      "note": ""
+    },
+    {
+      "a": "CRM",
+      "b": "anthropic",
+      "type": "invests_in",
+      "note": "Salesforce Ventures"
+    },
+    {
+      "a": "AMZN",
+      "b": "anthropic",
+      "type": "supplies",
+      "note": "AWS Trainium, up to 5GW; $100B AWS commitment"
+    },
+    {
+      "a": "GOOGL",
+      "b": "anthropic",
+      "type": "supplies",
+      "note": "Google Cloud TPU, multi-GW"
+    },
+    {
+      "a": "MSFT",
+      "b": "anthropic",
+      "type": "supplies",
+      "note": "Azure; $30B capacity commitment"
+    },
+    {
+      "a": "AVGO",
+      "b": "anthropic",
+      "type": "supplies",
+      "note": "co-designs next-gen TPU compute"
+    },
+    {
+      "a": "anthropic",
+      "b": "CRM",
+      "type": "customer",
+      "note": "Claude in Salesforce/enterprise"
+    },
+    {
+      "a": "NVDA",
+      "b": "AMZN",
+      "type": "supplies",
+      "note": "GPUs"
+    },
+    {
+      "a": "NVDA",
+      "b": "GOOGL",
+      "type": "supplies",
+      "note": "GPUs"
+    },
+    {
+      "a": "NVDA",
+      "b": "MSFT",
+      "type": "supplies",
+      "note": "GPUs"
+    },
+    {
+      "a": "NVDA",
+      "b": "ORCL",
+      "type": "supplies",
+      "note": "GPUs"
+    },
+    {
+      "a": "NVDA",
+      "b": "CRWV",
+      "type": "supplies",
+      "note": "GPUs"
+    },
+    {
+      "a": "NVDA",
+      "b": "META",
+      "type": "supplies",
+      "note": "GPUs"
+    },
+    {
+      "a": "NVDA",
+      "b": "xai",
+      "type": "supplies",
+      "note": "Colossus GPUs"
+    },
+    {
+      "a": "AMD",
+      "b": "MSFT",
+      "type": "supplies",
+      "note": "MI-series"
+    },
+    {
+      "a": "AMD",
+      "b": "META",
+      "type": "supplies",
+      "note": "MI-series"
+    },
+    {
+      "a": "AMD",
+      "b": "ORCL",
+      "type": "supplies",
+      "note": "MI-series"
+    },
+    {
+      "a": "AMD",
+      "b": "openai",
+      "type": "supplies",
+      "note": "up to 6GW deal"
+    },
+    {
+      "a": "AVGO",
+      "b": "GOOGL",
+      "type": "supplies",
+      "note": "TPU ASIC co-design (~60% ASIC share)"
+    },
+    {
+      "a": "AVGO",
+      "b": "META",
+      "type": "supplies",
+      "note": "MTIA co-design"
+    },
+    {
+      "a": "AVGO",
+      "b": "openai",
+      "type": "supplies",
+      "note": "custom inference ASIC"
+    },
+    {
+      "a": "MRVL",
+      "b": "AMZN",
+      "type": "supplies",
+      "note": "Trainium custom silicon (~35% share)"
+    },
+    {
+      "a": "MRVL",
+      "b": "MSFT",
+      "type": "supplies",
+      "note": "Maia custom silicon"
+    },
+    {
+      "a": "NVDA",
+      "b": "MRVL",
+      "type": "invests_in",
+      "note": "$2B; NVLink Fusion"
+    },
+    {
+      "a": "TSM",
+      "b": "NVDA",
+      "type": "supplies",
+      "note": "fabs ~92% of advanced AI chips"
+    },
+    {
+      "a": "TSM",
+      "b": "AMD",
+      "type": "supplies",
+      "note": "fab"
+    },
+    {
+      "a": "TSM",
+      "b": "AVGO",
+      "type": "supplies",
+      "note": "fab"
+    },
+    {
+      "a": "TSM",
+      "b": "MRVL",
+      "type": "supplies",
+      "note": "fab"
+    },
+    {
+      "a": "TSM",
+      "b": "GOOGL",
+      "type": "supplies",
+      "note": "TPU fab"
+    },
+    {
+      "a": "TSM",
+      "b": "AMZN",
+      "type": "supplies",
+      "note": "Trainium fab"
+    },
+    {
+      "a": "TSM",
+      "b": "MSFT",
+      "type": "supplies",
+      "note": "Maia fab"
+    },
+    {
+      "a": "ASML",
+      "b": "TSM",
+      "type": "supplies",
+      "note": "EUV lithography"
+    },
+    {
+      "a": "AMAT",
+      "b": "TSM",
+      "type": "supplies",
+      "note": "deposition/etch"
+    },
+    {
+      "a": "LRCX",
+      "b": "TSM",
+      "type": "supplies",
+      "note": "etch"
+    },
+    {
+      "a": "KLAC",
+      "b": "TSM",
+      "type": "supplies",
+      "note": "process control"
+    },
+    {
+      "a": "hynix",
+      "b": "NVDA",
+      "type": "supplies",
+      "note": "HBM (~62% share)"
+    },
+    {
+      "a": "MU",
+      "b": "NVDA",
+      "type": "supplies",
+      "note": "HBM"
+    },
+    {
+      "a": "samsung",
+      "b": "NVDA",
+      "type": "supplies",
+      "note": "HBM"
+    },
+    {
+      "a": "hynix",
+      "b": "AMD",
+      "type": "supplies",
+      "note": "HBM"
+    },
+    {
+      "a": "MU",
+      "b": "AMD",
+      "type": "supplies",
+      "note": "HBM"
+    },
+    {
+      "a": "SMCI",
+      "b": "CRWV",
+      "type": "supplies",
+      "note": "AI servers"
+    },
+    {
+      "a": "SMCI",
+      "b": "MSFT",
+      "type": "supplies",
+      "note": "AI servers"
+    },
+    {
+      "a": "DELL",
+      "b": "AMZN",
+      "type": "supplies",
+      "note": "servers"
+    },
+    {
+      "a": "DELL",
+      "b": "xai",
+      "type": "supplies",
+      "note": "Colossus servers"
+    },
+    {
+      "a": "ANET",
+      "b": "MSFT",
+      "type": "supplies",
+      "note": "AI networking"
+    },
+    {
+      "a": "ANET",
+      "b": "META",
+      "type": "supplies",
+      "note": "AI networking"
+    },
+    {
+      "a": "VRT",
+      "b": "CRWV",
+      "type": "supplies",
+      "note": "power & cooling"
+    },
+    {
+      "a": "VRT",
+      "b": "MSFT",
+      "type": "supplies",
+      "note": "power & cooling"
+    },
+    {
+      "a": "ETN",
+      "b": "GOOGL",
+      "type": "supplies",
+      "note": "data-center electrical"
+    },
+    {
+      "a": "SMCI",
+      "b": "NVDA",
+      "type": "partners",
+      "note": "reference AI systems"
+    },
+    {
+      "a": "CEG",
+      "b": "MSFT",
+      "type": "powers",
+      "note": "Three Mile Island restart, 835MW PPA"
+    },
+    {
+      "a": "TLN",
+      "b": "AMZN",
+      "type": "powers",
+      "note": "Susquehanna nuclear, 1.9GW"
+    },
+    {
+      "a": "AMZN",
+      "b": "xenergy",
+      "type": "invests_in",
+      "note": "$500M SMR round; ~5GW target"
+    },
+    {
+      "a": "GOOGL",
+      "b": "kairos",
+      "type": "partners",
+      "note": "500MW SMR development"
+    },
+    {
+      "a": "VST",
+      "b": "META",
+      "type": "powers",
+      "note": "nuclear PPA"
+    },
+    {
+      "a": "CEG",
+      "b": "META",
+      "type": "powers",
+      "note": "nuclear PPA"
+    },
+    {
+      "a": "OKLO",
+      "b": "META",
+      "type": "powers",
+      "note": "SMR commitment"
+    },
+    {
+      "a": "terrapower",
+      "b": "META",
+      "type": "partners",
+      "note": "SMR"
+    },
+    {
+      "a": "CCJ",
+      "b": "CEG",
+      "type": "supplies",
+      "note": "uranium fuel"
+    },
+    {
+      "a": "CCJ",
+      "b": "VST",
+      "type": "supplies",
+      "note": "uranium fuel"
+    },
+    {
+      "a": "CEG",
+      "b": "anthropic",
+      "type": "powers",
+      "note": "nuclear powers AWS/Azure AI capacity"
+    },
+    {
+      "a": "MSFT",
+      "b": "openai",
+      "type": "invests_in",
+      "note": "Azure partnership"
+    },
+    {
+      "a": "NVDA",
+      "b": "openai",
+      "type": "invests_in",
+      "note": "up to $100B"
+    },
+    {
+      "a": "MSFT",
+      "b": "openai",
+      "type": "supplies",
+      "note": "Azure compute"
+    },
+    {
+      "a": "ORCL",
+      "b": "openai",
+      "type": "supplies",
+      "note": "Stargate capacity"
+    },
+    {
+      "a": "deepmind",
+      "b": "GOOGL",
+      "type": "partners",
+      "note": "Gemini / Google subsidiary"
+    },
+    {
+      "a": "xai",
+      "b": "spacex",
+      "type": "partners",
+      "note": "Musk ecosystem; shared infra"
+    },
+    {
+      "a": "STM",
+      "b": "spacex",
+      "type": "supplies",
+      "note": "Starlink silicon (decade partnership)"
+    },
+    {
+      "a": "wistron",
+      "b": "spacex",
+      "type": "supplies",
+      "note": "Starlink ground terminals"
+    },
+    {
+      "a": "filtronic",
+      "b": "spacex",
+      "type": "supplies",
+      "note": "RF / E-band modules"
+    },
+    {
+      "a": "spacex",
+      "b": "nasa",
+      "type": "supplies",
+      "note": "launch / Artemis (~$4B)"
+    },
+    {
+      "a": "spacex",
+      "b": "spaceforce",
+      "type": "contracts",
+      "note": "Starshield; missile-tracking sats"
+    },
+    {
+      "a": "RKLB",
+      "b": "nasa",
+      "type": "supplies",
+      "note": "small-launch / spacecraft"
+    },
+    {
+      "a": "spacex",
+      "b": "MSFT",
+      "type": "partners",
+      "note": "Starlink global internet"
+    }
+  ],
+  "sectorColors": {
+    "AI Labs": "#a855f7",
+    "Cloud": "#3d8ef8",
+    "Chips": "#38bdf8",
+    "Memory": "#22d3ee",
+    "Foundry & Equipment": "#818cf8",
+    "Hardware": "#34d399",
+    "Space": "#f472b6",
+    "Energy": "#fb923c",
+    "Investors": "#cbd5e1",
+    "Government": "#94a3b8"
+  },
+  "edgeColors": {
+    "invests_in": "#34d399",
+    "supplies": "#3d8ef8",
+    "powers": "#fbbf24",
+    "partners": "#a855f7",
+    "customer": "#fb923c",
+    "contracts": "#f87171"
+  }
+}

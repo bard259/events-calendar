@@ -3,6 +3,18 @@
 > Chronological record of substantial work, newest at top. Append an entry per session/change set
 > so the chat history isn't needed. See `DECISIONS.md` for the "why", `ROADMAP.md` for "next".
 
+## 2026-06-03 — Anthropic ecosystem knowledge graph (branch `company-knowledge-graph`, PR #4)
+- New **`pipeline/knowledge_graph.py`**: curated, typed, directed relationship graph centered on
+  Anthropic — investors (Amazon ~$33B, Google ~$40B, Microsoft $5B, Nvidia $10B, Menlo/Lightspeed/
+  ICONIQ/Salesforce), compute suppliers (AWS Trainium / Google TPU / Azure; Broadcom & Marvell
+  co-design), chip chain (TSMC fab; SK Hynix/Micron/Samsung HBM; ASML/AMAT/Lam/KLA equip), energy/
+  nuclear (Constellation/Talen/Oklo/Kairos/X-energy/Vistra/Cameco power the data centers), and space
+  (SpaceX/Starlink ← STMicro/Wistron/Filtronic; → NASA/Space Force). 51 nodes / 80 typed edges
+  (invests_in/supplies/powers/partners/customer/contracts). Cluster-separated FR layout, Anthropic
+  pinned center → `app/assets/anthropic_graph.json`. Research-grounded (web).
+- **GraphView** generalized: toggle **Ecosystem map** ⟷ **Co-movement**; ecosystem edges colored by
+  relationship type with a relationship legend; nodes tap → company card when public.
+
 ## 2026-06-03 — Knowledge graph v2 + persistent docs (branch `company-knowledge-graph`, PR #4)
 - **Company relationship knowledge graph**: `pipeline/graph_build.py` builds nodes (companies) +
   edges (co-move in same event's stock-impacts), Fruchterman–Reingold layout in stdlib Python →

@@ -66,6 +66,16 @@ so learning persists across cloud runs (each run is a fresh checkout). `events.d
 holds cross-run state (snapshots/outcomes) — accept occasional binary merge conflicts (resolve by keeping the
 most complete DB; it regenerates anyway).
 
+### D14 — Anthropic-centered ecosystem knowledge graph (curated, typed)
+Separate from the co-movement graph (D11). `pipeline/knowledge_graph.py` is a **curated, typed,
+directed** relationship graph (`invests_in` / `supplies` / `powers` / `partners` / `customer` /
+`contracts`) centered on Anthropic and expanded through investors → compute suppliers → chip
+supply chain → energy/nuclear → space. It's sourced reference knowledge (allowed per D2), dated,
+refresh periodically. 51 nodes / 80 edges across AI/Cloud/Chips/Memory/Foundry/Hardware/Space/
+Energy/Investors/Government. Layout = cluster-separated FR with Anthropic pinned at center →
+`app/assets/anthropic_graph.json`. The app **Graph** tab toggles **Ecosystem map** ⟷ **Co-movement**;
+ecosystem edges are colored by relationship type; nodes tap → company card when public.
+
 ### D13 — Git workflow: feature branch + PR, no direct main push
 Auto-mode guardrail blocks direct main pushes; use branch → PR → squash-merge. `gh` isn't installed — open/merge
 PRs via the GitHub REST API using the stored git credential (read into a var, never printed).

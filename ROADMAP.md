@@ -15,8 +15,9 @@ _Last updated: 2026-06-03_
 - **Agents** (`run_daily_agents.py`): decision → price snapshots → critic → earnings-alpha learning.
   Learnable memory in `pipeline/memory/*.json`. Reports in `pipeline/reports/`, app **Reports** tab.
 - **App** (Expo, web+iOS): Month/Week/Day/Latest/**Graph**/Reports; single-select event-type filter;
-  event cards with company TL;DR + ⚡ setup + 📊 EVENT CALL; **CompanyModal** (About ›); **Graph** tab
-  (cluster-separated, pan/zoom).
+  event cards with company TL;DR + ⚡ setup + 📊 EVENT CALL; **CompanyModal** (About ›). **Graph** tab
+  toggles **Ecosystem map** (curated Anthropic-centered, typed edges; `knowledge_graph.py`) ⟷
+  **Co-movement** (derived from stock-impacts; `graph_build.py`); both cluster-separated + pan/zoom.
 - **Automation** (remote routines on `bard259/events-calendar`):
   - `Daily Events Collector` (14:00 UTC) — `daily_update.py`, commits to main.
   - `Daily earnings agents (decision+critic+learning)` (22:00 UTC) — `run_daily_agents.py`, commits memory to main.
@@ -27,9 +28,10 @@ _Last updated: 2026-06-03_
 - [ ] **Daily routine commit-list**: add `app/assets/company_graph.json` (and confirm `company_cards.json`)
       to the `Daily earnings agents` routine so the daily-refreshed graph/cards persist to the repo.
       (Update via the `schedule` skill / RemoteTrigger; needs full job_config resend.)
-- [ ] **Graph enrichment**: graph is sparse (~21 nodes) because most events are single-company
-      earnings (link only to sector ETFs). Grows as multi-company AI/defense/energy events accumulate.
-      Consider adding explicit relationship edges (supplier/customer, AI-ecosystem roster) beyond co-impact.
+- [ ] **Graph enrichment**: the *co-movement* graph is sparse (~21 nodes) because most events are
+      single-company earnings (link only to sector ETFs); grows as multi-company events accumulate.
+      The *ecosystem map* (`knowledge_graph.py`, 51 nodes) is curated — extend it (more customers,
+      tier-2 suppliers, directional arrowheads) and refresh the dated deal facts periodically.
 - [ ] **Company-card SEC coverage** fills incrementally (250/run, cached in `memory/sic_cache.json`);
       ~244/1039 have real SEC industries so far — let it accrue or raise `--sec-cap`.
 - [ ] **Earnings-alpha learning** needs accumulated pre+post price snapshots to actually self-tune
