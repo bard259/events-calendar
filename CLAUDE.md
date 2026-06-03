@@ -178,6 +178,14 @@ not a curated/synthetic event source, and `raw_json` is not written to the app p
   on Anthropic across AI/chips/space/energy — sourced reference knowledge (refresh periodically), not
   event data. The **Graph** tab toggles **Ecosystem map** ⟷ **Co-movement**; ecosystem edges are
   colored by relationship type. Rebuild: `python3 pipeline/knowledge_graph.py`.
+- **Connection rankings** (`connection_rank.py` → `app/assets/connection_rankings.json` +
+  `reports/research/`): measures each company's connection strength to **Nvidia / SpaceX / Anthropic**
+  via a weighted 3-hop diffusion (0.5/hop) over the curated ecosystem map + DB `stock_graph_edges`
+  (edge weight by relationship type). Ranks public companies per hub, joined with each one's next
+  earnings date + strongest link. Run: `python3 pipeline/connection_rank.py`.
+- **Yahoo earnings** (`scrape_yahoo_earnings.py`): real crumb+visualization scraper for the Yahoo
+  earnings calendar; Yahoo 429/406-blocks datacenter IPs, so the reachable equivalent is the Nasdaq
+  calendar (`scrape_earnings_previews.py`). Both record rate-limit/ToS signals.
 - **Earnings-alpha (continuous learning)** (`analysis/earnings_alpha.py`): per-earnings
   `pop_score` (post-earnings *increase* likelihood) + research-grounded `lookahead_days`
   (pre-earnings-drift entry timing) → `earnings_alpha` table, merged into `ev.preview`.
