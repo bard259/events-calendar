@@ -1,7 +1,14 @@
 # Events — Jun–Dec 2026 Event Collection Pipeline + Calendar App
 
-> New here? Read **`TAKEOVER.md`** first (cold-start onboarding + current state), then this
-> file for the deeper conventions.
+> **Persistent docs (keep these updated so the chat history isn't needed):**
+> - **`TAKEOVER.md`** — cold-start onboarding + repo map.
+> - **`CLAUDE.md`** (this file) — conventions & how things work.
+> - **`ROADMAP.md`** — current state snapshot + open items / next steps.
+> - **`DECISIONS.md`** — key decisions and *why* (don't relitigate without reason).
+> - **`WORKLOG.md`** — chronological record of what changed.
+>
+> After any substantial change: update `WORKLOG.md` (what), `ROADMAP.md` (what's left), and
+> `DECISIONS.md` (if a new decision was made). New here? Read `TAKEOVER.md`, then this file.
 
 This repo has two halves:
 
