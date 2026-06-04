@@ -224,6 +224,33 @@ successive days. This is by design, not a bug.
 
 ## 8. Session log (append newest at top)
 
+### 2026-06-04 — AVGO post-earnings recap (settled June 4 close)
+
+**Broadcom Q2 FY2026 actuals** (reported 2026-06-03 after close; reaction settled 6/4):
+
+| Metric | Expected | Actual | vs Estimate |
+|---|---|---|---|
+| Non-GAAP EPS | $2.40 | $2.44 | BEAT +$0.04 |
+| Revenue | $22.1B | $22.2B (+48% YoY) | BEAT |
+| AI semiconductor rev | guide $10.7B / whisper $11B+ | $10.8B (+143% YoY) | beat guide, near-miss whisper |
+| Q3 AI semi guide | buy-side ~$17.2B | $16.0B (+200% YoY) | MISS −$1.2B vs whisper |
+| Q3 total revenue guide | — | $29.4B (+84% YoY) | massive |
+| FY2027 $100B AI target | expected RAISED | REAFFIRMED only | disappointment |
+
+**Stock reaction:** DOWN ~−15.1% on June 4 (close ~$407 from $479.23 ATH on 6/3). Low of $403.01 intraday. Exceeded the ±8–10.6% implied move range — straddle buyers won.
+
+**Key learnings:**
+1. **Sell-the-news confirmed and exceeded implied range.** Q2 beat all metrics, but Q3 AI guide of $16B missed buy-side whisper of ~$17.2B, and Hock Tan reaffirmed (not raised) the FY2027 $100B target. The $280B four-session pre-print rally left no margin for anything less than a raise.
+2. **FY2027 $100B ceiling effect.** Market had priced in a raise to $110–120B+; flat reiteration was read as a cap, triggering crowded-long exit.
+3. **Options underpriced tail risk at ATH.** ±10.6% implied was set before the $280B pre-print run; actual downside was fatter than vol pricing.
+4. **Next-preview rule:** at crowded-ATH + >40% YTD, require explicit beat-and-raise of forward AI guide AND raised multi-year target to hold positive lean. In-line on guide = sell trigger.
+
+**Files changed:** `pipeline/analysis/earnings_preview.py` AVGO entry updated with actuals, new `learning` bullets, `lean` updated to settled result. `enrich_setups.py` re-run to re-export `app/assets/events.json`.
+
+**Sources:** stocktitan.net Q2 announcement, heygotrade.com post-earnings analysis, shacknews.com results, cnbc.com Q2 report, tickeron.com June 4 price action.
+
+---
+
 ### 2026-06-02 (latest+3) — integrate agents, company cards, continuous-learning alpha
 - **Integrated** Codex's decision/critic subsystem (earnings-calendar scrape → decision agent →
   price snapshots → critic → learnable `memory/key_knowledge_memory.json`; Reports tab) with this
