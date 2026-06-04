@@ -224,6 +224,27 @@ successive days. This is by design, not a bug.
 
 ## 8. Session log (append newest at top)
 
+### 2026-06-04 — AVGO Q2 FY26 post-earnings recap
+- **Results (reported 2026-06-03 after close; move played out 2026-06-04):**
+  - EPS: $2.44 (non-GAAP) vs $2.40 consensus — BEAT +$0.04
+  - Revenue: $22.19B vs $22.1B consensus / $22.0B guide (+48% YoY) — BEAT
+  - AI semiconductor Q2: $10.8B (+143% YoY) — slight beat vs guide ($10.7B); missed buy-side whisper $11B+
+  - Adj. EBITDA: $15.2B (69% margin) vs 68% guided — beat on margin
+  - Q3 revenue guide: ~$29.4B (+84% YoY) — large absolute beat vs prior expectations
+  - **Q3 AI semi guide: $16.0B (+200% YoY) — MISSED institutional baseline $17.2B by −$1.2B (principal sell trigger)**
+  - FY27 $100B+ AI revenue: **REAFFIRMED, NOT RAISED** (second sell trigger at ATH)
+  - FY26 full-year AI guide: $56B (~180% YoY) — reiterated
+- **Stock reaction: −15.7% on 6/4** — sell-the-news confirmed and **exceeded the implied ceiling** (±10.6% max)
+- **Pre-print lean validated:** original lean was "Up only on beat + raised Q3 guide + FY27 reiteration." Got the beat but NOT the raise; FY27 reiteration wasn't enough at ATH ~$495 (+40% YTD).
+- **Key learnings (folded into `earnings_preview.py` AVGO entry):**
+  1. Q3 AI guide sub-segment ($16B vs $17.2B baseline) was the *only* number the market cared about — not EPS, not total revenue.
+  2. Reiterate ≠ raise at all-time highs. +40% YTD priced in a raise; reiteration was read as a ceiling.
+  3. Pre-print +$280B four-session rally made the realized move (−15.7%) exceed the implied range (−10.6% ceiling). Large pre-print rallies expand actual downside beyond implied vol.
+  4. Baseline-error lesson from prior session carried forward: always pull the most recent quarterly actual when refreshing AI-segment comparisons.
+- Updated `pipeline/analysis/earnings_preview.py`: AVGO entry — repurposed `bar` to actual-vs-expected bullets, set `lean` to realized headline + key learning, updated `as_of`, appended sources, added 5-point `learning` list.
+- Ran `python3 pipeline/enrich_setups.py` to re-export `app/assets/events.json`.
+- Committed to branch `avgo-recap-20260604-1500`; PR opened against `main`.
+
 ### 2026-06-02 (latest+3) — integrate agents, company cards, continuous-learning alpha
 - **Integrated** Codex's decision/critic subsystem (earnings-calendar scrape → decision agent →
   price snapshots → critic → learnable `memory/key_knowledge_memory.json`; Reports tab) with this
