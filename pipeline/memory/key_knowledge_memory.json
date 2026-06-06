@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-05T22:06:55.125112+00:00",
+  "updated_at": "2026-06-06T22:03:03.832815+00:00",
   "principles": [
     "Make a positive call when several independent signals line up; do not require perfection.",
     "Penalize data-quality warnings, unverified dates, and already-reported stale events.",
