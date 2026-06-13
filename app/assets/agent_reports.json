@@ -1,6 +1,18 @@
 {
   "decision_runs": [
     {
+      "id": 17,
+      "run_date": "2026-06-13",
+      "started_at": "2026-06-13T01:18:41.266811+00:00",
+      "finished_at": "2026-06-13T01:18:41.288650+00:00",
+      "horizon_days": 7,
+      "events_reviewed": 34,
+      "decisions_made": 34,
+      "report_path": "/home/user/events-calendar/pipeline/reports/decisions/2026-06-13.md",
+      "memory_path": "/home/user/events-calendar/pipeline/memory/key_knowledge_memory.json",
+      "notes": "[\"Paper decisions only; no trades are placed.\"]"
+    },
+    {
       "id": 16,
       "run_date": "2026-06-11",
       "started_at": "2026-06-11T22:03:04.310560+00:00",
@@ -195,6 +207,18 @@
   ],
   "critic_runs": [
     {
+      "id": 17,
+      "run_date": "2026-06-13",
+      "started_at": "2026-06-13T01:18:41.342633+00:00",
+      "finished_at": "2026-06-13T01:18:41.374510+00:00",
+      "decisions_checked": 907,
+      "findings_count": 24,
+      "missed_count": 0,
+      "report_path": "/home/user/events-calendar/pipeline/reports/critics/2026-06-13.md",
+      "memory_path": "/home/user/events-calendar/pipeline/memory/key_knowledge_memory.json",
+      "notes": "[\"Outcome checks are heuristic unless price data is later attached.\"]"
+    },
+    {
       "id": 16,
       "run_date": "2026-06-11",
       "started_at": "2026-06-11T22:03:05.278094+00:00",
@@ -387,36 +411,13 @@
       "notes": "[\"Outcome checks are heuristic unless price data is later attached.\"]"
     }
   ],
-  "latest_decision_report": "# Decision Agent Report — 2026-06-11\n\nPaper investment decisions from earnings previews and key memory. No trades are placed.\n\nWindow: 2026-06-11 through +7 days\nReviewed: 53 earnings previews\nBUY: 2 · WATCH: 5 · PASS: 46 · IGNORE: 0\n\n## Top Decisions\n- **BUY ADBE** (2026-06-11, score 68) — Adobe Inc.\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Medium-high\n  - Significance: Medium-high: sizeable company with a meaningful stock-specific event.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **BUY ACN** (2026-06-18, score 68) — Accenture plc\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Medium-high\n  - Significance: Medium-high: sizeable company with a meaningful stock-specific event.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **WATCH CRMT** (2026-06-11, score 43) — America's Car-Mart, Inc.\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Medium\n  - Significance: Medium: enough analyst coverage to make the report useful to track.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **WATCH FRD** (2026-06-11, score 43) — Friedman Industries Inc.\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Medium\n  - Significance: Medium: enough analyst coverage to make the report useful to track.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **WATCH MH** (2026-06-11, score 43) — McGraw Hill, Inc.\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Medium\n  - Significance: Medium: enough analyst coverage to make the report useful to track.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **WATCH SENEB** (2026-06-11, score 43) — Seneca Foods Corp.\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Medium\n  - Significance: Medium: enough analyst coverage to make the report useful to track.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **WATCH YRD** (2026-06-11, score 43) — Yiren Digital Ltd.\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Medium\n  - Significance: Medium: enough analyst coverage to make the report useful to track.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **PASS ACB** (2026-06-11, score 30) — Aurora Cannabis Inc.\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Low-medium\n  - Significance: Low-medium: useful as a company-specific update, but less likely to move the broad market.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **PASS CMND** (2026-06-11, score 30) — Clearmind Medicine Inc.\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Low-medium\n  - Significance: Low-medium: useful as a company-specific update, but less likely to move the broad market.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **PASS ENGN** (2026-06-11, score 30) — enGene Therapeutics Inc.\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Low-medium\n  - Significance: Low-medium: useful as a company-specific update, but less likely to move the broad market.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **PASS HOFT** (2026-06-11, score 30) — Hooker Furnishings Corporation\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Low-medium\n  - Significance: Low-medium: useful as a company-specific update, but less likely to move the broad market.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **PASS LEN** (2026-06-11, score 30) — Lennar Corporation\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Low-medium\n  - Significance: Low-medium: useful as a company-specific update, but less likely to move the broad market.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **PASS LEN.B** (2026-06-11, score 30) — Lennar Corporation\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Low-medium\n  - Significance: Low-medium: useful as a company-specific update, but less likely to move the broad market.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **PASS LOVE** (2026-06-11, score 30) — The Lovesac Company\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Low-medium\n  - Significance: Low-medium: useful as a company-specific update, but less likely to move the broad market.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **PASS MAYS** (2026-06-11, score 30) — J. W. Mays, Inc.\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Low-medium\n  - Significance: Low-medium: useful as a company-specific update, but less likely to move the broad market.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **PASS MSB** (2026-06-11, score 30) — Mesabi Trust\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Low-medium\n  - Significance: Low-medium: useful as a company-specific update, but less likely to move the broad market.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **PASS RH** (2026-06-11, score 30) — RH\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Low-medium\n  - Significance: Low-medium: useful as a company-specific update, but less likely to move the broad market.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **PASS SENEA** (2026-06-11, score 30) — Seneca Foods Corp.\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Low-medium\n  - Significance: Low-medium: useful as a company-specific update, but less likely to move the broad market.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **PASS UXIN** (2026-06-11, score 30) — Uxin Limited\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Low-medium\n  - Significance: Low-medium: useful as a company-specific update, but less likely to move the broad market.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **PASS VRA** (2026-06-11, score 30) — Vera Bradley, Inc.\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Low-medium\n  - Significance: Low-medium: useful as a company-specific update, but less likely to move the broad market.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **PASS WLDS** (2026-06-11, score 30) — Wearable Devices Ltd.\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Low-medium\n  - Significance: Low-medium: useful as a company-specific update, but less likely to move the broad market.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **PASS ZDGE** (2026-06-11, score 30) — Zedge, Inc.\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Low-medium\n  - Significance: Low-medium: useful as a company-specific update, but less likely to move the broad market.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **PASS JVA** (2026-06-12, score 30) — Coffee Holding Co., Inc.\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Low-medium\n  - Significance: Low-medium: useful as a company-specific update, but less likely to move the broad market.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **PASS MNY** (2026-06-12, score 30) — MoneyHero Limited\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Low-medium\n  - Significance: Low-medium: useful as a company-specific update, but less likely to move the broad market.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **PASS OLOX** (2026-06-12, score 30) — Olenox Industries Inc.\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Low-medium\n  - Significance: Low-medium: useful as a company-specific update, but less likely to move the broad market.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n\n## Memory Used\n- Make a positive call when several independent signals line up; do not require perfection.\n- Penalize data-quality warnings, unverified dates, and already-reported stale events.\n- Treat earnings as two-sided unless the preview says the outlook is likely to improve.\n- A large run-up is acceptable when a new external validation resets the addressable market.\n- AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\n- Record missed high-significance opportunities so future scoring learns from omissions.\n",
-  "latest_critic_report": "# Critic Agent Report — 2026-06-11\n\nSystematic review of prior paper decisions, missed opportunities, and memory updates.\n\nDecisions checked: 856\nFindings: 23\n\n## Findings\n- **missed_opportunity · medium · CTRN**\n  - CTRN looked positive after a cautious decision.\n  - Lesson: When a preview reports a strong beat plus raised outlook, raise score faster.\n- **bad_decision · high · PANW**\n  - PANW had weak/bad-date language despite a BUY decision.\n  - Lesson: Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\n- **missed_opportunity · medium · AVGO**\n  - AVGO looked positive after a cautious decision.\n  - Lesson: When a preview reports a strong beat plus raised outlook, raise score faster.\n- **bad_decision · high · CRWD**\n  - CRWD had weak/bad-date language despite a BUY decision.\n  - Lesson: Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\n- **bad_decision · high · CRWD**\n  - CRWD had weak/bad-date language despite a BUY decision.\n  - Lesson: Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\n- **bad_decision · high · MDT**\n  - MDT had weak/bad-date language despite a BUY decision.\n  - Lesson: Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\n- **bad_decision · high · MDT**\n  - MDT had weak/bad-date language despite a BUY decision.\n  - Lesson: Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\n- **bad_decision · high · CIEN**\n  - CIEN had weak/bad-date language despite a BUY decision.\n  - Lesson: Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\n- **bad_decision · high · CIEN**\n  - CIEN had weak/bad-date language despite a BUY decision.\n  - Lesson: Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\n- **bad_decision · high · CIEN**\n  - CIEN had weak/bad-date language despite a BUY decision.\n  - Lesson: Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\n- **bad_decision · high · ORCL**\n  - ORCL had weak/bad-date language despite a BUY decision.\n  - Lesson: Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\n- **bad_decision · high · ORCL**\n  - ORCL had weak/bad-date language despite a BUY decision.\n  - Lesson: Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\n- **bad_decision · high · ORCL**\n  - ORCL had weak/bad-date language despite a BUY decision.\n  - Lesson: Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\n- **bad_decision · high · ORCL**\n  - ORCL had weak/bad-date language despite a BUY decision.\n  - Lesson: Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\n- **bad_decision · high · ORCL**\n  - ORCL had weak/bad-date language despite a BUY decision.\n  - Lesson: Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\n- **bad_decision · high · ORCL**\n  - ORCL had weak/bad-date language despite a BUY decision.\n  - Lesson: Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\n- **bad_decision · high · ORCL**\n  - ORCL had weak/bad-date language despite a BUY decision.\n  - Lesson: Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\n- **bad_decision · high · ADBE**\n  - ADBE had weak/bad-date language despite a BUY decision.\n  - Lesson: Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\n- **bad_decision · high · ADBE**\n  - ADBE had weak/bad-date language despite a BUY decision.\n  - Lesson: Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\n- **bad_decision · high · ADBE**\n  - ADBE had weak/bad-date language despite a BUY decision.\n  - Lesson: Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\n- **bad_decision · high · ADBE**\n  - ADBE had weak/bad-date language despite a BUY decision.\n  - Lesson: Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\n- **bad_decision · high · ADBE**\n  - ADBE had weak/bad-date language despite a BUY decision.\n  - Lesson: Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\n- **bad_decision · high · ADBE**\n  - ADBE had weak/bad-date language despite a BUY decision.\n  - Lesson: Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\n\n## Current Memory Lessons\n- 2026-06-02: When a preview reports a strong beat plus raised outlook, raise score faster.\n- 2026-06-03: Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\n- 2026-06-03: Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\n",
+  "latest_decision_report": "# Decision Agent Report — 2026-06-13\n\nPaper investment decisions from earnings previews and key memory. No trades are placed.\n\nWindow: 2026-06-13 through +7 days\nReviewed: 34 earnings previews\nBUY: 1 · WATCH: 0 · PASS: 32 · IGNORE: 1\n\n## Top Decisions\n- **BUY ACN** (2026-06-18, score 68) — Accenture plc\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Medium-high\n  - Significance: Medium-high: sizeable company with a meaningful stock-specific event.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **PASS ADXN** (2026-06-15, score 30) — Addex Therapeutics Ltd\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Low-medium\n  - Significance: Low-medium: useful as a company-specific update, but less likely to move the broad market.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **PASS AIOT** (2026-06-15, score 30) — PowerFleet, Inc.\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Low-medium\n  - Significance: Low-medium: useful as a company-specific update, but less likely to move the broad market.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **PASS BCTX** (2026-06-15, score 30) — BriaCell Therapeutics Corp.\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Low-medium\n  - Significance: Low-medium: useful as a company-specific update, but less likely to move the broad market.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **PASS CGC** (2026-06-15, score 30) — Canopy Growth Corporation\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Low-medium\n  - Significance: Low-medium: useful as a company-specific update, but less likely to move the broad market.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **PASS CODA** (2026-06-15, score 30) — Coda Octopus Group, Inc.\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Low-medium\n  - Significance: Low-medium: useful as a company-specific update, but less likely to move the broad market.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **PASS GLBS** (2026-06-15, score 30) — Globus Maritime Limited\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Low-medium\n  - Significance: Low-medium: useful as a company-specific update, but less likely to move the broad market.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **PASS HITI** (2026-06-15, score 30) — High Tide Inc.\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Low-medium\n  - Significance: Low-medium: useful as a company-specific update, but less likely to move the broad market.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **PASS POWW** (2026-06-15, score 30) — Outdoor Holding Company\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Low-medium\n  - Significance: Low-medium: useful as a company-specific update, but less likely to move the broad market.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **PASS RFIL** (2026-06-15, score 30) — RF Industries, Ltd.\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Low-medium\n  - Significance: Low-medium: useful as a company-specific update, but less likely to move the broad market.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **PASS JBL** (2026-06-16, score 30) — Jabil Inc.\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Low-medium\n  - Significance: Low-medium: useful as a company-specific update, but less likely to move the broad market.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **PASS KEP** (2026-06-16, score 30) — Korea Electric Power Corporation\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Low-medium\n  - Significance: Low-medium: useful as a company-specific update, but less likely to move the broad market.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **PASS LZB** (2026-06-16, score 30) — La-Z-Boy Incorporated\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Low-medium\n  - Significance: Low-medium: useful as a company-specific update, but less likely to move the broad market.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **PASS SNOA** (2026-06-16, score 30) — Sonoma Pharmaceuticals, Inc.\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Low-medium\n  - Significance: Low-medium: useful as a company-specific update, but less likely to move the broad market.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **PASS VNCE** (2026-06-16, score 30) — Vince Holding Corp.\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Low-medium\n  - Significance: Low-medium: useful as a company-specific update, but less likely to move the broad market.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **PASS VTGN** (2026-06-16, score 30) — VistaGen Therapeutics, Inc.\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Low-medium\n  - Significance: Low-medium: useful as a company-specific update, but less likely to move the broad market.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **PASS WLY** (2026-06-16, score 30) — John Wiley & Sons, Inc.\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Low-medium\n  - Significance: Low-medium: useful as a company-specific update, but less likely to move the broad market.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **PASS WLYB** (2026-06-16, score 30) — John Wiley & Sons, Inc.\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Low-medium\n  - Significance: Low-medium: useful as a company-specific update, but less likely to move the broad market.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **PASS XAIR** (2026-06-16, score 30) — Beyond Air, Inc.\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Low-medium\n  - Significance: Low-medium: useful as a company-specific update, but less likely to move the broad market.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **PASS DSWL** (2026-06-17, score 30) — Deswell Industries, Inc.\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Low-medium\n  - Significance: Low-medium: useful as a company-specific update, but less likely to move the broad market.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **PASS KFY** (2026-06-17, score 30) — Korn Ferry \n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Low-medium\n  - Significance: Low-medium: useful as a company-specific update, but less likely to move the broad market.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **PASS KMX** (2026-06-17, score 30) — CarMax Inc\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Low-medium\n  - Significance: Low-medium: useful as a company-specific update, but less likely to move the broad market.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **PASS LVO** (2026-06-17, score 30) — LiveOne, Inc.\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Low-medium\n  - Significance: Low-medium: useful as a company-specific update, but less likely to move the broad market.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **PASS SWBI** (2026-06-17, score 30) — Smith & Wesson Brands, Inc.\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Low-medium\n  - Significance: Low-medium: useful as a company-specific update, but less likely to move the broad market.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n- **PASS CMCM** (2026-06-18, score 30) — Cheetah Mobile Inc.\n  - Decision: Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.\n  - Confidence: Low-medium\n  - Significance: Low-medium: useful as a company-specific update, but less likely to move the broad market.\n  - Key risk: A miss, weak outlook, or already-crowded run-up could pressure the stock.\n\n## Memory Used\n- Make a positive call when several independent signals line up; do not require perfection.\n- Penalize data-quality warnings, unverified dates, and already-reported stale events.\n- Treat earnings as two-sided unless the preview says the outlook is likely to improve.\n- A large run-up is acceptable when a new external validation resets the addressable market.\n- AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\n- Record missed high-significance opportunities so future scoring learns from omissions.\n",
+  "latest_critic_report": "# Critic Agent Report — 2026-06-13\n\nSystematic review of prior paper decisions, missed opportunities, and memory updates.\n\nDecisions checked: 907\nFindings: 24\n\n## Findings\n- **missed_opportunity · medium · CTRN**\n  - CTRN looked positive after a cautious decision.\n  - Lesson: When a preview reports a strong beat plus raised outlook, raise score faster.\n- **bad_decision · high · PANW**\n  - PANW had weak/bad-date language despite a BUY decision.\n  - Lesson: Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\n- **missed_opportunity · medium · AVGO**\n  - AVGO looked positive after a cautious decision.\n  - Lesson: When a preview reports a strong beat plus raised outlook, raise score faster.\n- **bad_decision · high · CRWD**\n  - CRWD had weak/bad-date language despite a BUY decision.\n  - Lesson: Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\n- **bad_decision · high · CRWD**\n  - CRWD had weak/bad-date language despite a BUY decision.\n  - Lesson: Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\n- **bad_decision · high · MDT**\n  - MDT had weak/bad-date language despite a BUY decision.\n  - Lesson: Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\n- **bad_decision · high · MDT**\n  - MDT had weak/bad-date language despite a BUY decision.\n  - Lesson: Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\n- **bad_decision · high · CIEN**\n  - CIEN had weak/bad-date language despite a BUY decision.\n  - Lesson: Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\n- **bad_decision · high · CIEN**\n  - CIEN had weak/bad-date language despite a BUY decision.\n  - Lesson: Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\n- **bad_decision · high · CIEN**\n  - CIEN had weak/bad-date language despite a BUY decision.\n  - Lesson: Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\n- **bad_decision · high · ORCL**\n  - ORCL had weak/bad-date language despite a BUY decision.\n  - Lesson: Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\n- **bad_decision · high · ORCL**\n  - ORCL had weak/bad-date language despite a BUY decision.\n  - Lesson: Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\n- **bad_decision · high · ORCL**\n  - ORCL had weak/bad-date language despite a BUY decision.\n  - Lesson: Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\n- **bad_decision · high · ORCL**\n  - ORCL had weak/bad-date language despite a BUY decision.\n  - Lesson: Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\n- **bad_decision · high · ORCL**\n  - ORCL had weak/bad-date language despite a BUY decision.\n  - Lesson: Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\n- **bad_decision · high · ORCL**\n  - ORCL had weak/bad-date language despite a BUY decision.\n  - Lesson: Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\n- **bad_decision · high · ORCL**\n  - ORCL had weak/bad-date language despite a BUY decision.\n  - Lesson: Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\n- **bad_decision · high · ADBE**\n  - ADBE had weak/bad-date language despite a BUY decision.\n  - Lesson: Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\n- **bad_decision · high · ADBE**\n  - ADBE had weak/bad-date language despite a BUY decision.\n  - Lesson: Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\n- **bad_decision · high · ADBE**\n  - ADBE had weak/bad-date language despite a BUY decision.\n  - Lesson: Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\n- **bad_decision · high · ADBE**\n  - ADBE had weak/bad-date language despite a BUY decision.\n  - Lesson: Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\n- **bad_decision · high · ADBE**\n  - ADBE had weak/bad-date language despite a BUY decision.\n  - Lesson: Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\n- **bad_decision · high · ADBE**\n  - ADBE had weak/bad-date language despite a BUY decision.\n  - Lesson: Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\n- **bad_decision · high · ADBE**\n  - ADBE had weak/bad-date language despite a BUY decision.\n  - Lesson: Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\n\n## Current Memory Lessons\n- 2026-06-02: When a preview reports a strong beat plus raised outlook, raise score faster.\n- 2026-06-03: Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\n- 2026-06-03: Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\n",
   "latest_decisions": [
     {
-      "id": 1988,
-      "run_id": 16,
-      "run_date": "2026-06-11",
-      "event_uid": "658749d96a6b8f21:nfin_earnings_calendar",
-      "event_date": "2026-06-11",
-      "ticker": "ADBE",
-      "company": "Adobe Inc.",
-      "action": "BUY",
-      "confidence": "Medium-high",
-      "significance": "Medium-high: sizeable company with a meaningful stock-specific event.",
-      "score": 68,
-      "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
-      "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
-      "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
-      "performance": {
-        "first": null,
-        "latest": null,
-        "return_pct": null,
-        "snapshot_count": 1
-      }
-    },
-    {
-      "id": 2037,
-      "run_id": 16,
-      "run_date": "2026-06-11",
+      "id": 2064,
+      "run_id": 17,
+      "run_date": "2026-06-13",
       "event_uid": "8b009e2f42640559:nfin_earnings_calendar",
       "event_date": "2026-06-18",
       "ticker": "ACN",
@@ -428,7 +429,7 @@
       "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
       "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
       "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
+      "created_at": "2026-06-13T01:18:41.281023+00:00",
       "performance": {
         "first": null,
         "latest": null,
@@ -437,584 +438,9 @@
       }
     },
     {
-      "id": 1989,
-      "run_id": 16,
-      "run_date": "2026-06-11",
-      "event_uid": "9a9b719635cd58c2:nfin_earnings_calendar",
-      "event_date": "2026-06-11",
-      "ticker": "CRMT",
-      "company": "America's Car-Mart, Inc.",
-      "action": "WATCH",
-      "confidence": "Medium",
-      "significance": "Medium: enough analyst coverage to make the report useful to track.",
-      "score": 43,
-      "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
-      "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
-      "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
-      "performance": {
-        "first": null,
-        "latest": null,
-        "return_pct": null,
-        "snapshot_count": 1
-      }
-    },
-    {
-      "id": 1990,
-      "run_id": 16,
-      "run_date": "2026-06-11",
-      "event_uid": "c21b1b3913cbd2c2:nfin_earnings_calendar",
-      "event_date": "2026-06-11",
-      "ticker": "FRD",
-      "company": "Friedman Industries Inc.",
-      "action": "WATCH",
-      "confidence": "Medium",
-      "significance": "Medium: enough analyst coverage to make the report useful to track.",
-      "score": 43,
-      "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
-      "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
-      "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
-      "performance": {
-        "first": null,
-        "latest": null,
-        "return_pct": null,
-        "snapshot_count": 1
-      }
-    },
-    {
-      "id": 1991,
-      "run_id": 16,
-      "run_date": "2026-06-11",
-      "event_uid": "8ec18e5abf6f136f:nfin_earnings_calendar",
-      "event_date": "2026-06-11",
-      "ticker": "MH",
-      "company": "McGraw Hill, Inc.",
-      "action": "WATCH",
-      "confidence": "Medium",
-      "significance": "Medium: enough analyst coverage to make the report useful to track.",
-      "score": 43,
-      "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
-      "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
-      "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
-      "performance": {
-        "first": null,
-        "latest": null,
-        "return_pct": null,
-        "snapshot_count": 1
-      }
-    },
-    {
-      "id": 1992,
-      "run_id": 16,
-      "run_date": "2026-06-11",
-      "event_uid": "5095e7a786cb299c:nfin_earnings_calendar",
-      "event_date": "2026-06-11",
-      "ticker": "SENEB",
-      "company": "Seneca Foods Corp.",
-      "action": "WATCH",
-      "confidence": "Medium",
-      "significance": "Medium: enough analyst coverage to make the report useful to track.",
-      "score": 43,
-      "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
-      "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
-      "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
-      "performance": {
-        "first": null,
-        "latest": null,
-        "return_pct": null,
-        "snapshot_count": 1
-      }
-    },
-    {
-      "id": 1993,
-      "run_id": 16,
-      "run_date": "2026-06-11",
-      "event_uid": "a9783df78bc0c5ae:nfin_earnings_calendar",
-      "event_date": "2026-06-11",
-      "ticker": "YRD",
-      "company": "Yiren Digital Ltd.",
-      "action": "WATCH",
-      "confidence": "Medium",
-      "significance": "Medium: enough analyst coverage to make the report useful to track.",
-      "score": 43,
-      "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
-      "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
-      "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
-      "performance": {
-        "first": null,
-        "latest": null,
-        "return_pct": null,
-        "snapshot_count": 1
-      }
-    },
-    {
-      "id": 1994,
-      "run_id": 16,
-      "run_date": "2026-06-11",
-      "event_uid": "503adeb1a13429dc:nfin_earnings_calendar",
-      "event_date": "2026-06-11",
-      "ticker": "ACB",
-      "company": "Aurora Cannabis Inc.",
-      "action": "PASS",
-      "confidence": "Low-medium",
-      "significance": "Low-medium: useful as a company-specific update, but less likely to move the broad market.",
-      "score": 30,
-      "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
-      "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
-      "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
-      "performance": {
-        "first": null,
-        "latest": null,
-        "return_pct": null,
-        "snapshot_count": 0
-      }
-    },
-    {
-      "id": 1995,
-      "run_id": 16,
-      "run_date": "2026-06-11",
-      "event_uid": "052cae76226a3183:nfin_earnings_calendar",
-      "event_date": "2026-06-11",
-      "ticker": "CMND",
-      "company": "Clearmind Medicine Inc.",
-      "action": "PASS",
-      "confidence": "Low-medium",
-      "significance": "Low-medium: useful as a company-specific update, but less likely to move the broad market.",
-      "score": 30,
-      "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
-      "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
-      "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
-      "performance": {
-        "first": null,
-        "latest": null,
-        "return_pct": null,
-        "snapshot_count": 0
-      }
-    },
-    {
-      "id": 1996,
-      "run_id": 16,
-      "run_date": "2026-06-11",
-      "event_uid": "443b997c2aac5056:nfin_earnings_calendar",
-      "event_date": "2026-06-11",
-      "ticker": "ENGN",
-      "company": "enGene Therapeutics Inc.",
-      "action": "PASS",
-      "confidence": "Low-medium",
-      "significance": "Low-medium: useful as a company-specific update, but less likely to move the broad market.",
-      "score": 30,
-      "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
-      "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
-      "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
-      "performance": {
-        "first": null,
-        "latest": null,
-        "return_pct": null,
-        "snapshot_count": 0
-      }
-    },
-    {
-      "id": 1997,
-      "run_id": 16,
-      "run_date": "2026-06-11",
-      "event_uid": "a0519c7755c1a3d8:nfin_earnings_calendar",
-      "event_date": "2026-06-11",
-      "ticker": "HOFT",
-      "company": "Hooker Furnishings Corporation",
-      "action": "PASS",
-      "confidence": "Low-medium",
-      "significance": "Low-medium: useful as a company-specific update, but less likely to move the broad market.",
-      "score": 30,
-      "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
-      "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
-      "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
-      "performance": {
-        "first": null,
-        "latest": null,
-        "return_pct": null,
-        "snapshot_count": 0
-      }
-    },
-    {
-      "id": 1998,
-      "run_id": 16,
-      "run_date": "2026-06-11",
-      "event_uid": "591a7dd05aedaa2d:nfin_earnings_calendar",
-      "event_date": "2026-06-11",
-      "ticker": "LEN",
-      "company": "Lennar Corporation",
-      "action": "PASS",
-      "confidence": "Low-medium",
-      "significance": "Low-medium: useful as a company-specific update, but less likely to move the broad market.",
-      "score": 30,
-      "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
-      "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
-      "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
-      "performance": {
-        "first": null,
-        "latest": null,
-        "return_pct": null,
-        "snapshot_count": 0
-      }
-    },
-    {
-      "id": 1999,
-      "run_id": 16,
-      "run_date": "2026-06-11",
-      "event_uid": "be80e2ee3dd97a31:nfin_earnings_calendar",
-      "event_date": "2026-06-11",
-      "ticker": "LEN.B",
-      "company": "Lennar Corporation",
-      "action": "PASS",
-      "confidence": "Low-medium",
-      "significance": "Low-medium: useful as a company-specific update, but less likely to move the broad market.",
-      "score": 30,
-      "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
-      "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
-      "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
-      "performance": {
-        "first": null,
-        "latest": null,
-        "return_pct": null,
-        "snapshot_count": 0
-      }
-    },
-    {
-      "id": 2000,
-      "run_id": 16,
-      "run_date": "2026-06-11",
-      "event_uid": "c38404690a49382c:nfin_earnings_calendar",
-      "event_date": "2026-06-11",
-      "ticker": "LOVE",
-      "company": "The Lovesac Company",
-      "action": "PASS",
-      "confidence": "Low-medium",
-      "significance": "Low-medium: useful as a company-specific update, but less likely to move the broad market.",
-      "score": 30,
-      "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
-      "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
-      "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
-      "performance": {
-        "first": null,
-        "latest": null,
-        "return_pct": null,
-        "snapshot_count": 0
-      }
-    },
-    {
-      "id": 2001,
-      "run_id": 16,
-      "run_date": "2026-06-11",
-      "event_uid": "f35f16d2949a527d:nfin_earnings_calendar",
-      "event_date": "2026-06-11",
-      "ticker": "MAYS",
-      "company": "J. W. Mays, Inc.",
-      "action": "PASS",
-      "confidence": "Low-medium",
-      "significance": "Low-medium: useful as a company-specific update, but less likely to move the broad market.",
-      "score": 30,
-      "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
-      "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
-      "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
-      "performance": {
-        "first": null,
-        "latest": null,
-        "return_pct": null,
-        "snapshot_count": 0
-      }
-    },
-    {
-      "id": 2002,
-      "run_id": 16,
-      "run_date": "2026-06-11",
-      "event_uid": "833001af213eb21e:nfin_earnings_calendar",
-      "event_date": "2026-06-11",
-      "ticker": "MSB",
-      "company": "Mesabi Trust",
-      "action": "PASS",
-      "confidence": "Low-medium",
-      "significance": "Low-medium: useful as a company-specific update, but less likely to move the broad market.",
-      "score": 30,
-      "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
-      "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
-      "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
-      "performance": {
-        "first": null,
-        "latest": null,
-        "return_pct": null,
-        "snapshot_count": 0
-      }
-    },
-    {
-      "id": 2003,
-      "run_id": 16,
-      "run_date": "2026-06-11",
-      "event_uid": "e55c694a57dba06c:nfin_earnings_calendar",
-      "event_date": "2026-06-11",
-      "ticker": "RH",
-      "company": "RH",
-      "action": "PASS",
-      "confidence": "Low-medium",
-      "significance": "Low-medium: useful as a company-specific update, but less likely to move the broad market.",
-      "score": 30,
-      "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
-      "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
-      "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
-      "performance": {
-        "first": null,
-        "latest": null,
-        "return_pct": null,
-        "snapshot_count": 0
-      }
-    },
-    {
-      "id": 2004,
-      "run_id": 16,
-      "run_date": "2026-06-11",
-      "event_uid": "9a7fd54415d130e6:nfin_earnings_calendar",
-      "event_date": "2026-06-11",
-      "ticker": "SENEA",
-      "company": "Seneca Foods Corp.",
-      "action": "PASS",
-      "confidence": "Low-medium",
-      "significance": "Low-medium: useful as a company-specific update, but less likely to move the broad market.",
-      "score": 30,
-      "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
-      "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
-      "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
-      "performance": {
-        "first": null,
-        "latest": null,
-        "return_pct": null,
-        "snapshot_count": 0
-      }
-    },
-    {
-      "id": 2005,
-      "run_id": 16,
-      "run_date": "2026-06-11",
-      "event_uid": "2c9774ac7a8e15ed:nfin_earnings_calendar",
-      "event_date": "2026-06-11",
-      "ticker": "UXIN",
-      "company": "Uxin Limited",
-      "action": "PASS",
-      "confidence": "Low-medium",
-      "significance": "Low-medium: useful as a company-specific update, but less likely to move the broad market.",
-      "score": 30,
-      "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
-      "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
-      "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
-      "performance": {
-        "first": null,
-        "latest": null,
-        "return_pct": null,
-        "snapshot_count": 0
-      }
-    },
-    {
-      "id": 2006,
-      "run_id": 16,
-      "run_date": "2026-06-11",
-      "event_uid": "a11a5cb58ee60bcc:nfin_earnings_calendar",
-      "event_date": "2026-06-11",
-      "ticker": "VRA",
-      "company": "Vera Bradley, Inc.",
-      "action": "PASS",
-      "confidence": "Low-medium",
-      "significance": "Low-medium: useful as a company-specific update, but less likely to move the broad market.",
-      "score": 30,
-      "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
-      "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
-      "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
-      "performance": {
-        "first": null,
-        "latest": null,
-        "return_pct": null,
-        "snapshot_count": 0
-      }
-    },
-    {
-      "id": 2007,
-      "run_id": 16,
-      "run_date": "2026-06-11",
-      "event_uid": "5589f5ade8b391fe:nfin_earnings_calendar",
-      "event_date": "2026-06-11",
-      "ticker": "WLDS",
-      "company": "Wearable Devices Ltd.",
-      "action": "PASS",
-      "confidence": "Low-medium",
-      "significance": "Low-medium: useful as a company-specific update, but less likely to move the broad market.",
-      "score": 30,
-      "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
-      "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
-      "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
-      "performance": {
-        "first": null,
-        "latest": null,
-        "return_pct": null,
-        "snapshot_count": 0
-      }
-    },
-    {
-      "id": 2008,
-      "run_id": 16,
-      "run_date": "2026-06-11",
-      "event_uid": "b9a620736c79ceaf:nfin_earnings_calendar",
-      "event_date": "2026-06-11",
-      "ticker": "ZDGE",
-      "company": "Zedge, Inc.",
-      "action": "PASS",
-      "confidence": "Low-medium",
-      "significance": "Low-medium: useful as a company-specific update, but less likely to move the broad market.",
-      "score": 30,
-      "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
-      "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
-      "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
-      "performance": {
-        "first": null,
-        "latest": null,
-        "return_pct": null,
-        "snapshot_count": 0
-      }
-    },
-    {
-      "id": 2009,
-      "run_id": 16,
-      "run_date": "2026-06-11",
-      "event_uid": "228d4a9c9b632871:nfin_earnings_calendar",
-      "event_date": "2026-06-12",
-      "ticker": "JVA",
-      "company": "Coffee Holding Co., Inc.",
-      "action": "PASS",
-      "confidence": "Low-medium",
-      "significance": "Low-medium: useful as a company-specific update, but less likely to move the broad market.",
-      "score": 30,
-      "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
-      "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
-      "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
-      "performance": {
-        "first": null,
-        "latest": null,
-        "return_pct": null,
-        "snapshot_count": 0
-      }
-    },
-    {
-      "id": 2010,
-      "run_id": 16,
-      "run_date": "2026-06-11",
-      "event_uid": "b666cf4c0bcf1db1:nfin_earnings_calendar",
-      "event_date": "2026-06-12",
-      "ticker": "MNY",
-      "company": "MoneyHero Limited",
-      "action": "PASS",
-      "confidence": "Low-medium",
-      "significance": "Low-medium: useful as a company-specific update, but less likely to move the broad market.",
-      "score": 30,
-      "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
-      "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
-      "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
-      "performance": {
-        "first": null,
-        "latest": null,
-        "return_pct": null,
-        "snapshot_count": 0
-      }
-    },
-    {
-      "id": 2011,
-      "run_id": 16,
-      "run_date": "2026-06-11",
-      "event_uid": "c712a6218e7e021c:nfin_earnings_calendar",
-      "event_date": "2026-06-12",
-      "ticker": "OLOX",
-      "company": "Olenox Industries Inc.",
-      "action": "PASS",
-      "confidence": "Low-medium",
-      "significance": "Low-medium: useful as a company-specific update, but less likely to move the broad market.",
-      "score": 30,
-      "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
-      "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
-      "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
-      "performance": {
-        "first": null,
-        "latest": null,
-        "return_pct": null,
-        "snapshot_count": 0
-      }
-    },
-    {
-      "id": 2012,
-      "run_id": 16,
-      "run_date": "2026-06-11",
-      "event_uid": "1586c4c734ed6f12:nfin_earnings_calendar",
-      "event_date": "2026-06-12",
-      "ticker": "PPIH",
-      "company": "Perma-Pipe International Holdings, Inc.",
-      "action": "PASS",
-      "confidence": "Low-medium",
-      "significance": "Low-medium: useful as a company-specific update, but less likely to move the broad market.",
-      "score": 30,
-      "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
-      "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
-      "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
-      "performance": {
-        "first": null,
-        "latest": null,
-        "return_pct": null,
-        "snapshot_count": 0
-      }
-    },
-    {
-      "id": 2013,
-      "run_id": 16,
-      "run_date": "2026-06-11",
-      "event_uid": "7f9ada9438901520:nfin_earnings_calendar",
-      "event_date": "2026-06-12",
-      "ticker": "WALD",
-      "company": "Waldencast plc",
-      "action": "PASS",
-      "confidence": "Low-medium",
-      "significance": "Low-medium: useful as a company-specific update, but less likely to move the broad market.",
-      "score": 30,
-      "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
-      "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
-      "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
-      "performance": {
-        "first": null,
-        "latest": null,
-        "return_pct": null,
-        "snapshot_count": 0
-      }
-    },
-    {
-      "id": 2014,
-      "run_id": 16,
-      "run_date": "2026-06-11",
+      "id": 2041,
+      "run_id": 17,
+      "run_date": "2026-06-13",
       "event_uid": "05297f10998381e1:nfin_earnings_calendar",
       "event_date": "2026-06-15",
       "ticker": "ADXN",
@@ -1026,7 +452,7 @@
       "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
       "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
       "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
+      "created_at": "2026-06-13T01:18:41.281023+00:00",
       "performance": {
         "first": null,
         "latest": null,
@@ -1035,9 +461,9 @@
       }
     },
     {
-      "id": 2015,
-      "run_id": 16,
-      "run_date": "2026-06-11",
+      "id": 2042,
+      "run_id": 17,
+      "run_date": "2026-06-13",
       "event_uid": "42d1d47890fd5436:nfin_earnings_calendar",
       "event_date": "2026-06-15",
       "ticker": "AIOT",
@@ -1049,7 +475,7 @@
       "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
       "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
       "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
+      "created_at": "2026-06-13T01:18:41.281023+00:00",
       "performance": {
         "first": null,
         "latest": null,
@@ -1058,9 +484,9 @@
       }
     },
     {
-      "id": 2016,
-      "run_id": 16,
-      "run_date": "2026-06-11",
+      "id": 2043,
+      "run_id": 17,
+      "run_date": "2026-06-13",
       "event_uid": "5e669e7bdea7620d:nfin_earnings_calendar",
       "event_date": "2026-06-15",
       "ticker": "BCTX",
@@ -1072,7 +498,7 @@
       "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
       "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
       "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
+      "created_at": "2026-06-13T01:18:41.281023+00:00",
       "performance": {
         "first": null,
         "latest": null,
@@ -1081,9 +507,9 @@
       }
     },
     {
-      "id": 2017,
-      "run_id": 16,
-      "run_date": "2026-06-11",
+      "id": 2044,
+      "run_id": 17,
+      "run_date": "2026-06-13",
       "event_uid": "52733dfcb97115cf:nfin_earnings_calendar",
       "event_date": "2026-06-15",
       "ticker": "CGC",
@@ -1095,7 +521,7 @@
       "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
       "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
       "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
+      "created_at": "2026-06-13T01:18:41.281023+00:00",
       "performance": {
         "first": null,
         "latest": null,
@@ -1104,9 +530,9 @@
       }
     },
     {
-      "id": 2018,
-      "run_id": 16,
-      "run_date": "2026-06-11",
+      "id": 2045,
+      "run_id": 17,
+      "run_date": "2026-06-13",
       "event_uid": "d903844fe2c4ee0d:nfin_earnings_calendar",
       "event_date": "2026-06-15",
       "ticker": "CODA",
@@ -1118,7 +544,7 @@
       "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
       "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
       "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
+      "created_at": "2026-06-13T01:18:41.281023+00:00",
       "performance": {
         "first": null,
         "latest": null,
@@ -1127,9 +553,9 @@
       }
     },
     {
-      "id": 2019,
-      "run_id": 16,
-      "run_date": "2026-06-11",
+      "id": 2046,
+      "run_id": 17,
+      "run_date": "2026-06-13",
       "event_uid": "28e235ea6e08b291:nfin_earnings_calendar",
       "event_date": "2026-06-15",
       "ticker": "GLBS",
@@ -1141,7 +567,7 @@
       "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
       "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
       "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
+      "created_at": "2026-06-13T01:18:41.281023+00:00",
       "performance": {
         "first": null,
         "latest": null,
@@ -1150,9 +576,9 @@
       }
     },
     {
-      "id": 2020,
-      "run_id": 16,
-      "run_date": "2026-06-11",
+      "id": 2047,
+      "run_id": 17,
+      "run_date": "2026-06-13",
       "event_uid": "ab86d013a5290218:nfin_earnings_calendar",
       "event_date": "2026-06-15",
       "ticker": "HITI",
@@ -1164,7 +590,7 @@
       "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
       "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
       "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
+      "created_at": "2026-06-13T01:18:41.281023+00:00",
       "performance": {
         "first": null,
         "latest": null,
@@ -1173,9 +599,9 @@
       }
     },
     {
-      "id": 2021,
-      "run_id": 16,
-      "run_date": "2026-06-11",
+      "id": 2048,
+      "run_id": 17,
+      "run_date": "2026-06-13",
       "event_uid": "244480bb1363d81a:nfin_earnings_calendar",
       "event_date": "2026-06-15",
       "ticker": "POWW",
@@ -1187,7 +613,7 @@
       "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
       "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
       "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
+      "created_at": "2026-06-13T01:18:41.281023+00:00",
       "performance": {
         "first": null,
         "latest": null,
@@ -1196,9 +622,9 @@
       }
     },
     {
-      "id": 2022,
-      "run_id": 16,
-      "run_date": "2026-06-11",
+      "id": 2049,
+      "run_id": 17,
+      "run_date": "2026-06-13",
       "event_uid": "4e4723d48c63e7b6:nfin_earnings_calendar",
       "event_date": "2026-06-15",
       "ticker": "RFIL",
@@ -1210,7 +636,7 @@
       "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
       "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
       "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
+      "created_at": "2026-06-13T01:18:41.281023+00:00",
       "performance": {
         "first": null,
         "latest": null,
@@ -1219,9 +645,9 @@
       }
     },
     {
-      "id": 2023,
-      "run_id": 16,
-      "run_date": "2026-06-11",
+      "id": 2050,
+      "run_id": 17,
+      "run_date": "2026-06-13",
       "event_uid": "76224fa92770c0f9:nfin_earnings_calendar",
       "event_date": "2026-06-16",
       "ticker": "JBL",
@@ -1233,7 +659,7 @@
       "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
       "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
       "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
+      "created_at": "2026-06-13T01:18:41.281023+00:00",
       "performance": {
         "first": null,
         "latest": null,
@@ -1242,9 +668,9 @@
       }
     },
     {
-      "id": 2024,
-      "run_id": 16,
-      "run_date": "2026-06-11",
+      "id": 2051,
+      "run_id": 17,
+      "run_date": "2026-06-13",
       "event_uid": "dc0148d3df58ad26:nfin_earnings_calendar",
       "event_date": "2026-06-16",
       "ticker": "KEP",
@@ -1256,7 +682,7 @@
       "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
       "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
       "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
+      "created_at": "2026-06-13T01:18:41.281023+00:00",
       "performance": {
         "first": null,
         "latest": null,
@@ -1265,9 +691,9 @@
       }
     },
     {
-      "id": 2025,
-      "run_id": 16,
-      "run_date": "2026-06-11",
+      "id": 2052,
+      "run_id": 17,
+      "run_date": "2026-06-13",
       "event_uid": "6df6f1b851240b91:nfin_earnings_calendar",
       "event_date": "2026-06-16",
       "ticker": "LZB",
@@ -1279,7 +705,7 @@
       "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
       "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
       "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
+      "created_at": "2026-06-13T01:18:41.281023+00:00",
       "performance": {
         "first": null,
         "latest": null,
@@ -1288,9 +714,9 @@
       }
     },
     {
-      "id": 2026,
-      "run_id": 16,
-      "run_date": "2026-06-11",
+      "id": 2053,
+      "run_id": 17,
+      "run_date": "2026-06-13",
       "event_uid": "503df537b77c765e:nfin_earnings_calendar",
       "event_date": "2026-06-16",
       "ticker": "SNOA",
@@ -1302,7 +728,7 @@
       "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
       "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
       "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
+      "created_at": "2026-06-13T01:18:41.281023+00:00",
       "performance": {
         "first": null,
         "latest": null,
@@ -1311,9 +737,9 @@
       }
     },
     {
-      "id": 2027,
-      "run_id": 16,
-      "run_date": "2026-06-11",
+      "id": 2054,
+      "run_id": 17,
+      "run_date": "2026-06-13",
       "event_uid": "063100174b512c65:nfin_earnings_calendar",
       "event_date": "2026-06-16",
       "ticker": "VNCE",
@@ -1325,7 +751,7 @@
       "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
       "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
       "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
+      "created_at": "2026-06-13T01:18:41.281023+00:00",
       "performance": {
         "first": null,
         "latest": null,
@@ -1334,9 +760,9 @@
       }
     },
     {
-      "id": 2028,
-      "run_id": 16,
-      "run_date": "2026-06-11",
+      "id": 2055,
+      "run_id": 17,
+      "run_date": "2026-06-13",
       "event_uid": "81534d1c84e6d1c1:nfin_earnings_calendar",
       "event_date": "2026-06-16",
       "ticker": "VTGN",
@@ -1348,7 +774,7 @@
       "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
       "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
       "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
+      "created_at": "2026-06-13T01:18:41.281023+00:00",
       "performance": {
         "first": null,
         "latest": null,
@@ -1357,9 +783,9 @@
       }
     },
     {
-      "id": 2029,
-      "run_id": 16,
-      "run_date": "2026-06-11",
+      "id": 2056,
+      "run_id": 17,
+      "run_date": "2026-06-13",
       "event_uid": "06e9433d144e39f5:nfin_earnings_calendar",
       "event_date": "2026-06-16",
       "ticker": "WLY",
@@ -1371,7 +797,7 @@
       "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
       "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
       "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
+      "created_at": "2026-06-13T01:18:41.281023+00:00",
       "performance": {
         "first": null,
         "latest": null,
@@ -1380,9 +806,9 @@
       }
     },
     {
-      "id": 2030,
-      "run_id": 16,
-      "run_date": "2026-06-11",
+      "id": 2057,
+      "run_id": 17,
+      "run_date": "2026-06-13",
       "event_uid": "107e15620ae60227:nfin_earnings_calendar",
       "event_date": "2026-06-16",
       "ticker": "WLYB",
@@ -1394,7 +820,7 @@
       "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
       "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
       "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
+      "created_at": "2026-06-13T01:18:41.281023+00:00",
       "performance": {
         "first": null,
         "latest": null,
@@ -1403,9 +829,9 @@
       }
     },
     {
-      "id": 2031,
-      "run_id": 16,
-      "run_date": "2026-06-11",
+      "id": 2058,
+      "run_id": 17,
+      "run_date": "2026-06-13",
       "event_uid": "9c310075dcee321d:nfin_earnings_calendar",
       "event_date": "2026-06-16",
       "ticker": "XAIR",
@@ -1417,7 +843,7 @@
       "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
       "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
       "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
+      "created_at": "2026-06-13T01:18:41.281023+00:00",
       "performance": {
         "first": null,
         "latest": null,
@@ -1426,9 +852,9 @@
       }
     },
     {
-      "id": 2032,
-      "run_id": 16,
-      "run_date": "2026-06-11",
+      "id": 2059,
+      "run_id": 17,
+      "run_date": "2026-06-13",
       "event_uid": "8516f4a6a96c9eb1:nfin_earnings_calendar",
       "event_date": "2026-06-17",
       "ticker": "DSWL",
@@ -1440,7 +866,7 @@
       "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
       "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
       "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
+      "created_at": "2026-06-13T01:18:41.281023+00:00",
       "performance": {
         "first": null,
         "latest": null,
@@ -1449,9 +875,9 @@
       }
     },
     {
-      "id": 2033,
-      "run_id": 16,
-      "run_date": "2026-06-11",
+      "id": 2060,
+      "run_id": 17,
+      "run_date": "2026-06-13",
       "event_uid": "088501dfa7032c0e:nfin_earnings_calendar",
       "event_date": "2026-06-17",
       "ticker": "KFY",
@@ -1463,7 +889,7 @@
       "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
       "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
       "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
+      "created_at": "2026-06-13T01:18:41.281023+00:00",
       "performance": {
         "first": null,
         "latest": null,
@@ -1472,9 +898,9 @@
       }
     },
     {
-      "id": 2034,
-      "run_id": 16,
-      "run_date": "2026-06-11",
+      "id": 2061,
+      "run_id": 17,
+      "run_date": "2026-06-13",
       "event_uid": "51701d7b9b38168a:nfin_earnings_calendar",
       "event_date": "2026-06-17",
       "ticker": "KMX",
@@ -1486,7 +912,7 @@
       "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
       "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
       "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
+      "created_at": "2026-06-13T01:18:41.281023+00:00",
       "performance": {
         "first": null,
         "latest": null,
@@ -1495,9 +921,9 @@
       }
     },
     {
-      "id": 2035,
-      "run_id": 16,
-      "run_date": "2026-06-11",
+      "id": 2062,
+      "run_id": 17,
+      "run_date": "2026-06-13",
       "event_uid": "23a12a70326abc1c:nfin_earnings_calendar",
       "event_date": "2026-06-17",
       "ticker": "LVO",
@@ -1509,7 +935,7 @@
       "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
       "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
       "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
+      "created_at": "2026-06-13T01:18:41.281023+00:00",
       "performance": {
         "first": null,
         "latest": null,
@@ -1518,9 +944,9 @@
       }
     },
     {
-      "id": 2036,
-      "run_id": 16,
-      "run_date": "2026-06-11",
+      "id": 2063,
+      "run_id": 17,
+      "run_date": "2026-06-13",
       "event_uid": "abaff1865a24b07c:nfin_earnings_calendar",
       "event_date": "2026-06-17",
       "ticker": "SWBI",
@@ -1532,7 +958,7 @@
       "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
       "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
       "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
+      "created_at": "2026-06-13T01:18:41.281023+00:00",
       "performance": {
         "first": null,
         "latest": null,
@@ -1541,9 +967,9 @@
       }
     },
     {
-      "id": 2038,
-      "run_id": 16,
-      "run_date": "2026-06-11",
+      "id": 2065,
+      "run_id": 17,
+      "run_date": "2026-06-13",
       "event_uid": "4ff47feb35bf99ae:nfin_earnings_calendar",
       "event_date": "2026-06-18",
       "ticker": "CMCM",
@@ -1555,7 +981,7 @@
       "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
       "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
       "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
+      "created_at": "2026-06-13T01:18:41.281023+00:00",
       "performance": {
         "first": null,
         "latest": null,
@@ -1564,9 +990,9 @@
       }
     },
     {
-      "id": 2039,
-      "run_id": 16,
-      "run_date": "2026-06-11",
+      "id": 2066,
+      "run_id": 17,
+      "run_date": "2026-06-13",
       "event_uid": "8e7a40a08fbf0f6b:nfin_earnings_calendar",
       "event_date": "2026-06-18",
       "ticker": "KR",
@@ -1578,7 +1004,7 @@
       "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
       "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
       "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
+      "created_at": "2026-06-13T01:18:41.281023+00:00",
       "performance": {
         "first": null,
         "latest": null,
@@ -1587,9 +1013,9 @@
       }
     },
     {
-      "id": 2040,
-      "run_id": 16,
-      "run_date": "2026-06-11",
+      "id": 2067,
+      "run_id": 17,
+      "run_date": "2026-06-13",
       "event_uid": "4d8ffbe6900745f6:nfin_earnings_calendar",
       "event_date": "2026-06-18",
       "ticker": "YI",
@@ -1601,7 +1027,168 @@
       "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
       "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
       "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
-      "created_at": "2026-06-11T22:03:04.324924+00:00",
+      "created_at": "2026-06-13T01:18:41.281023+00:00",
+      "performance": {
+        "first": null,
+        "latest": null,
+        "return_pct": null,
+        "snapshot_count": 0
+      }
+    },
+    {
+      "id": 2068,
+      "run_id": 17,
+      "run_date": "2026-06-13",
+      "event_uid": "abdaaaa39fd965c6:nfin_earnings_calendar",
+      "event_date": "2026-06-19",
+      "ticker": "CHR",
+      "company": "Cheer Holding, Inc. ",
+      "action": "PASS",
+      "confidence": "Low-medium",
+      "significance": "Low-medium: useful as a company-specific update, but less likely to move the broad market.",
+      "score": 30,
+      "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
+      "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
+      "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
+      "created_at": "2026-06-13T01:18:41.281023+00:00",
+      "performance": {
+        "first": null,
+        "latest": null,
+        "return_pct": null,
+        "snapshot_count": 0
+      }
+    },
+    {
+      "id": 2069,
+      "run_id": 17,
+      "run_date": "2026-06-13",
+      "event_uid": "c0b7959f170f72ba:nfin_earnings_calendar",
+      "event_date": "2026-06-19",
+      "ticker": "FMST",
+      "company": "Foremost Clean Energy Ltd.",
+      "action": "PASS",
+      "confidence": "Low-medium",
+      "significance": "Low-medium: useful as a company-specific update, but less likely to move the broad market.",
+      "score": 30,
+      "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
+      "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
+      "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
+      "created_at": "2026-06-13T01:18:41.281023+00:00",
+      "performance": {
+        "first": null,
+        "latest": null,
+        "return_pct": null,
+        "snapshot_count": 0
+      }
+    },
+    {
+      "id": 2070,
+      "run_id": 17,
+      "run_date": "2026-06-13",
+      "event_uid": "122647c73ff9d569:nfin_earnings_calendar",
+      "event_date": "2026-06-19",
+      "ticker": "IHT",
+      "company": "InnSuites Hospitality Trust",
+      "action": "PASS",
+      "confidence": "Low-medium",
+      "significance": "Low-medium: useful as a company-specific update, but less likely to move the broad market.",
+      "score": 30,
+      "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
+      "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
+      "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
+      "created_at": "2026-06-13T01:18:41.281023+00:00",
+      "performance": {
+        "first": null,
+        "latest": null,
+        "return_pct": null,
+        "snapshot_count": 0
+      }
+    },
+    {
+      "id": 2071,
+      "run_id": 17,
+      "run_date": "2026-06-13",
+      "event_uid": "3f7eb5af1b3ad59e:nfin_earnings_calendar",
+      "event_date": "2026-06-19",
+      "ticker": "MODD",
+      "company": "Modular Medical, Inc.",
+      "action": "PASS",
+      "confidence": "Low-medium",
+      "significance": "Low-medium: useful as a company-specific update, but less likely to move the broad market.",
+      "score": 30,
+      "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
+      "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
+      "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
+      "created_at": "2026-06-13T01:18:41.281023+00:00",
+      "performance": {
+        "first": null,
+        "latest": null,
+        "return_pct": null,
+        "snapshot_count": 0
+      }
+    },
+    {
+      "id": 2072,
+      "run_id": 17,
+      "run_date": "2026-06-13",
+      "event_uid": "5d33cb9ea203ac40:nfin_earnings_calendar",
+      "event_date": "2026-06-19",
+      "ticker": "RUBI",
+      "company": "Rubico Inc.",
+      "action": "PASS",
+      "confidence": "Low-medium",
+      "significance": "Low-medium: useful as a company-specific update, but less likely to move the broad market.",
+      "score": 30,
+      "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
+      "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
+      "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
+      "created_at": "2026-06-13T01:18:41.281023+00:00",
+      "performance": {
+        "first": null,
+        "latest": null,
+        "return_pct": null,
+        "snapshot_count": 0
+      }
+    },
+    {
+      "id": 2073,
+      "run_id": 17,
+      "run_date": "2026-06-13",
+      "event_uid": "4972eda28c0862b6:nfin_earnings_calendar",
+      "event_date": "2026-06-19",
+      "ticker": "ZGN",
+      "company": "Ermenegildo Zegna N.V.",
+      "action": "PASS",
+      "confidence": "Low-medium",
+      "significance": "Low-medium: useful as a company-specific update, but less likely to move the broad market.",
+      "score": 30,
+      "thesis": "Watch the report. The calendar gives the date and expectations, but not enough by itself for a directional call.",
+      "risks": "A miss, weak outlook, or already-crowded run-up could pressure the stock.",
+      "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
+      "created_at": "2026-06-13T01:18:41.281023+00:00",
+      "performance": {
+        "first": null,
+        "latest": null,
+        "return_pct": null,
+        "snapshot_count": 0
+      }
+    },
+    {
+      "id": 2074,
+      "run_id": 17,
+      "run_date": "2026-06-13",
+      "event_uid": "c399c8ca21a98477:sec_edgar_fts",
+      "event_date": "2026-06-20",
+      "ticker": "CRON",
+      "company": "Cronos Group",
+      "action": "IGNORE",
+      "confidence": "Low",
+      "significance": "Low-medium: interesting stock-specific story, but the date is uncertain.",
+      "score": 0,
+      "thesis": "Do not rely on this date yet. Verify the event before using it for a trade decision.",
+      "risks": "Cannabis stocks remain volatile, and profitability is still limited.",
+      "memory_snapshot": "{\"version\": 1, \"principles\": [\"Make a positive call when several independent signals line up; do not require perfection.\", \"Penalize data-quality warnings, unverified dates, and already-reported stale events.\", \"Treat earnings as two-sided unless the preview says the outlook is likely to improve.\", \"A large run-up is acceptable when a new external validation resets the addressable market.\", \"AI infrastructure momentum matters most when endorsement, custom silicon, optical networking, and guidance all point the same way.\", \"Record missed high-significance opportunities so future scoring learns from omissions.\"], \"weights\": {\"confidence_high\": 34, \"confidence_medium\": 21, \"confidence_low\": 5, \"significance_high\": 29, \"significance_medium\": 17, \"setup_high\": 22, \"setup_notable\": 12, \"data_quality_penalty\": -45, \"generic_preview_penalty\": -3, \"ai_infra_momentum\": 18, \"positive_outlook\": 14}, \"recent_lessons\": [{\"date\": \"2026-06-02\", \"lesson\": \"When a preview reports a strong beat plus raised outlook, raise score faster.\", \"source\": \"missed_opportunity\", \"severity\": \"medium\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Marvell-style AI infrastructure moves are strongest when external Nvidia/hyperscaler validation combines with custom silicon, optical/networking bottleneck exposure, and analyst or guidance resets.\", \"source\": \"marvell_research\", \"severity\": \"high\"}, {\"date\": \"2026-06-03\", \"lesson\": \"Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.\", \"source\": \"bad_decision\", \"severity\": \"high\"}]}",
+      "created_at": "2026-06-13T01:18:41.281023+00:00",
       "performance": {
         "first": null,
         "latest": null,
@@ -1612,262 +1199,273 @@
   ],
   "latest_findings": [
     {
-      "id": 100,
-      "run_id": 16,
+      "id": 123,
+      "run_id": 17,
       "event_uid": "b39201260fd39b60:google_news_ai",
       "ticker": "AVGO",
       "finding_type": "missed_opportunity",
       "severity": "medium",
       "summary": "AVGO looked positive after a cautious decision.",
       "lesson": "When a preview reports a strong beat plus raised outlook, raise score faster.",
-      "created_at": "2026-06-11T22:03:05.294147+00:00"
+      "created_at": "2026-06-13T01:18:41.360476+00:00"
     },
     {
-      "id": 98,
-      "run_id": 16,
+      "id": 121,
+      "run_id": 17,
       "event_uid": "1798aa58574eb025:sec_edgar_fts",
       "ticker": "CTRN",
       "finding_type": "missed_opportunity",
       "severity": "medium",
       "summary": "CTRN looked positive after a cautious decision.",
       "lesson": "When a preview reports a strong beat plus raised outlook, raise score faster.",
-      "created_at": "2026-06-11T22:03:05.294147+00:00"
+      "created_at": "2026-06-13T01:18:41.360476+00:00"
     },
     {
-      "id": 120,
-      "run_id": 16,
+      "id": 144,
+      "run_id": 17,
       "event_uid": "658749d96a6b8f21:nfin_earnings_calendar",
       "ticker": "ADBE",
       "finding_type": "bad_decision",
       "severity": "high",
       "summary": "ADBE had weak/bad-date language despite a BUY decision.",
       "lesson": "Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.",
-      "created_at": "2026-06-11T22:03:05.294147+00:00"
+      "created_at": "2026-06-13T01:18:41.360476+00:00"
     },
     {
-      "id": 119,
-      "run_id": 16,
+      "id": 143,
+      "run_id": 17,
       "event_uid": "658749d96a6b8f21:nfin_earnings_calendar",
       "ticker": "ADBE",
       "finding_type": "bad_decision",
       "severity": "high",
       "summary": "ADBE had weak/bad-date language despite a BUY decision.",
       "lesson": "Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.",
-      "created_at": "2026-06-11T22:03:05.294147+00:00"
+      "created_at": "2026-06-13T01:18:41.360476+00:00"
     },
     {
-      "id": 118,
-      "run_id": 16,
+      "id": 142,
+      "run_id": 17,
       "event_uid": "658749d96a6b8f21:nfin_earnings_calendar",
       "ticker": "ADBE",
       "finding_type": "bad_decision",
       "severity": "high",
       "summary": "ADBE had weak/bad-date language despite a BUY decision.",
       "lesson": "Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.",
-      "created_at": "2026-06-11T22:03:05.294147+00:00"
+      "created_at": "2026-06-13T01:18:41.360476+00:00"
     },
     {
-      "id": 117,
-      "run_id": 16,
+      "id": 141,
+      "run_id": 17,
       "event_uid": "658749d96a6b8f21:nfin_earnings_calendar",
       "ticker": "ADBE",
       "finding_type": "bad_decision",
       "severity": "high",
       "summary": "ADBE had weak/bad-date language despite a BUY decision.",
       "lesson": "Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.",
-      "created_at": "2026-06-11T22:03:05.294147+00:00"
+      "created_at": "2026-06-13T01:18:41.360476+00:00"
     },
     {
-      "id": 116,
-      "run_id": 16,
+      "id": 140,
+      "run_id": 17,
       "event_uid": "658749d96a6b8f21:nfin_earnings_calendar",
       "ticker": "ADBE",
       "finding_type": "bad_decision",
       "severity": "high",
       "summary": "ADBE had weak/bad-date language despite a BUY decision.",
       "lesson": "Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.",
-      "created_at": "2026-06-11T22:03:05.294147+00:00"
+      "created_at": "2026-06-13T01:18:41.360476+00:00"
     },
     {
-      "id": 115,
-      "run_id": 16,
+      "id": 139,
+      "run_id": 17,
       "event_uid": "658749d96a6b8f21:nfin_earnings_calendar",
       "ticker": "ADBE",
       "finding_type": "bad_decision",
       "severity": "high",
       "summary": "ADBE had weak/bad-date language despite a BUY decision.",
       "lesson": "Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.",
-      "created_at": "2026-06-11T22:03:05.294147+00:00"
+      "created_at": "2026-06-13T01:18:41.360476+00:00"
     },
     {
-      "id": 114,
-      "run_id": 16,
+      "id": 138,
+      "run_id": 17,
+      "event_uid": "658749d96a6b8f21:nfin_earnings_calendar",
+      "ticker": "ADBE",
+      "finding_type": "bad_decision",
+      "severity": "high",
+      "summary": "ADBE had weak/bad-date language despite a BUY decision.",
+      "lesson": "Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.",
+      "created_at": "2026-06-13T01:18:41.360476+00:00"
+    },
+    {
+      "id": 137,
+      "run_id": 17,
       "event_uid": "62a300cb77eb717a:nfin_earnings_calendar",
       "ticker": "ORCL",
       "finding_type": "bad_decision",
       "severity": "high",
       "summary": "ORCL had weak/bad-date language despite a BUY decision.",
       "lesson": "Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.",
-      "created_at": "2026-06-11T22:03:05.294147+00:00"
+      "created_at": "2026-06-13T01:18:41.360476+00:00"
     },
     {
-      "id": 113,
-      "run_id": 16,
+      "id": 136,
+      "run_id": 17,
       "event_uid": "62a300cb77eb717a:nfin_earnings_calendar",
       "ticker": "ORCL",
       "finding_type": "bad_decision",
       "severity": "high",
       "summary": "ORCL had weak/bad-date language despite a BUY decision.",
       "lesson": "Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.",
-      "created_at": "2026-06-11T22:03:05.294147+00:00"
+      "created_at": "2026-06-13T01:18:41.360476+00:00"
     },
     {
-      "id": 112,
-      "run_id": 16,
+      "id": 135,
+      "run_id": 17,
       "event_uid": "62a300cb77eb717a:nfin_earnings_calendar",
       "ticker": "ORCL",
       "finding_type": "bad_decision",
       "severity": "high",
       "summary": "ORCL had weak/bad-date language despite a BUY decision.",
       "lesson": "Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.",
-      "created_at": "2026-06-11T22:03:05.294147+00:00"
+      "created_at": "2026-06-13T01:18:41.360476+00:00"
     },
     {
-      "id": 111,
-      "run_id": 16,
+      "id": 134,
+      "run_id": 17,
       "event_uid": "62a300cb77eb717a:nfin_earnings_calendar",
       "ticker": "ORCL",
       "finding_type": "bad_decision",
       "severity": "high",
       "summary": "ORCL had weak/bad-date language despite a BUY decision.",
       "lesson": "Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.",
-      "created_at": "2026-06-11T22:03:05.294147+00:00"
+      "created_at": "2026-06-13T01:18:41.360476+00:00"
     },
     {
-      "id": 110,
-      "run_id": 16,
+      "id": 133,
+      "run_id": 17,
       "event_uid": "62a300cb77eb717a:nfin_earnings_calendar",
       "ticker": "ORCL",
       "finding_type": "bad_decision",
       "severity": "high",
       "summary": "ORCL had weak/bad-date language despite a BUY decision.",
       "lesson": "Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.",
-      "created_at": "2026-06-11T22:03:05.294147+00:00"
+      "created_at": "2026-06-13T01:18:41.360476+00:00"
     },
     {
-      "id": 109,
-      "run_id": 16,
+      "id": 132,
+      "run_id": 17,
       "event_uid": "62a300cb77eb717a:nfin_earnings_calendar",
       "ticker": "ORCL",
       "finding_type": "bad_decision",
       "severity": "high",
       "summary": "ORCL had weak/bad-date language despite a BUY decision.",
       "lesson": "Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.",
-      "created_at": "2026-06-11T22:03:05.294147+00:00"
+      "created_at": "2026-06-13T01:18:41.360476+00:00"
     },
     {
-      "id": 108,
-      "run_id": 16,
+      "id": 131,
+      "run_id": 17,
       "event_uid": "62a300cb77eb717a:nfin_earnings_calendar",
       "ticker": "ORCL",
       "finding_type": "bad_decision",
       "severity": "high",
       "summary": "ORCL had weak/bad-date language despite a BUY decision.",
       "lesson": "Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.",
-      "created_at": "2026-06-11T22:03:05.294147+00:00"
+      "created_at": "2026-06-13T01:18:41.360476+00:00"
     },
     {
-      "id": 107,
-      "run_id": 16,
+      "id": 130,
+      "run_id": 17,
       "event_uid": "025767b596814fff:nfin_earnings_calendar",
       "ticker": "CIEN",
       "finding_type": "bad_decision",
       "severity": "high",
       "summary": "CIEN had weak/bad-date language despite a BUY decision.",
       "lesson": "Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.",
-      "created_at": "2026-06-11T22:03:05.294147+00:00"
+      "created_at": "2026-06-13T01:18:41.360476+00:00"
     },
     {
-      "id": 106,
-      "run_id": 16,
+      "id": 129,
+      "run_id": 17,
       "event_uid": "025767b596814fff:nfin_earnings_calendar",
       "ticker": "CIEN",
       "finding_type": "bad_decision",
       "severity": "high",
       "summary": "CIEN had weak/bad-date language despite a BUY decision.",
       "lesson": "Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.",
-      "created_at": "2026-06-11T22:03:05.294147+00:00"
+      "created_at": "2026-06-13T01:18:41.360476+00:00"
     },
     {
-      "id": 105,
-      "run_id": 16,
+      "id": 128,
+      "run_id": 17,
       "event_uid": "025767b596814fff:nfin_earnings_calendar",
       "ticker": "CIEN",
       "finding_type": "bad_decision",
       "severity": "high",
       "summary": "CIEN had weak/bad-date language despite a BUY decision.",
       "lesson": "Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.",
-      "created_at": "2026-06-11T22:03:05.294147+00:00"
+      "created_at": "2026-06-13T01:18:41.360476+00:00"
     },
     {
-      "id": 104,
-      "run_id": 16,
+      "id": 127,
+      "run_id": 17,
       "event_uid": "366e292a82ae1615:nfin_earnings_calendar",
       "ticker": "MDT",
       "finding_type": "bad_decision",
       "severity": "high",
       "summary": "MDT had weak/bad-date language despite a BUY decision.",
       "lesson": "Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.",
-      "created_at": "2026-06-11T22:03:05.294147+00:00"
+      "created_at": "2026-06-13T01:18:41.360476+00:00"
     },
     {
-      "id": 103,
-      "run_id": 16,
+      "id": 126,
+      "run_id": 17,
       "event_uid": "366e292a82ae1615:nfin_earnings_calendar",
       "ticker": "MDT",
       "finding_type": "bad_decision",
       "severity": "high",
       "summary": "MDT had weak/bad-date language despite a BUY decision.",
       "lesson": "Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.",
-      "created_at": "2026-06-11T22:03:05.294147+00:00"
+      "created_at": "2026-06-13T01:18:41.360476+00:00"
     },
     {
-      "id": 102,
-      "run_id": 16,
+      "id": 125,
+      "run_id": 17,
       "event_uid": "e02dcc164921d43b:nfin_earnings_calendar",
       "ticker": "CRWD",
       "finding_type": "bad_decision",
       "severity": "high",
       "summary": "CRWD had weak/bad-date language despite a BUY decision.",
       "lesson": "Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.",
-      "created_at": "2026-06-11T22:03:05.294147+00:00"
+      "created_at": "2026-06-13T01:18:41.360476+00:00"
     },
     {
-      "id": 101,
-      "run_id": 16,
+      "id": 124,
+      "run_id": 17,
       "event_uid": "e02dcc164921d43b:nfin_earnings_calendar",
       "ticker": "CRWD",
       "finding_type": "bad_decision",
       "severity": "high",
       "summary": "CRWD had weak/bad-date language despite a BUY decision.",
       "lesson": "Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.",
-      "created_at": "2026-06-11T22:03:05.294147+00:00"
+      "created_at": "2026-06-13T01:18:41.360476+00:00"
     },
     {
-      "id": 99,
-      "run_id": 16,
+      "id": 122,
+      "run_id": 17,
       "event_uid": "c20f3f2765d788f4:nfin_earnings_calendar",
       "ticker": "PANW",
       "finding_type": "bad_decision",
       "severity": "high",
       "summary": "PANW had weak/bad-date language despite a BUY decision.",
       "lesson": "Never allow BUY when preview contains wrong-date, unverified, miss, or lowered-outlook language.",
-      "created_at": "2026-06-11T22:03:05.294147+00:00"
+      "created_at": "2026-06-13T01:18:41.360476+00:00"
     }
   ],
   "memory": {
     "version": 1,
-    "updated_at": "2026-06-11T22:03:05.312289+00:00",
+    "updated_at": "2026-06-13T01:18:41.374053+00:00",
     "principles": [
       "Make a positive call when several independent signals line up; do not require perfection.",
       "Penalize data-quality warnings, unverified dates, and already-reported stale events.",
@@ -1912,13 +1510,13 @@
   },
   "performance": {
     "action_counts": {
-      "BUY": 2,
-      "WATCH": 5,
-      "PASS": 46
+      "BUY": 1,
+      "PASS": 32,
+      "IGNORE": 1
     },
-    "tracked_count": 7,
+    "tracked_count": 1,
     "measured_count": 0,
-    "pending_count": 7,
+    "pending_count": 1,
     "avg_return_pct": null
   }
 }
