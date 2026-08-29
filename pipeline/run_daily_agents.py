@@ -40,6 +40,11 @@ def main() -> None:
 
     export_agent_reports.main()
     export_for_app.main()  # refresh app data so look-ahead + pop show on cards
+    try:
+        import graph_build
+        graph_build.build()  # refresh the company-relationship knowledge graph
+    except Exception as e:
+        print(f"graph_build skipped: {e}")
 
     print("Daily agents complete.")
     print(f"  Decision report: {decision['report_path']}")

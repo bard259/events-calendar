@@ -1,11 +1,16 @@
 # TAKEOVER — Agent Onboarding & Handoff Manual
 
 > **Purpose.** This file lets a *fresh* agent (or human) take over this project cold —
-> no prior conversation context required. Read this top-to-bottom, then `CLAUDE.md`
-> for the deeper conventions. Keep this file **updated** at the end of any substantial
-> work session (there's a "Session log" at the bottom — append to it).
+> no prior conversation context required. Read this top-to-bottom, then the doc set below.
+> Keep it **updated** at the end of any substantial session (append to the Session log).
+>
+> **Doc set (read in this order):** `TAKEOVER.md` (this — onboarding) → `CLAUDE.md`
+> (conventions) → `ROADMAP.md` (current state + open items) → `DECISIONS.md` (why) →
+> `WORKLOG.md` (chronological changes). After substantial work, update WORKLOG (what),
+> ROADMAP (what's left), DECISIONS (new calls), and this Session log.
 
-Last updated: **2026-06-03** · Data span: **2026-06-01 → 2026-12-31** · DB: **1,198 events**
+Last updated: **2026-06-03** · Data span: **2026-06-01 → 2026-12-31** · DB: **~1,200 events**
+· Branch of record: `main`; in-flight: **PR #4** (`company-knowledge-graph`).
 
 ---
 
@@ -17,9 +22,16 @@ Two halves in one repo:
    macro / geopolitical / AI events for **June–December 2026** from **live free APIs +
    scrapers**, stores them in **SQLite** (`pipeline/events.db`), runs a **rules-based
    stock-impact analysis**, and exports `app/assets/events.json`.
-2. **`app/`** — an **Expo / React Native** app (web + iOS from one codebase) — a calendar
-   with **Month / Week / Day / Latest** views, category filters, search, and a day-detail
-   panel that shows each day's events **and** the stocks likely impacted.
+2. **`app/`** — an **Expo / React Native** app (web + iOS) — calendar with
+   **Month / Week / Day / Latest / Graph / Reports** views, category filter (single-select),
+   search, day-detail (Events / Stocks tabs), **company cards** (About ›), and two knowledge
+   graphs (Anthropic **Ecosystem map** + **Co-movement**).
+
+On top of raw events sit several **analytical layers** (all sourced/dated reference, not
+fabricated events): stock-impact rules, setup-signals (⚡), earnings-preview + earnings-alpha
+(📊 pop-score + look-ahead days), company cards, and a **decision→snapshot→critic learning
+loop** with markdown reports. See `CLAUDE.md` "Notes for future edits" for each layer; the
+sections below cover the collection pipeline + run/handoff basics.
 
 **Hard rule (learned the hard way): NO synthetic / curated / hand-typed event data.**
 Every event must trace to a live source (`source_type` ∈ {`api`, `scraper`}). The DB
@@ -37,6 +49,16 @@ python3 pipeline/daily_update.py                     # INCREMENTAL: 3 collectors
 python3 pipeline/daily_update.py --start 2026-06-01 --end 2026-12-31
 python3 pipeline/report.py                            # storage + rate-limit/ToS report
 python3 pipeline/export_for_app.py                   # rebuild app/assets/events.json from DB
+
+# Earnings calendar + agents + learning (the daily intelligence loop)
+python3 pipeline/scrape_earnings_previews.py         # nfin/Nasdaq earnings calendar → cat-3 events + previews
+python3 pipeline/run_daily_agents.py                 # scrape → decide → snapshot → critic → earnings-alpha learn → export
+python3 pipeline/enrich_setups.py                    # recompute setups + previews, re-export
+
+# Knowledge graphs (→ app/assets/*.json)
+python3 pipeline/company_cards.py --sec-cap 250      # company cards (curated TL;DR > SEC SIC > size), cached
+python3 pipeline/graph_build.py                      # co-movement graph (from stock-impacts)
+python3 pipeline/knowledge_graph.py                  # curated Anthropic ecosystem map (chips·AI·space·energy)
 
 # App
 cd app && npm install && npx expo start --web        # web
@@ -68,50 +90,50 @@ pipeline/
   models.py            Event + CollectorReport dataclasses; uid = sha1(source:native_id)
   http_client.py       stdlib HTTP; records 429/403, Retry-After, robots.txt / UA (ToS)
   parsers.py           strip_tags(); extract_dates() (single month) + extract_dates_window() (range)
-  db.py                SQLite schema + upsert/report/impact helpers (no migrations needed)
+  db.py                SQLite schema + helpers (events, *_impacts/setups/previews, company_cards,
+                       earnings_alpha/outcomes, decision/critic/snapshot/scrape tables). No migrations.
   edgar_fts.py         SEC full-text search helper (efts.sec.gov) — Tier 2
-  collect.py           orchestrator: ALL_COLLECTORS for one month + stock analysis
+  collect.py           orchestrator: ALL_COLLECTORS for one month + stock/setup/preview analysis
   daily_update.py      incremental DAILY_COLLECTORS over the full range
+  scrape_earnings_previews.py  nfin/Nasdaq earnings calendar → cat-3 events + setups/previews/alpha
+  run_daily_agents.py  DAILY LOOP: scrape → decision → price snapshots → critic → earnings-alpha learn → exports
+  decision_agents.py   decision agent (BUY/WATCH/PASS/IGNORE) + critic + collect_price_snapshots; memory-weighted
+  export_agent_reports.py  agent runs/decisions/findings/perf → app/assets/agent_reports.json
+  export_for_app.py    DB → app/assets/events.json (+stock_impacts +setup +preview +alpha +company_intro +company_ticker)
+  enrich_setups.py     standalone: recompute setups + previews + re-export
+  company_tldr.py      curated business one-liners (COMPANY_TLDR, ~70 tickers)
+  company_cards.py     per-ticker cards: curated TL;DR > SEC SIC industry (cached) > size → company_cards + .json
+  graph_build.py       co-movement graph (companies sharing an event's stock-impacts) → company_graph.json
+  knowledge_graph.py   curated Anthropic ecosystem map (typed edges) → anthropic_graph.json
   report.py            reads runs + collector_reports → storage & issue report
   estimate_storage.py  pre-collection size estimate (uses EXPECTED_COUNTS)
-  export_for_app.py    DB → app/assets/events.json (events + stock_impacts + setup + categories + nfin company_intro)
-  enrich_setups.py     standalone: recompute event_setups + re-export (no re-collect)
   analysis/
     stock_impact.py    rules engine: ENTITY_TICKERS, SECTOR_ETFS, KEYWORD_RULES, CATEGORY_DEFAULTS
     setup_signals.py   pre-event asymmetry scorer: SETUP_PROFILES (short/activist/analyst) → event_setups
-    earnings_preview.py  per-ticker earnings-preview notes (bar/implied move/lean) → event_previews
-  collectors/
-    __init__.py        ALL_COLLECTORS registry (collect.py uses this)
-    base.py            BaseCollector (lifecycle, in_window filter, report wiring)
-    news.py            NewsCollector base (Google News RSS) + Strategic/Geopolitical subclasses
-    macro.py           cat 1 — BLS + BEA schedule parse (T1) + news (T3)
-    central_bank.py    cat 2 — Fed FOMC parse (T1) + ECB/BoE/BoJ news (T3)
-    corporate_financial.py  cat 3 — SEC EDGAR submissions API + Tier-2 FTS forward earnings
-    corporate_strategic.py  cat 4 — news-mined product/M&A/investor-day (AI query removed)
-    operational.py     cat 5 — Launch Library 2 API (rocket launches)
-    regulatory.py      cat 6 — openFDA API + Tier-2 FTS PDUFA dates
-    industry.py        cat 7 — EIA petroleum schedule parse + OPEC/shipping news
-    geopolitical.py    cat 8 — elections/summits/tariffs news
-    ipo.py             cat 3 — IpoEdgarCollector (424B4/S-1) + IpoNewsCollector (rumored)
-    ai_industry.py     cat 9 — AI & compute ecosystem news mining (chips/models/datacenters)
-    daily_news.py      DailyTechNewsCollector — real, dated marquee tech catalysts (multi-cat)
-    official_events.py OfficialEventsCollector — scrapes flagship conf dates from official sites
+    earnings_preview.py  per-ticker preview notes (bar/implied move/lean/decision) → event_previews
+    earnings_alpha.py  pop-score + look-ahead days + outcome eval + self-tuning → earnings_alpha/outcomes
+  collectors/          (cat 1–9; ALL_COLLECTORS in __init__.py) base, news, macro, central_bank,
+                       corporate_financial, corporate_strategic, operational, regulatory, industry,
+                       geopolitical, ipo, ai_industry, daily_news, official_events
+  memory/              key_knowledge_memory.json (critic-learned), earnings_alpha_params.json,
+                       sic_cache.json, sec_company_tickers.json  ← PERSIST across runs (learning state)
+  reports/             decisions/<date>.md, critics/<date>.md, research/*.md
 app/
-  App.js               header, category chips, Month/Week/Day/Latest switcher, search, nav
-  assets/events.json   THE app data (exported from DB) — do not hand-edit
+  App.js               header, single-select category chips, Month/Week/Day/Latest/Graph/Reports switcher, search
+  assets/              events.json (main data), company_cards.json, company_graph.json,
+                       anthropic_graph.json, agent_reports.json  — all exported, do not hand-edit
   src/
-    data.js            loads events.json; MONTHS, RANGE_START/END, LAST_COLLECTED, searchEvents()
+    data.js            loads events.json + agent_reports.json; MONTHS, RANGE_START/END, search
     theme.js           colors, categoryColors[1..9], categoryIcons[1..9], importance/direction cfg
-    Calendar.js        month grid (urgency bar, dots, today pill)
-    WeekView.js        7-day view
-    DayView.js         single-day list
-    LatestView.js      "latest identified events" — grouped by collected_at, newest first
-    EventCard.js       reusable event card (SourcePill + optional showDate + company_intro)
-    DayDetail.js       modal: Events tab / Stocks tab (aggregates day's impacts)
-    StockImpact.js     stock-signal cards (ticker badge ▲▼◆, confidence, reason)
-    SearchModal.js     full-text search over title/entity/desc/category/tickers
-CLAUDE.md              conventions (READ THIS SECOND)
-TAKEOVER.md            this file
+    Calendar.js / WeekView.js / DayView.js / LatestView.js   calendar views
+    EventCard.js       reusable card: clean title, company TL;DR (About ›), ⚡ setup, 📊 EVENT CALL (+alpha)
+    DayDetail.js       modal: Events tab / Stocks tab
+    StockImpact.js     stock-signal cards (▲▼◆, confidence, reason)
+    CompanyModal.js    company card popup; companyStore.js  module opener (no prop-drilling)
+    GraphView.js       Graph tab: Ecosystem map ⟷ Co-movement toggle, pan/zoom, typed edges
+    ReportsView.js     Reports tab: agent performance / decisions / critic / memory
+    SearchModal.js     full-text search
+docs: CLAUDE.md (conventions) · ROADMAP.md · DECISIONS.md · WORKLOG.md · AGENTS.md · TAKEOVER.md (this)
 ```
 
 ---
@@ -201,9 +223,17 @@ ticker** → a keyword rule maps them to the public enabler basket (NVDA/AMZN/GO
 - Category **9 (AI & Compute Ecosystem)** is live: `ai_industry.py` + AI rules in
   `stock_impact.py` + violet `🧠` lane in `theme.js`. (Anthropic/OpenAI etc. map to the
   enabler basket since they're private.)
-- App has 4 views (Month/Week/Day/**Latest**) + search + day-detail Events/Stocks tabs.
-- Git: single "Initial commit" on disk; current working tree has uncommitted edits — see
-  session log. Commit/push only when the user asks.
+- App has **6 views** (Month/Week/Day/Latest/**Graph**/Reports) + search + day-detail Events/Stocks tabs
+  + company cards + two knowledge graphs.
+- **Enrichment/intelligence layers live**: stock-impact, setup-signals (`event_setups`),
+  earnings-preview (`event_previews`), earnings-alpha (`earnings_alpha` — pop-score + look-ahead,
+  self-tuning), company cards (`company_cards`), decision/critic agents + learnable `memory/`.
+- **Git**: PRs #1–#3 merged to `main`; **PR #4** open (`company-knowledge-graph`: company cards,
+  clustered/zoomable co-movement graph, Anthropic ecosystem map, and the ROADMAP/DECISIONS/WORKLOG docs).
+  Workflow = feature branch → PR → squash-merge via GitHub API (`gh` not installed). Commit when asked.
+- **Automation (remote routines on `bard259/events-calendar`)**: `Daily Events Collector` (14:00 UTC,
+  `daily_update.py`); `Daily earnings agents` (22:00 UTC, `run_daily_agents.py`, commits `memory/` to main
+  so learning persists). They run on `main` — keep it green.
 
 ### Why category-9 / AI counts look small on any given run
 T3 news mining only emits when a headline carries a **concrete in-window date**. Google
@@ -214,15 +244,42 @@ successive days. This is by design, not a bug.
 
 ## 7. Likely next tasks / open ideas
 
-- Keep running `daily_update.py` (or schedule it) so confirmed events fill in over time.
-- Consider adding `ai_industry.py`-style entity rosters to more lanes for richer stock links.
-- The cat-6 openFDA note string was corrected ("relying on Tier-2 SEC full-text PDUFA
-  mining"); it self-corrects on the next `collect.py`.
+**`ROADMAP.md` is the authoritative open-items list.** Highlights:
+- **Merge PR #4**; then add `app/assets/company_graph.json` to the daily routine's commit list so the
+  daily-refreshed graph persists.
+- Co-movement graph is sparse (~21 nodes) until multi-company events accumulate; the ecosystem map
+  (`knowledge_graph.py`, curated, 51 nodes) can be extended (more suppliers/customers, arrowheads).
+- Earnings-alpha learning only self-tunes once pre+post price snapshots accumulate — verify after a few
+  daily runs (`earnings_outcomes`).
+- `events.db` is a tracked binary touched by parallel routines → occasional merge conflicts (keep the
+  most complete DB; it regenerates).
 - No automated tests yet — `parsers.extract_dates*` is the highest-value place to add them.
 
 ---
 
 ## 8. Session log (append newest at top)
+
+### 2026-06-03 — handover doc refresh + Anthropic ecosystem map
+- Verified & refreshed this handover doc: added the doc-set pointer, full repo map (agents,
+  company cards, earnings-alpha, both graphs, memory/reports, new app files), updated Run-it
+  commands, and corrected the stale "4 views / single Initial commit" current-state section.
+- **Anthropic ecosystem knowledge graph** (`knowledge_graph.py` → `anthropic_graph.json`): curated
+  typed/directed relationships (invests_in/supplies/powers/partners/customer/contracts) centered on
+  Anthropic across chips·AI·space·energy (51 nodes / 80 edges). Graph tab now toggles
+  **Ecosystem map ⟷ Co-movement**. On PR #4.
+
+### 2026-06-03 — merged PR #3 + company knowledge-graph page
+- Merged **PR #3** (AVGO pre-print recap) into main — corrected a baseline error (Q1 FY26 AI
+  revenue was $8.4B not $4.1B; Q2 guide $10.7B/+140%) before the nightly run. Resolved the
+  earnings_preview.py conflict by keeping the corrected content + the app's decision/confidence/
+  significance fields.
+- **Company knowledge graph** (research → force-directed/Fruchterman–Reingold is the standard):
+  `pipeline/graph_build.py` builds nodes (companies) + edges (co-move in the same event's
+  stock-impacts), precomputes the FR layout in stdlib Python → `app/assets/company_graph.json`.
+  New **Graph** tab (`app/src/GraphView.js`) renders it with plain RN Views (no svg dep),
+  colored by sector group; nodes tap → CompanyModal. First build: 21 nodes / 16 edges (grows
+  as multi-company events accumulate). Wired into `run_daily_agents.py` to refresh daily.
+
 
 ### 2026-06-02 (latest+3) — integrate agents, company cards, continuous-learning alpha
 - **Integrated** Codex's decision/critic subsystem (earnings-calendar scrape → decision agent →

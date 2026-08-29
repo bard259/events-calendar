@@ -1,0 +1,448 @@
+{
+  "generated_at": "2026-06-03T23:28:17.754492+00:00",
+  "as_of": "2026-06-03",
+  "method": "weighted 3-hop diffusion (0.5/hop) over curated ecosystem + stock graph",
+  "hubs": [
+    {
+      "hub": "NVDA",
+      "display": "Nvidia",
+      "ranked": [
+        {
+          "ticker": "TSM",
+          "name": "TSMC",
+          "score": 43.2386,
+          "next_earnings": "2026-07-16",
+          "link": "direct: supplies — fabs ~92% of advanced AI chips"
+        },
+        {
+          "ticker": "MSFT",
+          "name": "Microsoft (Azure)",
+          "score": 37.1465,
+          "next_earnings": null,
+          "link": "direct: supplies — GPUs"
+        },
+        {
+          "ticker": "AMZN",
+          "name": "Amazon (AWS)",
+          "score": 31.1669,
+          "next_earnings": null,
+          "link": "direct: supplies — GPUs"
+        },
+        {
+          "ticker": "MRVL",
+          "name": "Marvell",
+          "score": 25.9508,
+          "next_earnings": null,
+          "link": "direct: invests in — $2B; NVLink Fusion"
+        },
+        {
+          "ticker": "GOOGL",
+          "name": "Alphabet (Google Cloud)",
+          "score": 24.8062,
+          "next_earnings": "2026-07-22",
+          "link": "direct: supplies — GPUs"
+        },
+        {
+          "ticker": "META",
+          "name": "Meta",
+          "score": 23.7992,
+          "next_earnings": "2026-06-25",
+          "link": "direct: supplies — GPUs"
+        },
+        {
+          "ticker": "ORCL",
+          "name": "Oracle (OCI)",
+          "score": 22.2645,
+          "next_earnings": "2026-06-10",
+          "link": "direct: supplies — GPUs"
+        },
+        {
+          "ticker": "MU",
+          "name": "Micron",
+          "score": 21.1779,
+          "next_earnings": "2026-06-24",
+          "link": "direct: supplies — HBM"
+        },
+        {
+          "ticker": "SMCI",
+          "name": "Super Micro",
+          "score": 16.2255,
+          "next_earnings": null,
+          "link": "direct: partners — reference AI systems"
+        },
+        {
+          "ticker": "AVGO",
+          "name": "Broadcom",
+          "score": 15.9623,
+          "next_earnings": "2026-06-03",
+          "link": "direct: event impact — Primary event company has a stock-impact link to this peer"
+        },
+        {
+          "ticker": "CRWV",
+          "name": "CoreWeave",
+          "score": 15.597,
+          "next_earnings": null,
+          "link": "direct: supplies — GPUs"
+        },
+        {
+          "ticker": "AMD",
+          "name": "AMD",
+          "score": 14.4022,
+          "next_earnings": null,
+          "link": "via OpenAI (invests in / supplies)"
+        },
+        {
+          "ticker": "RMCF",
+          "name": "Rocky Mountain Chocolate Factory, Inc.",
+          "score": 6.8154,
+          "next_earnings": "2026-07-21",
+          "link": "direct: event impact — Primary event company has a stock-impact link to this peer"
+        },
+        {
+          "ticker": "VRT",
+          "name": "Vertiv",
+          "score": 5.5935,
+          "next_earnings": null,
+          "link": "via CoreWeave (supplies / supplies)"
+        },
+        {
+          "ticker": "CEG",
+          "name": "Constellation Energy",
+          "score": 5.3112,
+          "next_earnings": null,
+          "link": "via Anthropic (invests in / powers)"
+        },
+        {
+          "ticker": "NXPI",
+          "name": "NXP Semiconductors N.V.",
+          "score": 5.2999,
+          "next_earnings": "2026-07-20",
+          "link": "direct: event impact — Primary event company has a stock-impact link to this peer"
+        },
+        {
+          "ticker": "CMG",
+          "name": "Chipotle Mexican Grill, Inc.",
+          "score": 5.2719,
+          "next_earnings": "2026-07-22",
+          "link": "direct: event impact — Primary event company has a stock-impact link to this peer"
+        },
+        {
+          "ticker": "ANET",
+          "name": "Arista",
+          "score": 5.229,
+          "next_earnings": null,
+          "link": "via Microsoft (Azure) (supplies / supplies)"
+        },
+        {
+          "ticker": "AMAT",
+          "name": "Applied Materials",
+          "score": 5.1503,
+          "next_earnings": null,
+          "link": "via TSMC (supplies / supplies)"
+        },
+        {
+          "ticker": "ASML",
+          "name": "ASML",
+          "score": 5.1503,
+          "next_earnings": "2026-07-15",
+          "link": "via TSMC (supplies / supplies)"
+        }
+      ],
+      "n_connected": 42
+    },
+    {
+      "hub": "spacex",
+      "display": "SpaceX",
+      "ranked": [
+        {
+          "ticker": "MSFT",
+          "name": "Microsoft (Azure)",
+          "score": 4.249,
+          "next_earnings": null,
+          "link": "direct: partners — Starlink global internet"
+        },
+        {
+          "ticker": "NVDA",
+          "name": "Nvidia",
+          "score": 2.0495,
+          "next_earnings": null,
+          "link": "via Microsoft (Azure) (partners / supplies)"
+        },
+        {
+          "ticker": "AMZN",
+          "name": "Amazon (AWS)",
+          "score": 1.846,
+          "next_earnings": null,
+          "link": "multi-hop"
+        },
+        {
+          "ticker": "TSM",
+          "name": "TSMC",
+          "score": 1.683,
+          "next_earnings": "2026-07-16",
+          "link": "via Microsoft (Azure) (partners / supplies)"
+        },
+        {
+          "ticker": "META",
+          "name": "Meta",
+          "score": 1.33,
+          "next_earnings": "2026-06-25",
+          "link": "multi-hop"
+        },
+        {
+          "ticker": "MRVL",
+          "name": "Marvell",
+          "score": 1.224,
+          "next_earnings": null,
+          "link": "via Microsoft (Azure) (partners / supplies)"
+        },
+        {
+          "ticker": "GOOGL",
+          "name": "Alphabet (Google Cloud)",
+          "score": 1.171,
+          "next_earnings": "2026-07-22",
+          "link": "multi-hop"
+        },
+        {
+          "ticker": "ORCL",
+          "name": "Oracle (OCI)",
+          "score": 1.17,
+          "next_earnings": "2026-06-10",
+          "link": "multi-hop"
+        },
+        {
+          "ticker": "CRWV",
+          "name": "CoreWeave",
+          "score": 1.134,
+          "next_earnings": null,
+          "link": "multi-hop"
+        },
+        {
+          "ticker": "STM",
+          "name": "STMicroelectronics",
+          "score": 1.0676,
+          "next_earnings": "2026-07-23",
+          "link": "direct: supplies — Starlink silicon (decade partnership)"
+        },
+        {
+          "ticker": "MU",
+          "name": "Micron",
+          "score": 1.0485,
+          "next_earnings": "2026-06-24",
+          "link": "multi-hop"
+        },
+        {
+          "ticker": "AMD",
+          "name": "AMD",
+          "score": 0.855,
+          "next_earnings": null,
+          "link": "via Microsoft (Azure) (partners / supplies)"
+        },
+        {
+          "ticker": "AVGO",
+          "name": "Broadcom",
+          "score": 0.855,
+          "next_earnings": "2026-06-03",
+          "link": "multi-hop"
+        },
+        {
+          "ticker": "SMCI",
+          "name": "Super Micro",
+          "score": 0.792,
+          "next_earnings": null,
+          "link": "via Microsoft (Azure) (partners / supplies)"
+        },
+        {
+          "ticker": "CEG",
+          "name": "Constellation Energy",
+          "score": 0.413,
+          "next_earnings": null,
+          "link": "via Microsoft (Azure) (partners / powers)"
+        },
+        {
+          "ticker": "CRM",
+          "name": "Salesforce Ventures",
+          "score": 0.361,
+          "next_earnings": null,
+          "link": "multi-hop"
+        },
+        {
+          "ticker": "ANET",
+          "name": "Arista",
+          "score": 0.36,
+          "next_earnings": null,
+          "link": "via Microsoft (Azure) (partners / supplies)"
+        },
+        {
+          "ticker": "VRT",
+          "name": "Vertiv",
+          "score": 0.36,
+          "next_earnings": null,
+          "link": "via Microsoft (Azure) (partners / supplies)"
+        },
+        {
+          "ticker": "AMAT",
+          "name": "Applied Materials",
+          "score": 0.324,
+          "next_earnings": null,
+          "link": "multi-hop"
+        },
+        {
+          "ticker": "ASML",
+          "name": "ASML",
+          "score": 0.324,
+          "next_earnings": "2026-07-15",
+          "link": "multi-hop"
+        }
+      ],
+      "n_connected": 37
+    },
+    {
+      "hub": "anthropic",
+      "display": "Anthropic",
+      "ranked": [
+        {
+          "ticker": "NVDA",
+          "name": "Nvidia",
+          "score": 20.1708,
+          "next_earnings": null,
+          "link": "direct: invests in — up to $10B"
+        },
+        {
+          "ticker": "MSFT",
+          "name": "Microsoft (Azure)",
+          "score": 19.65,
+          "next_earnings": null,
+          "link": "direct: invests in — up to $5B"
+        },
+        {
+          "ticker": "AMZN",
+          "name": "Amazon (AWS)",
+          "score": 16.9714,
+          "next_earnings": null,
+          "link": "direct: invests in — ~$8B + up to $25B (~$33B total)"
+        },
+        {
+          "ticker": "GOOGL",
+          "name": "Alphabet (Google Cloud)",
+          "score": 14.5951,
+          "next_earnings": "2026-07-22",
+          "link": "direct: invests in — up to $40B"
+        },
+        {
+          "ticker": "TSM",
+          "name": "TSMC",
+          "score": 13.313,
+          "next_earnings": "2026-07-16",
+          "link": "via Nvidia (invests in / supplies)"
+        },
+        {
+          "ticker": "AVGO",
+          "name": "Broadcom",
+          "score": 10.3748,
+          "next_earnings": "2026-06-03",
+          "link": "direct: supplies — co-designs next-gen TPU compute"
+        },
+        {
+          "ticker": "MRVL",
+          "name": "Marvell",
+          "score": 9.6885,
+          "next_earnings": null,
+          "link": "via Nvidia (invests in / invests in)"
+        },
+        {
+          "ticker": "AMD",
+          "name": "AMD",
+          "score": 7.452,
+          "next_earnings": null,
+          "link": "via Microsoft (Azure) (supplies / supplies)"
+        },
+        {
+          "ticker": "META",
+          "name": "Meta",
+          "score": 6.781,
+          "next_earnings": "2026-06-25",
+          "link": "via Nvidia (invests in / supplies)"
+        },
+        {
+          "ticker": "MU",
+          "name": "Micron",
+          "score": 5.883,
+          "next_earnings": "2026-06-24",
+          "link": "via Nvidia (invests in / supplies)"
+        },
+        {
+          "ticker": "ORCL",
+          "name": "Oracle (OCI)",
+          "score": 5.823,
+          "next_earnings": "2026-06-10",
+          "link": "via Nvidia (invests in / supplies)"
+        },
+        {
+          "ticker": "CRM",
+          "name": "Salesforce Ventures",
+          "score": 5.6382,
+          "next_earnings": null,
+          "link": "direct: invests in — Salesforce Ventures"
+        },
+        {
+          "ticker": "CRWV",
+          "name": "CoreWeave",
+          "score": 5.0985,
+          "next_earnings": null,
+          "link": "via Nvidia (invests in / supplies)"
+        },
+        {
+          "ticker": "SMCI",
+          "name": "Super Micro",
+          "score": 4.7295,
+          "next_earnings": null,
+          "link": "via Microsoft (Azure) (supplies / supplies)"
+        },
+        {
+          "ticker": "CEG",
+          "name": "Constellation Energy",
+          "score": 4.2822,
+          "next_earnings": null,
+          "link": "direct: powers — nuclear powers AWS/Azure AI capacity"
+        },
+        {
+          "ticker": "AMAT",
+          "name": "Applied Materials",
+          "score": 3.2355,
+          "next_earnings": null,
+          "link": "multi-hop"
+        },
+        {
+          "ticker": "ASML",
+          "name": "ASML",
+          "score": 3.2355,
+          "next_earnings": "2026-07-15",
+          "link": "multi-hop"
+        },
+        {
+          "ticker": "KLAC",
+          "name": "KLA",
+          "score": 3.2355,
+          "next_earnings": null,
+          "link": "multi-hop"
+        },
+        {
+          "ticker": "LRCX",
+          "name": "Lam Research",
+          "score": 3.2355,
+          "next_earnings": null,
+          "link": "multi-hop"
+        },
+        {
+          "ticker": "RMCF",
+          "name": "Rocky Mountain Chocolate Factory, Inc.",
+          "score": 2.5288,
+          "next_earnings": "2026-07-21",
+          "link": "via Nvidia (invests in / event impact)"
+        }
+      ],
+      "n_connected": 43
+    }
+  ]
+}
